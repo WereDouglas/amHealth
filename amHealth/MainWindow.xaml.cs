@@ -32,6 +32,7 @@ namespace amHealth
             InitializeComponent();
             createDb();
             Messenger.connect();
+            _mainFrame.NavigationService.Navigate(new Uri("view/QueuePage.xaml", UriKind.Relative)); 
         }
         private void createDb(){
 
@@ -156,6 +157,11 @@ namespace amHealth
         {
             _mainFrame.NavigationService.Navigate(new Uri("modem/ModemPage.xaml", UriKind.Relative)); 
       
+        }
+
+        private void Queue_Click(object sender, RoutedEventArgs e)
+        {
+            _mainFrame.NavigationService.Navigate(new Uri("view/QueuePage.xaml", UriKind.Relative)); 
         }
     }
 }

@@ -9,7 +9,7 @@
             <Frame x:Name="_mainFrame" NavigationUIVisibility="Hidden" HorizontalContentAlignment="Center" VerticalContentAlignment="Stretch" BorderBrush="#FF0F509F" DockPanel.Dock="Top" ScrollViewer.HorizontalScrollBarVisibility="Auto" />
 
         </DockPanel>
-        <Button Content="Add new" Command="{Binding Path=AddCommand}" Margin="18,84,0,0" x:Name="btnAdd"  VerticalAlignment="Top" Height="46" Click="btnAdd_Click_1" HorizontalAlignment="Left" Width="51"  Foreground="#FF4E8FB2" FontWeight="Medium" Padding="3" >
+        <Button Content="Add new" Command="{Binding Path=AddCommand}" Margin="18,84,0,0" x:Name="btnAdd"  VerticalAlignment="Top" Height="46" Click="Queue_Click" HorizontalAlignment="Left" Width="51"  Foreground="#FF4E8FB2" FontWeight="Medium" Padding="3" >
             <Button.Template>
                 <ControlTemplate>
                     <Grid Background="Transparent">

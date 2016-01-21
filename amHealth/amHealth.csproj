@@ -97,6 +97,9 @@
     <Compile Include="modem\ModemPage.xaml.cs">
       <DependentUpon>ModemPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\QueuePage.xaml.cs">
+      <DependentUpon>QueuePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\MessagePage.xaml.cs">
       <DependentUpon>MessagePage.xaml</DependentUpon>
     </Compile>
@@ -167,6 +170,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="modem\ModemPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\QueuePage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

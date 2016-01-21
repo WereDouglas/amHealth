@@ -12,7 +12,7 @@
     </Page.Resources>
     <Grid Margin="0,0,0,10">
         <Label Content="" x:Name="internet" HorizontalAlignment="Left" Margin="883,9,0,0" VerticalAlignment="Top" Width="85"/>
-        <ComboBox Name="cmbCOM" HorizontalAlignment="Left" Margin="140,63,0,0" VerticalAlignment="Top" Width="120">
+        <ComboBox Name="cmbCOM" HorizontalAlignment="Left" Margin="139,65,0,0" VerticalAlignment="Top" Width="120">
             <ListBoxItem Content="COM1"/>
             <ListBoxItem Content="COM2"/>
             <ListBoxItem Content="COM3"/>
@@ -26,6 +26,6 @@
         </ComboBox>
         <Label Content="Modem port:" HorizontalAlignment="Left" Margin="29,59,0,0" VerticalAlignment="Top"/>
         <Button IsDefault="True" x:Name="btnDialogOk" Click="btnDialogOk_Click" MinWidth="60" Margin="0,65,563,0" Content="Connect" HorizontalAlignment="Right" Width="120" Background="#FF2799F0" Foreground="White" Height="30" VerticalAlignment="Top"/>
-        <Button IsDefault="True" x:Name="btnDialogOk_Copy" Click="Send_Click" MinWidth="60" Margin="0,65,438,0" Content="Send" HorizontalAlignment="Right" Width="120" Background="#FF2799F0" Foreground="White" Height="30" VerticalAlignment="Top"/>
+        <Button IsDefault="True" x:Name="btnDialogOk_Copy" Click="Send_Click" MinWidth="60" Margin="0,65,438,0" Content="Send" HorizontalAlignment="Right" Width="120" Background="#FF2799F0" Foreground="White" Height="30" VerticalAlignment="Top" IsEnabled="False"/>
     </Grid>
 </Page>

@@ -73,3 +73,5 @@ C:\Users\DOUGLAS\documents\visual studio 2013\Projects\amHealth\amHealth\obj\Deb
 C:\Users\DOUGLAS\documents\visual studio 2013\Projects\amHealth\amHealth\obj\Debug\View\practitioner\MessagePractitioner.g.cs
 C:\Users\DOUGLAS\documents\visual studio 2013\Projects\amHealth\amHealth\obj\Debug\View\patient\DynamicPatient.baml
 C:\Users\DOUGLAS\documents\visual studio 2013\Projects\amHealth\amHealth\obj\Debug\View\patient\DynamicPatient.g.cs
+C:\Users\DOUGLAS\documents\visual studio 2013\Projects\amHealth\amHealth\obj\Debug\View\QueuePage.baml
+C:\Users\DOUGLAS\documents\visual studio 2013\Projects\amHealth\amHealth\obj\Debug\View\QueuePage.g.cs
