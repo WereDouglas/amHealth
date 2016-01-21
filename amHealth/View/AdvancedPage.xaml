@@ -1,0 +1,56 @@
+﻿<Page x:Class="amHealth.AdvancedPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"       
+      mc:Ignorable="d"
+	Title="Daily weather records" MinWidth="800" MinHeight="600" Background="White" Height="417" >
+    <Page.Resources>
+
+
+
+    </Page.Resources>
+    <Grid Margin="0,0,0,10">
+        <Label Content="" x:Name="internet" HorizontalAlignment="Left" Margin="883,9,0,0" VerticalAlignment="Top" Width="85"/>
+        <Button Content="Delete selected" HorizontalAlignment="Left" Command="{Binding AddCommand}" Margin="10,22,0,0" x:Name="btnAdd_Copy"  VerticalAlignment="Top" Width="135" Height="24" Click="Deletepatients_Click">
+            <Button.Template>
+                <ControlTemplate>
+                    <Grid Background="Transparent">
+                        <TextBlock><Run Text="Delete patients"/></TextBlock>
+                        <Image  Stretch="Uniform" Source="/amHealth;component/image/Deletes.png" HorizontalAlignment="Right" />
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button Content="Delete selected" HorizontalAlignment="Left" Command="{Binding AddCommand}" Margin="10,67,0,0" x:Name="btnAdd_Copy1"  VerticalAlignment="Top" Width="135" Height="24" Click="btnDeleteAll_Click" RenderTransformOrigin="0.488,1.757">
+            <Button.Template>
+                <ControlTemplate>
+                    <Grid Background="Transparent">
+                        <TextBlock><Run Text="Delete practitioners"/></TextBlock>
+                        <Image  Stretch="Uniform" Source="/amHealth;component/image/Deletes.png" HorizontalAlignment="Right" />
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button Content="Delete imports" HorizontalAlignment="Left" Command="{Binding AddCommand}" Margin="10,164,0,0" x:Name="btnAdd_Copy2"  VerticalAlignment="Top" Width="135" Height="24" Click="btnDelete_imports">
+            <Button.Template>
+                <ControlTemplate>
+                    <Grid Background="Transparent">
+                        <TextBlock><Run Text="Delete imports"/></TextBlock>
+                        <Image  Stretch="Uniform" Source="/amHealth;component/image/Deletes.png" HorizontalAlignment="Right" />
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button Content="Delete selected" HorizontalAlignment="Left" Command="{Binding AddCommand}" Margin="10,121,0,0" x:Name="btnAdd_Copy3"  VerticalAlignment="Top" Width="135" Height="24" Click="btnDeleteAll_Click">
+            <Button.Template>
+                <ControlTemplate>
+                    <Grid Background="Transparent">
+                        <TextBlock><Run Text="Delete selected"/></TextBlock>
+                        <Image  Stretch="Uniform" Source="/amHealth;component/image/Deletes.png" HorizontalAlignment="Right" />
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+    </Grid>
+</Page>

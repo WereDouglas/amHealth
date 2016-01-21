@@ -1,0 +1,75 @@
+﻿<Window x:Class="amHealth.View.patient.Groups"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        WindowStartupLocation="CenterScreen"
+      
+         
+        Title="Add user" MinHeight="600" MinWidth="750"  WindowStyle="None" Height="526.866">
+
+    <Grid IsHitTestVisible="True" Margin="0,0,2,0" Height="590" VerticalAlignment="Top">
+
+        <WrapPanel HorizontalAlignment="Right" Margin="0,6,164,9"/>
+        <Button IsDefault="True" x:Name="btnDialogOk" Click="btnDialogOk_Click" MinWidth="60" Margin="12,515,0,0" Content="Create" HorizontalAlignment="Left" Width="83" Background="#FF2799F0" Foreground="White" Height="30" VerticalAlignment="Top" BorderBrush="{x:Null}"/>
+        <Button IsCancel="True" MinWidth="60" Content="_Cancel" Margin="100,515,0,0" Height="29" VerticalAlignment="Top" HorizontalAlignment="Left" Width="76" Click="Button_Click" BorderBrush="{x:Null}"/>
+        <TextBox HorizontalAlignment="Left" Height="23" x:Name="name" Margin="65,36,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="111" RenderTransformOrigin="-1.893,1.016"/>
+        <Label Content="Create message group from patients" HorizontalAlignment="Left" Margin="186,5,0,0" VerticalAlignment="Top" Width="271"/>
+        <ListView Background="LightGray" Margin="186,36,0,0" x:Name="PatientlistView" SelectionChanged="PatientlistView_SelectionChanged">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Background="White" Margin="5,5,5,5" Orientation="Horizontal">
+
+                        <CheckBox  x:Name="cbSelectRow" IsChecked="{Binding IsSelected, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListViewItem}}}"/>
+
+
+
+                        <Button Height="50" Width="50" >
+                            <Button.Template>
+                                <ControlTemplate>
+                                    <Image Height="50" Margin="5,5,5,5" Source="{Binding Image}"  Stretch="UniformToFill" Width="50"/>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                        <TextBlock  Margin="0,15,0,5" Text="{Binding Lname}" Width="50" />
+                        <TextBlock Margin="5,15,0,5" Text="{Binding Fname}" Width="50" />
+                        <TextBlock Margin="5,15,0,5"  Text="{Binding Gender}" Width="50" />
+                        <TextBlock Margin="5,15,0,5"  Text="{Binding Dob}" Width="80" />
+                        <TextBlock Margin="5,15,0,5"  Text="{Binding Age}" Width="50" />
+                        <TextBlock Margin="0,15,0,5"  Text="{Binding Height}" Width="50" />
+                        <TextBlock Margin="0,15,0,5"  Text="{Binding Weight}" Width="50" />
+                        <TextBlock Margin="0,15,0,5"  Text="{Binding Phone}" Width="90" />
+                        <TextBlock Margin="0,15,0,5"  Text="{Binding Email}" Width="120" />
+                        <TextBlock Margin="0,15,0,5"  Text="{Binding Region}" Width="50" />
+                        <TextBlock Margin="0,15,0,5"  Text="{Binding Sync}" Width="50" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Vertical" />
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+        </ListView>
+        <TextBox x:Name="txtFilter" TextChanged="txtFilter_TextChanged" Height="29" VerticalAlignment="Top" HorizontalAlignment="Left" Width="166" Margin="10,346,0,0" />
+        <Label Content="Search by phone/contact" HorizontalAlignment="Left" Margin="10,314,0,0" VerticalAlignment="Top" Width="149" Height="27"/>
+        <CheckBox Margin="17,395,0,0" x:Name="chkSelectAll"  Click="chkSelectAll_Click" Content="Check all" HorizontalAlignment="Left" Width="67" Height="26" VerticalAlignment="Top"  />
+        <Label Content="Name" HorizontalAlignment="Left" Margin="12,37,0,0" VerticalAlignment="Top" Width="53" Height="27"/>
+        <Label Content="Age from" HorizontalAlignment="Left" Margin="0,116,0,0" VerticalAlignment="Top" Width="60" Height="27" RenderTransformOrigin="0.328,1.556"/>
+        <ComboBox HorizontalAlignment="Left"  x:Name="gender"  SelectedValue="{Binding CurrentUser.Station}" SelectedValuePath="Content"  Margin="65,68,0,0" VerticalAlignment="Top" Width="111" RenderTransformOrigin="0.302,-0.056"  DropDownClosed="gender_DropDownClosed" >
+            <ListBoxItem Content=""/>
+            <ListBoxItem Content="Male"/>
+            <ListBoxItem Content="Female"/>
+
+        </ComboBox>
+        <Label Content="Gender" HorizontalAlignment="Left" Margin="12,64,0,0" VerticalAlignment="Top" Width="48" RenderTransformOrigin="0.579,-3.033"/>
+        <TextBox HorizontalAlignment="Left"  InputScope="Number" Name="Ageto" Height="23" Margin="65,154,0,0" TextWrapping="Wrap" Text="160" VerticalAlignment="Top" Width="109" RenderTransformOrigin="0.567,-0.339" LostFocus="Ageto_LostFocus"/>
+        <TextBox HorizontalAlignment="Left" Name="Agefrom" InputScope="Number" Height="23" Margin="65,120,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="109"/>
+        <Label Content="Add conditions" HorizontalAlignment="Left" Margin="10,248,0,0" VerticalAlignment="Top" Width="166" Height="27"/>
+        <Label Content="Add locations" HorizontalAlignment="Left" Margin="8,182,0,0" VerticalAlignment="Top" Width="166" Height="27"/>
+        <TextBox x:Name="txtFilterLocations" TextChanged="txtFilter_TextChanged" Height="29" VerticalAlignment="Top" HorizontalAlignment="Left" Width="166" Margin="10,214,0,0" />
+        <TextBox x:Name="txtFilterConditions" TextChanged="txtFilter_TextChanged" Height="29" VerticalAlignment="Top" HorizontalAlignment="Left" Width="166" Margin="8,280,0,0" />
+        <Label Content="Age to" HorizontalAlignment="Left" Margin="0,148,0,0" VerticalAlignment="Top" Width="60" Height="27"/>
+        <Button IsDefault="True" x:Name="btnPreview" Click="Preview_Click" MinWidth="60" Margin="10,421,0,0" Content="Preview" HorizontalAlignment="Left" Width="164" Background="#FFFFBE00" Foreground="White" Height="30" VerticalAlignment="Top" BorderBrush="{x:Null}"/>
+    </Grid>
+
+</Window>
+

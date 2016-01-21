@@ -1,0 +1,31 @@
+﻿<Page x:Class="amHealth.modem.ModemPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"       
+      mc:Ignorable="d"
+	Title="Daily weather records" MinWidth="800" MinHeight="600" Background="White" Height="417" >
+    <Page.Resources>
+
+
+
+    </Page.Resources>
+    <Grid Margin="0,0,0,10">
+        <Label Content="" x:Name="internet" HorizontalAlignment="Left" Margin="883,9,0,0" VerticalAlignment="Top" Width="85"/>
+        <ComboBox Name="cmbCOM" HorizontalAlignment="Left" Margin="140,63,0,0" VerticalAlignment="Top" Width="120">
+            <ListBoxItem Content="COM1"/>
+            <ListBoxItem Content="COM2"/>
+            <ListBoxItem Content="COM3"/>
+            <ListBoxItem Content="COM4"/>
+            <ListBoxItem Content="COM5"/>
+            <ListBoxItem Content="COM6"/>
+            <ListBoxItem Content="COM7"/>
+            <ListBoxItem Content="COM8"/>
+            <ListBoxItem Content="COM9"/>
+            <ListBoxItem Content="COM10"/>
+        </ComboBox>
+        <Label Content="Modem port:" HorizontalAlignment="Left" Margin="29,59,0,0" VerticalAlignment="Top"/>
+        <Button IsDefault="True" x:Name="btnDialogOk" Click="btnDialogOk_Click" MinWidth="60" Margin="0,65,563,0" Content="Connect" HorizontalAlignment="Right" Width="120" Background="#FF2799F0" Foreground="White" Height="30" VerticalAlignment="Top"/>
+        <Button IsDefault="True" x:Name="btnDialogOk_Copy" Click="Send_Click" MinWidth="60" Margin="0,65,438,0" Content="Send" HorizontalAlignment="Right" Width="120" Background="#FF2799F0" Foreground="White" Height="30" VerticalAlignment="Top"/>
+    </Grid>
+</Page>

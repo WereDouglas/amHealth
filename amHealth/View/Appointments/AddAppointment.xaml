@@ -1,0 +1,63 @@
+﻿<Window x:Class="amHealth.View.Appointments.AddAppointment"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        WindowStartupLocation="CenterScreen"
+        SizeToContent="WidthAndHeight"
+         
+        Title="Add user"  MinHeight="600" Width="327.677"  WindowStyle="None">
+
+    <Grid IsHitTestVisible="True" Margin="0,0,2,0" Height="592" VerticalAlignment="Top">
+        <GroupBox Header="" HorizontalAlignment="Left" Margin="10,83,0,0" Name="groupBox10" Width="298" BorderBrush="#FFE7E8EC" Height="150" VerticalAlignment="Top">
+            <Grid Margin="0,0,-2,-2" Height="130" VerticalAlignment="Top">
+                <Image Margin="161,32,0,0" x:Name="imgCapture" Source="{Binding Image}" HorizontalAlignment="Left" Width="117" Height="88" VerticalAlignment="Top" />
+                <Label Content="{Binding Fname}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,32,0,0" Background="WhiteSmoke" Width="151" Height="25"/>
+                <Label Content="{Binding Lname}" HorizontalAlignment="Left" Margin="0,2,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.214,0.731" Background="#FFE7E8EC" Width="151" Height="25"/>
+                <Label Content="{Binding Phone}" HorizontalAlignment="Left" Margin="0,62,0,0" Width="151" Background="#FFE7E8EC" Height="26" VerticalAlignment="Top"/>
+                <Label Content="{Binding Email}" HorizontalAlignment="Left" Margin="0,94,0,0" VerticalAlignment="Top" Width="151" Background="#FFE7E8EC" Height="26"/>
+                <Label Content="{Binding Id}" Name="patient" HorizontalAlignment="Left" Margin="156,1,0,0" VerticalAlignment="Top" Width="122" Background="#FFE7E8EC" Height="26"/>
+            </Grid>
+        </GroupBox>
+        <Label x:Name="lblQuestion" Margin="20,9,298,391">
+
+        </Label>
+        <Button IsDefault="True" x:Name="btnDialogOk" Click="btnDialogOk_Click" MinWidth="60" Margin="0,530,118,0" Content="Create" HorizontalAlignment="Right" Width="83" Background="#FF2799F0" Foreground="White" Height="30" VerticalAlignment="Top"/>
+        <Button IsCancel="True" MinWidth="60" Content="_Cancel" Margin="0,531,37,0" Height="29" VerticalAlignment="Top" HorizontalAlignment="Right" Width="76"/>
+        <DatePicker x:Name="startDate" HorizontalAlignment="Left" Margin="12,309,0,0" VerticalAlignment="Top" Width="112"/>
+        <TextBox HorizontalAlignment="Left" Height="23" x:Name="reason" Margin="19,437,0,0" TextWrapping="Wrap" Text="{Binding CurrentUser.Name}" VerticalAlignment="Top" Width="256" RenderTransformOrigin="-1.893,1.016"/>
+        <TextBox x:Name="txtFilter" TextChanged="txtFilter_TextChanged" Height="28" VerticalAlignment="Top" HorizontalAlignment="Right" Width="202" Margin="0,50,10,0" />
+        <Label Content="Schedule appointment" HorizontalAlignment="Left" Margin="12,0,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.214,0.731" Width="165" FontSize="15"/>
+        <Label Content="Appointment information" HorizontalAlignment="Left" Margin="20,233,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.214,0.731" Width="288" FontSize="15"/>
+        <Label Content="Reason to visit" HorizontalAlignment="Left" Margin="25,406,0,0" VerticalAlignment="Top" Width="256"/>
+        <Label Content="start time" HorizontalAlignment="Left" Margin="139,280,0,0" VerticalAlignment="Top" Width="99"/>
+        <Label Content="Date" HorizontalAlignment="Left" Margin="20,278,0,0" VerticalAlignment="Top" Width="73"/>
+        <Label Content="End time" HorizontalAlignment="Left" Margin="139,346,0,0" VerticalAlignment="Top" Width="112"/>
+        <ComboBox HorizontalAlignment="Left"  x:Name="startHour"  SelectedValue="{Binding CurrentUser.Station}" SelectedValuePath="Content"  Margin="139,306,0,0" VerticalAlignment="Top" Width="61" RenderTransformOrigin="0.302,-0.056" Height="27">
+            <ListBoxItem Content="Male"/>
+            <ListBoxItem Content="Female"/>
+
+        </ComboBox>
+        <ComboBox HorizontalAlignment="Left"  x:Name="endHour"  SelectedValue="{Binding CurrentUser.Station}" SelectedValuePath="Content"  Margin="139,377,0,0" VerticalAlignment="Top" Width="61" RenderTransformOrigin="0.302,-0.056">
+            <ListBoxItem Content="Male"/>
+            <ListBoxItem Content="Female"/>
+
+        </ComboBox>
+        <ComboBox HorizontalAlignment="Left"  x:Name="startMin"  SelectedValue="{Binding CurrentUser.Station}" SelectedValuePath="Content"  Margin="209,306,0,0" VerticalAlignment="Top" Width="66" RenderTransformOrigin="0.302,-0.056" Height="27">
+            <ListBoxItem Content="Male"/>
+            <ListBoxItem Content="Female"/>
+
+        </ComboBox>
+        <ComboBox HorizontalAlignment="Left"  x:Name="endMin"  SelectedValue="{Binding CurrentUser.Station}" SelectedValuePath="Content"  Margin="209,377,0,0" VerticalAlignment="Top" Width="66" RenderTransformOrigin="0.302,-0.056">
+            <ListBoxItem Content="Male"/>
+            <ListBoxItem Content="Female"/>
+
+        </ComboBox>
+        <ComboBox HorizontalAlignment="Left"  x:Name="practitioners"  SelectedValuePath="Content"  Margin="19,503,0,0" VerticalAlignment="Top" Width="262" RenderTransformOrigin="0.302,-0.056" SelectionChanged="PractitionerSelectionChanged">
+
+
+        </ComboBox>
+        <Label Content="Choose practitioner" HorizontalAlignment="Left" Margin="19,465,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.214,0.731" Width="144" FontSize="15"/>
+        <Label Content="Find patient" HorizontalAlignment="Left" Margin="10,49,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.214,0.731" Width="91" FontSize="14"/>
+    </Grid>
+
+</Window>
+

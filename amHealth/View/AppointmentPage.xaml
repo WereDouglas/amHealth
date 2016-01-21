@@ -1,0 +1,319 @@
+﻿<Page x:Class="amHealth.AppointmentPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"       
+      mc:Ignorable="d"
+	Title="Daily weather records" MinWidth="800" MinHeight="600" Background="#FFEEEEF2" Height="417" >
+    <Page.Resources>
+
+
+
+    </Page.Resources>
+    <Grid>
+        <Label Content="" x:Name="internet" HorizontalAlignment="Left" Margin="883,9,0,0" VerticalAlignment="Top" Width="85"/>
+        <Label Content="Appointments" HorizontalAlignment="Left" Margin="0,6,0,0" VerticalAlignment="Top" Width="139" Foreground="Black" FontSize="20" Height="35" FontFamily="Calibri"/>
+        <Button IsDefault="True" x:Name="btnDialogOk" Click="btnDialogOk_Click" MinWidth="60" Margin="0,5,10,0" Content="SCHEDULE APPOINTMENT" HorizontalAlignment="Right" Width="165" Background="#FF2799F0" Foreground="White" Height="36" VerticalAlignment="Top" FontFamily="Calibri Light" FontSize="14" BorderBrush="{x:Null}"/>
+        <Button IsDefault="True" x:Name="btnDialogOk_Copy" Click="btnCalendar" MinWidth="60" Margin="0,7,180,0" Content="VIEW CALENDAR" HorizontalAlignment="Right" Width="129" Background="#FF2799F0" Foreground="White" Height="36" VerticalAlignment="Top" FontFamily="Calibri Light" FontSize="14" BorderBrush="{x:Null}"/>
+        <DataGrid  AutoGenerateColumns="False"  CanUserAddRows="False" FrozenColumnCount ="1" HorizontalScrollBarVisibility="Auto" 
+        		x:Name="AppointmentListView"  Background="{x:Null}" RowBackground="LightYellow" 
+        		AlternatingRowBackground="LightBlue" BorderBrush="#FFC5C5C5" BorderThickness="1" 
+        		SelectionMode="Extended" Height="auto" VerticalAlignment="Top" Width="auto"  HorizontalGridLinesBrush="#FFC5C5C5" VerticalGridLinesBrush="#FFC5C5C5" Margin="0,46,0,0"  >
+            <DataGrid.Resources>
+                <Style TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="Background" Value="#A5A5A5"  />
+                    <Setter Property="VerticalContentAlignment" Value="Center" />
+
+                </Style>
+            </DataGrid.Resources>
+
+            <DataGrid.Columns >
+
+                <DataGridTemplateColumn Header="Practitioner">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            
+                            <StackPanel>
+                                <Image Height="60" Width="60" Source="{Binding PractitionerImage}"  />
+                                <TextBlock  FontSize="12" Width="140" Text="{Binding Practitioner}" />
+                                <StackPanel Orientation="Vertical">
+                                   
+                                    <StackPanel Orientation="Horizontal">
+                                        <Button Click="image_Click_edit" Style="{StaticResource CalendarButton}">
+                                            <StackPanel>
+                                                <Image Height="10" Width="10" Source="/amHealth;component/image/Add.png"  />
+
+                                            </StackPanel>
+                                        </Button>
+                                        <Button Click="image_Click_view" Style="{StaticResource CalendarButton}" Background="{x:Null}" BorderBrush="{x:Null}">
+                                            <StackPanel>
+                                                <Image Height="20" Width="20" Source="/amHealth;component/image/Delete.png"   />
+                                            </StackPanel>
+                                        </Button>
+                                    </StackPanel>
+                                </StackPanel>
+
+                            </StackPanel>
+                            
+                            
+                            
+                            
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="6:00am">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <Button   Click="image_Click" Style="{StaticResource CalendarButton}">
+                                    <StackPanel>
+                                        <TextBlock  FontSize="10" Text="{Binding six}" />
+                                    </StackPanel>
+                                </Button>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Header="7:00am">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <TextBlock  FontSize="10" Text="{Binding Seven}" />
+                                <Button   Click="image_Click" Style="{StaticResource CalendarButton}">
+                                   
+                                </Button>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="8:00am">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <Button   Click="image_Click" Style="{StaticResource CalendarButton}">
+                                    <StackPanel>
+                                        <TextBlock  FontSize="10" Text="{Binding Eight}" />
+                                    </StackPanel>
+                                </Button>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="9:00am">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Vertical">
+                                <TextBlock  Style="{StaticResource CalendarText}" Text="{Binding Nine}" />
+                                
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Header="10:00am">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            
+                           
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Header="11:00am">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <Button   Click="image_Click"  Style="{StaticResource CalendarButton}">
+                                    <StackPanel>
+                                        <TextBlock  Style="{StaticResource CalendarText}"  Text="{Binding Eleven}" />
+                                    </StackPanel>
+                                </Button>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="12:00">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <Button   Click="image_Click" Style="{StaticResource CalendarButton}">
+                                    <StackPanel>
+                                        <TextBlock  FontSize="10" Text="{Binding Twelve}" />
+                                    </StackPanel>
+                                </Button>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Header="13:00">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <Button   Click="image_Click" Style="{StaticResource CalendarButton}">
+                                    <StackPanel>
+                                        <TextBlock  FontSize="10" Text="{Binding Thirteen}" />
+                                    </StackPanel>
+                                </Button>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="14:00">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <Button   Click="image_Click" Style="{StaticResource CalendarButton}">
+                                    <StackPanel>
+                                        <TextBlock  FontSize="10" Text="{Binding Fourteen}" />
+                                    </StackPanel>
+                                </Button>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="15:00">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <Button   Click="image_Click" Style="{StaticResource CalendarButton}">
+                                    <StackPanel>
+                                        <TextBlock  FontSize="10" Text="{Binding Fifteen}" />
+                                    </StackPanel>
+                                </Button>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Header="16:00">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <Button   Click="image_Click" Style="{StaticResource CalendarButton}">
+                                    <StackPanel>
+                                        <TextBlock  FontSize="10" Text="{Binding Sixteen}" />
+                                    </StackPanel>
+                                </Button>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Header="17:00">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <Button   Click="image_Click" Style="{StaticResource CalendarButton}">
+                                    <StackPanel>
+                                        <TextBlock  FontSize="10" Text="{Binding Seventeen}" />
+                                    </StackPanel>
+                                </Button>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Header="18:00">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <Button   Click="image_Click" Style="{StaticResource CalendarButton}">
+                                    <StackPanel>
+                                        <TextBlock  FontSize="10" Text="{Binding Eighteen}" />
+                                    </StackPanel>
+                                </Button>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="19:00">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <Button   Click="image_Click" Style="{StaticResource CalendarButton}">
+                                    <StackPanel>
+                                        <TextBlock  FontSize="10" Text="{Binding Nineteen}" />
+                                    </StackPanel>
+                                </Button>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="20:00">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <Button   Click="image_Click" Style="{StaticResource CalendarButton}">
+                                    <StackPanel>
+                                        <TextBlock  FontSize="10" Text="{Binding Twenty}" />
+                                    </StackPanel>
+                                </Button>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Header="21:00">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <Button   Click="image_Click" Style="{StaticResource CalendarButton}">
+                                    <StackPanel>
+                                        <TextBlock  FontSize="10" Text="{Binding Twentyone}" />
+                                    </StackPanel>
+                                </Button>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="22:00">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <Button   Click="image_Click" Style="{StaticResource CalendarButton}">
+                                    <StackPanel>
+                                        <TextBlock  FontSize="10" Text="{Binding Twentytwo}" />
+                                    </StackPanel>
+                                </Button>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Header="23:00">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <Button   Click="image_Click" Style="{StaticResource CalendarButton}">
+                                    <StackPanel>
+                                        <TextBlock  FontSize="10" Text="{Binding Twentythree}" />
+                                    </StackPanel>
+                                </Button>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Header="24:00">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <Button   Click="image_Click" Style="{StaticResource CalendarButton}">
+                                    <StackPanel>
+                                        <TextBlock Style="{StaticResource CalendarText}"  Text="{Binding Twentyfour}" />
+                                    </StackPanel>
+                                </Button>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <DatePicker Name="selectdate" HorizontalAlignment="Left" Margin="167,13,0,0"  VerticalAlignment="Top" Width="171" LostFocus="selectdate_LostFocus"/>
+    </Grid>
+</Page>

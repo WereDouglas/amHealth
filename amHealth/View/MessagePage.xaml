@@ -1,0 +1,83 @@
+﻿<Page x:Class="amHealth.MessagePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"       
+      mc:Ignorable="d"
+	Title="Daily weather records" MinWidth="800" MinHeight="600" Background="White" Height="417" >
+    <Page.Resources>
+
+
+
+    </Page.Resources>
+    <Grid Margin="0,0,0,10">
+        <Label Content="" x:Name="internet" HorizontalAlignment="Left" Margin="883,9,0,0" VerticalAlignment="Top" Width="85"/>
+        <Button Content="Add new" HorizontalAlignment="Right" Command="{Binding AddCommand}" Margin="0,9,334,0" x:Name="btnAdd"  VerticalAlignment="Top" Width="113" Height="25" Click="btnAdd_Click_1" >
+            <Button.Template>
+                <ControlTemplate>
+                    <Grid Background="Transparent">
+                        <TextBlock><Run Text="Send to patients"/></TextBlock>
+                        <Image  Stretch="Uniform" Source="/amHealth;component/image/User-48.png" HorizontalAlignment="Right" />
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button Content="Delete selected" Command="{Binding AddCommand}" Margin="0,9,197,0" x:Name="btnExport"  VerticalAlignment="Top" Height="25" Click="Button_Click_export" HorizontalAlignment="Right" Width="114">
+            <Button.Template>
+                <ControlTemplate>
+                    <Grid Background="Transparent">
+                        <TextBlock><Run Text="Messaging lists"/></TextBlock>
+                        <Image  Stretch="Uniform" Source="/amHealth;component/image/excel.png" HorizontalAlignment="Right" />
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button Content="Add new" Command="{Binding AddCommand}" Margin="0,9,11,0" x:Name="btnAdd_Copy"  VerticalAlignment="Top" Height="25" Click="Group_Click" HorizontalAlignment="Right" Width="167" >
+            <Button.Template>
+                <ControlTemplate>
+                    <Grid Background="Transparent">
+                        <TextBlock><Run Text="Create messaging group"/></TextBlock>
+                        <Image  Stretch="Uniform" Source="/amHealth;component/image/User-Group-48.png" HorizontalAlignment="Right" />
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <ListView Background="LightGray" Margin="10,60,10,10" x:Name="GroupListView" SelectionChanged="PatientlistView_SelectionChanged">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Background="White" Margin="5,5,5,5" Orientation="Horizontal">
+                        <TextBlock  Margin="0,15,0,5" Text="{Binding Name}" Width="150" />
+                        <TextBlock Margin="5,15,0,5"  Text="{Binding Filters}" Width="300" />
+                        <TextBlock Margin="5,15,0,5"  Text="{Binding Dor}" Width="150" />
+                        <TextBlock Margin="0,15,0,5"  Text="{Binding Sync}" Width="50" />
+                        <Button Height="36" HorizontalAlignment="Left" x:Name="GroupButton" Click="GroupButton_Click" Margin="5,0,0,0" Width="36">
+                            <Button.Template>
+                                <ControlTemplate>
+                                    <Grid Background="Transparent">
+                                        <Image Source="/amHealth;component/image/Edits.png" Width="25" Height="25" />
+                                    </Grid>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+
+                        <Button Height="36" HorizontalAlignment="Left" x:Name="DeleteButton" Click="DeleteButton_Click"  Margin="5,0,0,0" Width="36">
+                            <Button.Template>
+                                <ControlTemplate>
+                                    <Grid Background="Transparent">
+                                        <Image Source="/amHealth;component/image/Deletes.png" Width="25" Height="25" />
+                                    </Grid>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Vertical" />
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+        </ListView>
+        <Label Content="Messaging groups" HorizontalAlignment="Left" Margin="10,35,0,0" VerticalAlignment="Top" Width="113" FontWeight="Bold"/>
+    </Grid>
+</Page>
