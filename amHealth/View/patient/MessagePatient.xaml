@@ -27,7 +27,7 @@
         <Label Content="Email" HorizontalAlignment="Left" Margin="58,307,0,0" VerticalAlignment="Top" Width="48"/>
         <TextBox HorizontalAlignment="Left" x:Name="email" Margin="114,307,0,0" TextWrapping="Wrap" Text="{Binding Email}" Width="164" RenderTransformOrigin="-1.893,1.016" Height="23" VerticalAlignment="Top"/>
 
-        <Image Margin="147,46,0,0" x:Name="imgCapture" Source="{Binding Image}" HorizontalAlignment="Left" Width="93" Height="91" VerticalAlignment="Top" />
+        <Image Margin="114,46,0,0" x:Name="imgCapture" Source="{Binding Image}" HorizontalAlignment="Left" Width="164" Height="115" VerticalAlignment="Top" />
         <Label Content="Message" HorizontalAlignment="Left" Margin="20,371,0,0" VerticalAlignment="Top" Width="65"/>
         <RichTextBox HorizontalAlignment="Left" Name="message" Height="100" Margin="114,371,0,0" VerticalAlignment="Top" Width="164">
             <FlowDocument>

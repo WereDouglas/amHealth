@@ -88,6 +88,18 @@
     <Compile Include="View\AppointmentPage.xaml.cs">
       <DependentUpon>AppointmentPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Appointments\PatientAppointment.xaml.cs">
+      <DependentUpon>PatientAppointment.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Appointments\ManageAppointment .xaml.cs">
+      <DependentUpon>ManageAppointment .xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MyDialog.xaml.cs">
+      <DependentUpon>MyDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\queue\AddQueue.xaml.cs">
+      <DependentUpon>AddQueue.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Appointments\AddAppointment.xaml.cs">
       <DependentUpon>AddAppointment.xaml</DependentUpon>
     </Compile>
@@ -158,6 +170,22 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="View\AppointmentPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Appointments\PatientAppointment.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Appointments\ManageAppointment .xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\MyDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\queue\AddQueue.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -322,6 +350,8 @@
     <Resource Include="image\Settings-01-128.png" />
     <Resource Include="image\Modem-Wireless-48.png" />
     <Resource Include="image\Settings-02-48.png" />
+    <Resource Include="image\Cancel-48.png" />
+    <Resource Include="image\Group-Add-48.png" />
     <Content Include="x64\sqlceca35.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -367,6 +397,9 @@
     <Content Include="x86\System.Data.SqlServerCe.Entity.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Info\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

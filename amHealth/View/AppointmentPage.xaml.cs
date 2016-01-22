@@ -56,7 +56,7 @@ namespace amHealth
             _practitionerList = new ObservableCollection<Practitioner>(App.amApp.Practitioners);
             _appointmentList = new ObservableCollection<Appointment>(App.amApp.Appointments);
             AppointmentListView.ItemsSource = null;
-
+            count.Content = "Appointment count:"+_appointmentList.Where(k => k.Dated == selectdate.Text).Count().ToString();
             ListAppoint.Clear();
 
             foreach (Practitioner prac in _practitionerList)
@@ -208,7 +208,7 @@ namespace amHealth
 
             return ""; 
     
-    }
+        }
 
         private void btnCalendar(object sender, RoutedEventArgs e)
         {
@@ -262,10 +262,7 @@ namespace amHealth
                 Refresh();
         }
 
-        private void image_Click_view(object sender, RoutedEventArgs e)
-        {
-
-        }
+       
     }
 
 

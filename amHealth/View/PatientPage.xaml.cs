@@ -1,4 +1,5 @@
-﻿using amHealth.View.patient;
+﻿using amHealth.View.Appointments;
+using amHealth.View.patient;
 using amLibrary;
 using System;
 using System.Collections.Generic;
@@ -23,7 +24,7 @@ namespace amHealth
     /// </summary>
     public partial class PatientPage : Page
     {
-        private Patient _patient;        
+        private Patient _patient;
         private ObservableCollection<Patient> _patientList = null;
         public PatientPage()
         {
@@ -46,13 +47,13 @@ namespace amHealth
             Button button = sender as System.Windows.Controls.Button;
             Patient user = button.DataContext as Patient;
             // EditPatient(string id,string fname,string lname,string gender,string dob,string height,string weight,string phone,string email,string region,string image)
-       
-            EditPatient inputDialog = new EditPatient(user.Id, user.Fname, user.Lname, user.Gender, user.Dob, user.Height,user.Weight,user.Phone,user.Email,user.Region,user.Image);
+
+            EditPatient inputDialog = new EditPatient(user.Id, user.Fname, user.Lname, user.Gender, user.Dob, user.Height, user.Weight, user.Phone, user.Email, user.Region, user.Image);
             if (inputDialog.ShowDialog() == true)
                 lblName.Text = inputDialog.Answer;
             lblName.Visibility = System.Windows.Visibility.Visible;
-          
-            Refresh();          
+
+            Refresh();
 
         }
         private void image_Click(object sender, RoutedEventArgs e)
@@ -77,15 +78,15 @@ namespace amHealth
             if (inputDialog.ShowDialog() == true)
                 lblName.Text = inputDialog.Answer;
             lblName.Visibility = System.Windows.Visibility.Visible;
-           // alert.Visibility = System.Windows.Visibility.Visible;
-           Refresh();
+            // alert.Visibility = System.Windows.Visibility.Visible;
+            Refresh();
         }
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
         {
             Button button = sender as System.Windows.Controls.Button;
             Patient user = button.DataContext as Patient;
 
-            if (MessageBox.Show("Are you sure you want to delete " + user.Fname + " "+ user.Lname +" ?", "Confirmation", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+            if (MessageBox.Show("Are you sure you want to delete " + user.Fname + " " + user.Lname + " ?", "Confirmation", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
             {
                 user.Delete(user.Id.ToString());
                 Refresh();
@@ -137,7 +138,7 @@ namespace amHealth
             }
             return false;
 
-       }
+        }
         private void chkSelectAll_Click(object sender, RoutedEventArgs e)
         {
             if (chkSelectAll.IsChecked.Value == true)
@@ -166,8 +167,8 @@ namespace amHealth
             else
             {
                 return;
-            } 
-           
+            }
+
         }
 
         private void sync_Click(object sender, RoutedEventArgs e)
@@ -210,17 +211,22 @@ namespace amHealth
             Patient user = button.DataContext as Patient;
             // EditPatient(string id,string fname,string lname,string gender,string dob,string height,string weight,string phone,string email,string region,string image)
 
-            MessagePatient inputDialog = new MessagePatient(user.Id, user.Fname, user.Lname,user.Phone, user.Email, user.Region, user.Image);
+            MessagePatient inputDialog = new MessagePatient(user.Id, user.Fname, user.Lname, user.Phone, user.Email, user.Region, user.Image);
             if (inputDialog.ShowDialog() == true)
                 lblName.Text = inputDialog.Answer;
             lblName.Visibility = System.Windows.Visibility.Visible;
 
-            Refresh();          
+            Refresh();
         }
 
         private void appointmentsButton_Click(object sender, RoutedEventArgs e)
         {
+            Button button = sender as System.Windows.Controls.Button;
+            Patient user = button.DataContext as Patient;
+            PatientAppointment inputDialog = new PatientAppointment(user.Id, user.Fname+" "+user.Lname);
 
+            if (inputDialog.ShowDialog() == true)
+                Refresh();
         }
 
         private void chkSelectAll_Checked(object sender, RoutedEventArgs e)
@@ -228,6 +234,6 @@ namespace amHealth
 
         }
 
-       
+
     }
 }

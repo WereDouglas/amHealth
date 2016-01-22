@@ -18,46 +18,33 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace amHealth.View.Appointments
+namespace amHealth.View.queue
 {
     /// <summary>
     /// Interaction logic for AddPatient.xaml
     /// </summary>
-    public partial class AddAppointment : Window
+    public partial class AddQueue : Window
     {
         private Patient _patient;
         private ObservableCollection<Patient> _patientList = null;
         private Practitioner _practitioner;
         private ObservableCollection<Practitioner> _practitionerList = null;
 
-        private Appointment _appointment;
-        private ObservableCollection<Appointment> _appointmentList = null;
+        private Queue _queue;
+        private ObservableCollection<Queue> _queueList = null;
         private string selectedPrac = "";
 
-        public AddAppointment()
+        public AddQueue()
         {
             InitializeComponent();
-            startDate.Text = DateTime.Now.Date.Date.ToString();
+        
             _patientList = new ObservableCollection<Patient>(App.amApp.Patients);
-
             _practitionerList = new ObservableCollection<Practitioner>(App.amApp.Practitioners);
             practitioners.ItemsSource = null;
             foreach (Practitioner prac in _practitionerList)
             {
                 practitioners.Items.Add(prac.Name);
-            }
-            string fmt = "00";
-
-            for (int d = 00; d < 24; d++)
-            {
-                startHour.Items.Add(d.ToString(fmt));
-                endHour.Items.Add(d.ToString(fmt));
-            }
-            for (int d = 00; d < 60; d++)
-            {
-                startMin.Items.Add(d.ToString(fmt));
-                endMin.Items.Add(d.ToString(fmt));
-            }
+            }         
 
         }
         public string Answer
@@ -70,15 +57,16 @@ namespace amHealth.View.Appointments
         {
             try
             {
-                SaveAppointment();
+                SaveQueue();
                 this.DialogResult = true;
             }
-            catch 
-            {               
+            catch (Exception ex)
+            {
+
+                System.Windows.MessageBox.Show(ex.Message.ToString());
+                return;
 
             }
-            Messenger.Send("You have `scheduled an appointment with" + _practitionerList.First(x => x.Id == selectedPrac).Practice + "  on:" + startDate.Text + " at:" + endHour.Text + ":" + endMin.Text + "  ", _patientList.First(x => x.Id == patient.Content.ToString()).Phone);    
-         
 
         }
 
@@ -114,30 +102,26 @@ namespace amHealth.View.Appointments
             }
 
         }
-        private void SaveAppointment()
+        private void SaveQueue()
         {
-            string fmt = "00";
-            int period = Convert.ToInt32(endHour.Text) - Convert.ToInt32(startHour.Text);
-            _appointment = App.amApp.Appointments.Add();
-            string build =startHour.Text;
-            for (int p = 0; p <= period;p++ ) {
-                build += (Convert.ToInt32(startHour.Text) + p).ToString(fmt) + "  ";
-            
-            }
+          
+            _queue = App.amApp.Queues.Add();
+            _queue.Patient = patient.Content.ToString();
+            _queue.Practitioner = selectedPrac;
+            _queue.Payment = payment.Text;
+            _queue.Amount = amount.Text;
+            _queue.Checked = DateTime.Now.TimeOfDay.ToString();
+            _queue.Day = DateTime.Now.ToString();
+            _queue.Reason = reason.Text;
+            _queue.Sync = "F";
+            _queue.Org = "test";
+            _queue.Save();
 
-            _appointment.Patient = patient.Content.ToString();
-            _appointment.Practitioner = selectedPrac;
-            _appointment.Dated = startDate.Text;
-            _appointment.StartTime = build;
-            _appointment.EndTime = endHour.Text + ":" + endMin.Text;
-            _appointment.Reason = reason.Text;
-            _appointment.Sync = "F";
-            _appointment.Org = "test";
+           // Messenger.Send("You have `scheduled an appointment with" + _practitionerList.First(x => x.Id == selectedPrac).Practice + "  on:" + startDate.Text + " at:" + endHour.Text + ":" + endMin.Text + "  ", _patientList.First(x => x.Id == patient.Content.ToString()).Phone);    
+          
 
-            _appointment.Save();
 
-           
-            System.Windows.MessageBox.Show("Appointment created ");
+            System.Windows.MessageBox.Show("Queue created ");
             this.DialogResult = true;
 
         }
@@ -160,6 +144,7 @@ namespace amHealth.View.Appointments
             if (inputDialog.ShowDialog() == true)
                 _patientList = new ObservableCollection<Patient>(App.amApp.Patients);
                 System.Windows.MessageBox.Show("done");
+            
           
         }
 

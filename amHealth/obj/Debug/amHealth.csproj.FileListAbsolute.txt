@@ -75,3 +75,11 @@ C:\Users\DOUGLAS\documents\visual studio 2013\Projects\amHealth\amHealth\obj\Deb
 C:\Users\DOUGLAS\documents\visual studio 2013\Projects\amHealth\amHealth\obj\Debug\View\patient\DynamicPatient.g.cs
 C:\Users\DOUGLAS\documents\visual studio 2013\Projects\amHealth\amHealth\obj\Debug\View\QueuePage.baml
 C:\Users\DOUGLAS\documents\visual studio 2013\Projects\amHealth\amHealth\obj\Debug\View\QueuePage.g.cs
+C:\Users\DOUGLAS\documents\visual studio 2013\Projects\amHealth\amHealth\obj\Debug\View\queue\AddQueue.baml
+C:\Users\DOUGLAS\documents\visual studio 2013\Projects\amHealth\amHealth\obj\Debug\View\queue\AddQueue.g.cs
+C:\Users\DOUGLAS\documents\visual studio 2013\Projects\amHealth\amHealth\obj\Debug\View\Appointments\ManageAppointment .baml
+C:\Users\DOUGLAS\documents\visual studio 2013\Projects\amHealth\amHealth\obj\Debug\View\Appointments\ManageAppointment .g.cs
+C:\Users\DOUGLAS\documents\visual studio 2013\Projects\amHealth\amHealth\obj\Debug\View\Appointments\PatientAppointment.baml
+C:\Users\DOUGLAS\documents\visual studio 2013\Projects\amHealth\amHealth\obj\Debug\View\Appointments\PatientAppointment.g.cs
+C:\Users\DOUGLAS\documents\visual studio 2013\Projects\amHealth\amHealth\obj\Debug\View\MyDialog.baml
+C:\Users\DOUGLAS\documents\visual studio 2013\Projects\amHealth\amHealth\obj\Debug\View\MyDialog.g.cs

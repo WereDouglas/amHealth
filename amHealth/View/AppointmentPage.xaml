@@ -32,32 +32,10 @@
                 <DataGridTemplateColumn Header="Practitioner">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            
                             <StackPanel>
-                                <Image Height="60" Width="60" Source="{Binding PractitionerImage}"  />
+                                <Image Height="60" Width="60" Source="{Binding PractitionerImage}"   />
                                 <TextBlock  FontSize="12" Width="140" Text="{Binding Practitioner}" />
-                                <StackPanel Orientation="Vertical">
-                                   
-                                    <StackPanel Orientation="Horizontal">
-                                        <Button Click="image_Click_edit" Style="{StaticResource CalendarButton}">
-                                            <StackPanel>
-                                                <Image Height="10" Width="10" Source="/amHealth;component/image/Add.png"  />
-
-                                            </StackPanel>
-                                        </Button>
-                                        <Button Click="image_Click_view" Style="{StaticResource CalendarButton}" Background="{x:Null}" BorderBrush="{x:Null}">
-                                            <StackPanel>
-                                                <Image Height="20" Width="20" Source="/amHealth;component/image/Delete.png"   />
-                                            </StackPanel>
-                                        </Button>
-                                    </StackPanel>
-                                </StackPanel>
-
-                            </StackPanel>
-                            
-                            
-                            
-                            
+                                </StackPanel>                                    
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
@@ -81,7 +59,7 @@
                             <StackPanel>
                                 <TextBlock  FontSize="10" Text="{Binding Seven}" />
                                 <Button   Click="image_Click" Style="{StaticResource CalendarButton}">
-                                   
+
                                 </Button>
                             </StackPanel>
                         </DataTemplate>
@@ -105,7 +83,7 @@
                         <DataTemplate>
                             <StackPanel Orientation="Vertical">
                                 <TextBlock  Style="{StaticResource CalendarText}" Text="{Binding Nine}" />
-                                
+
                             </StackPanel>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
@@ -114,8 +92,8 @@
                 <DataGridTemplateColumn Header="10:00am">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            
-                           
+
+
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
@@ -315,5 +293,6 @@
         </DataGrid>
 
         <DatePicker Name="selectdate" HorizontalAlignment="Left" Margin="167,13,0,0"  VerticalAlignment="Top" Width="171" LostFocus="selectdate_LostFocus"/>
+        <Label Content="Info:" Name="count" HorizontalAlignment="Left" Margin="376,15,0,0" VerticalAlignment="Top" Width="260"/>
     </Grid>
 </Page>

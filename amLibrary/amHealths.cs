@@ -16,7 +16,8 @@ namespace amLibrary
             _patients = new PatientCollection(this);
             _appointments = new AppointmentCollection(this);
             _groups = new GroupCollection(this);
-            _members = new MemberCollection(this); 
+            _members = new MemberCollection(this);
+            _queues = new QueueCollection(this); 
 
         }
 
@@ -75,7 +76,6 @@ namespace amLibrary
 
 
         private MemberCollection _members;
-
         public MemberCollection Members
         {
             get
@@ -84,6 +84,18 @@ namespace amLibrary
                     _members.Refresh();
                 _members.Load();
                 return _members;
+            }
+        }
+
+        private QueueCollection _queues;
+        public QueueCollection Queues
+        {
+            get
+            {
+                if (!_queues.IsLoaded)
+                    _queues.Refresh();
+                _queues.Load();
+                return _queues;
             }
         }
 

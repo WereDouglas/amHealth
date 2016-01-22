@@ -11,29 +11,26 @@
 
     </Page.Resources>
     <Grid Margin="0,0,0,10">
-        <Label Content="Patient Queue" x:Name="internet" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="115" FontWeight="Bold" Height="30"/>
-        <ListView Background="LightGray" Margin="10,45,10,0" x:Name="PatientlistView" SelectionChanged="PatientlistView_SelectionChanged">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="399*"/>
+            <ColumnDefinition Width="401*"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Patient Queue" x:Name="queue" HorizontalAlignment="Left" Margin="10,36,0,0" VerticalAlignment="Top" Width="97" FontWeight="Bold" Height="30"/>
+        <ListView Background="LightGray" Margin="10,64,5,0" x:Name="QueuelistView" SelectionChanged="QueuelistView_SelectionChanged">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel Background="White" Margin="5,5,5,5" Orientation="Horizontal">  
+                    <StackPanel Background="White" Margin="5,5,5,5" Orientation="Horizontal">
                         <Button Height="50" Width="50"  Click="image_Click">
                             <Button.Template>
                                 <ControlTemplate>
-                                    <Image Height="50" Margin="5,5,5,5" Source="{Binding Image}"  Stretch="UniformToFill" Width="50"/>
+                                    <Image Height="50" Margin="5,5,5,5" Source="{Binding Patientimage}"  Stretch="UniformToFill" Width="50"/>
                                 </ControlTemplate>
                             </Button.Template>
                         </Button>
-                        <TextBlock  Margin="0,15,0,5" Text="{Binding Lname}" Width="50" />
-                        <TextBlock Margin="5,15,0,5" Text="{Binding Fname}" Width="50" />
-                        <TextBlock Margin="5,15,0,5"  Text="{Binding Gender}" Width="50" />
-                        <TextBlock Margin="5,15,0,5"  Text="{Binding Dob}" Width="100" />
-                        <TextBlock Margin="5,15,0,5"  Text="{Binding Age}" Width="50" />
-                        <TextBlock Margin="0,15,0,5"  Text="{Binding Height}" Width="80" />
-                        <TextBlock Margin="0,15,0,5"  Text="{Binding Weight}" Width="80" />
-                        <TextBlock Margin="0,15,0,5"  Text="{Binding Phone}" Width="80" />
-                        <TextBlock Margin="0,15,0,5"  Text="{Binding Email}" Width="120" />
-                        <TextBlock Margin="0,15,0,5"  Text="{Binding Region}" Width="50" />
-                        <TextBlock Margin="0,15,0,5"  Text="{Binding Sync}" Width="50" />
+                        <TextBlock  Margin="0,15,0,5" Text="{Binding Checked}" Width="50" />                       
+                        <TextBlock  Margin="0,15,0,5" Text="{Binding Details}" Width="200" />
+                        <TextBlock  Visibility="Hidden" Margin="0,15,0,5" Text="{Binding Patient}" Width="0" />
+                        <TextBlock  Visibility="Hidden"  Margin="0,15,0,5" Text="{Binding Practitioner}" Width="0" />
 
                         <Button Height="36" HorizontalAlignment="Left" x:Name="EditButton" Click="EditButton_Click" Margin="5,0,0,0" Width="36">
                             <Button.Template>
@@ -52,7 +49,7 @@
                                     </Grid>
                                 </ControlTemplate>
                             </Button.Template>
-                        </Button>                       
+                        </Button>
                     </StackPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>
@@ -62,7 +59,66 @@
                 </ItemsPanelTemplate>
             </ListView.ItemsPanel>
         </ListView>
-        <Button IsDefault="True" x:Name="btnDialogOk" Click="btnDialogOk_Click" MinWidth="60" Margin="0,8,10,0" Content="INTAKE PATIENT" HorizontalAlignment="Right" Width="120" Background="#FF2799F0" Foreground="White" Height="30" VerticalAlignment="Top" BorderBrush="{x:Null}"/>
-        <DatePicker x:Name="selectdate" HorizontalAlignment="Left" Margin="236,8,0,0"  VerticalAlignment="Top" Width="171" LostFocus="selectdate_LostFocus" Height="32"/>
+        <Button IsDefault="True" x:Name="btnDialogOk" Click="btnDialogOk_Click" MinWidth="60" Margin="0,7,10,0" Content="INTAKE PATIENT" Background="#FF2799F0" Foreground="White" Height="21" VerticalAlignment="Top" BorderBrush="{x:Null}" HorizontalAlignment="Right" Width="120"/>
+        <DatePicker x:Name="selectdate" Margin="10,5,0,0"  VerticalAlignment="Top" LostFocus="selectdate_LostFocus" Height="25" HorizontalAlignment="Left" Width="254"/>
+        <ListView Background="LightGray" Margin="0,64,10,0" x:Name="AppointmentlistView" SelectionChanged="AppointlistView_SelectionChanged" Grid.Column="1">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Background="White" Margin="5,5,5,5" Orientation="Horizontal">
+                        <Button Height="50" Width="50"  Click="image_Click">
+                            <Button.Template>
+                                <ControlTemplate>
+                                    <Image Height="50" Margin="5,5,5,5" Source="{Binding Patientimage}"  Stretch="UniformToFill" Width="50"/>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                        <TextBlock  Margin="0,15,0,5" Text="{Binding Details}" Width="200" />
+                        <TextBlock  Visibility="Hidden" Margin="0,15,0,5" Text="{Binding Patient}" Width="0" />
+                        <TextBlock  Visibility="Hidden"  Margin="0,15,0,5" Text="{Binding Practitioner}" Width="0" />
+                        <TextBlock  Visibility="Hidden"  Margin="0,15,0,5" Text="{Binding Dated}" Width="0" />
+                        <TextBlock  Visibility="Hidden"  Margin="0,15,0,5" Text="{Binding StartTime}" Width="0" />
+                        <TextBlock  Visibility="Hidden"  Margin="0,15,0,5" Text="{Binding EndTime}" Width="0" />
+
+
+                        <Button Height="36" HorizontalAlignment="Left" x:Name="EditButton" Click="EditButton_Click" Margin="5,0,0,0" Width="36">
+                            <Button.Template>
+                                <ControlTemplate>
+                                    <Grid Background="Transparent">
+                                        <Image Source="/amHealth;component/image/Edits.png" Width="25" Height="25" />
+                                    </Grid>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                        <Button Height="36" HorizontalAlignment="Left" x:Name="QueueButton" Click="QueueButton_Click"  Margin="5,0,0,0" Width="36">
+                            <Button.Template>
+                                <ControlTemplate>
+                                    <Grid Background="Transparent">
+                                        <Image Source="/amHealth;component/image/Group-Add-48.png" Width="25" Height="25" />
+                                    </Grid>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                        <Button Height="36" HorizontalAlignment="Left" x:Name="DeleteButton" Click="DeleteButton_Click"  Margin="5,0,0,0" Width="36">
+                            <Button.Template>
+                                <ControlTemplate>
+                                    <Grid Background="Transparent">
+                                        <Image Source="/amHealth;component/image/Cancel-48.png" Width="25" Height="25" />
+                                    </Grid>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Vertical" />
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+        </ListView>
+        <Label Content="Appointments" x:Name="appointment" HorizontalAlignment="Left" Margin="23,33,0,0" VerticalAlignment="Top" Width="96" FontWeight="Bold" Height="30" Grid.Column="1"/>
+        <Button IsDefault="True" x:Name="btnDialogOk_Copy" Click="Schedule_Click" MinWidth="60" Margin="0,4,10,0" Content="NEW APPOINTMENT" HorizontalAlignment="Right" Width="165" Background="#FF2799F0" Foreground="White" Height="21" VerticalAlignment="Top" FontFamily="Calibri Light" FontSize="14" BorderBrush="{x:Null}" Grid.Column="1"/>
+        <Label Content="Info:" x:Name="appointmentcount" HorizontalAlignment="Left" Margin="124,33,0,0" VerticalAlignment="Top" Width="267" Grid.Column="1"/>
+        <Label Content="Info:" x:Name="queuecount" HorizontalAlignment="Left" Margin="130,35,0,0" VerticalAlignment="Top" Width="258"/>
     </Grid>
 </Page>

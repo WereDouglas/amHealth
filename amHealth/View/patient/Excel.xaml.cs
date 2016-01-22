@@ -107,8 +107,8 @@ namespace amHealth.View.patient
                 string myText = new TextRange(message.Document.ContentStart, message.Document.ContentEnd).Text;
                 foreach (Member u in dtGrid.SelectedItems)
                 {
-                    // Messenger.Send(myText, u.Contact);
-                    MessageBox.Show(u.Contact);
+                    Messenger.Send(myText, u.Contact);
+                    //MessageBox.Show(u.Contact);
 
                 }
                 // MessageBox.Show("messages sent");

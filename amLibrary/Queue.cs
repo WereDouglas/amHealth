@@ -8,9 +8,9 @@ using System.Data.SqlServerCe;
 
 namespace amLibrary
 {
-   public class Appointment : DBObject
+   public class Queue : DBObject
     {
-       public Appointment(DBObject parent)
+       public Queue(DBObject parent)
             : base(parent)
         {
             Id = Guid.NewGuid().ToString();
@@ -23,8 +23,13 @@ namespace amLibrary
            get { return _id; }
            set { _id = value; }
        }
-      
+       private string _day;
 
+       public string Day
+       {
+           get { return _day; }
+           set { _day = value; }
+       }
        private string _org;
 
        public string Org
@@ -39,20 +44,6 @@ namespace amLibrary
            get { return _patient; }
            set { _patient = value; }
        }
-       private string _details;
-
-       public string Details
-       {
-           get { return _details; }
-           set { _details = value; }
-       }
-       private string _patientimage;
-
-       public string Patientimage
-       {
-           get { return _patientimage; }
-           set { _patientimage = value; }
-       }
        private string _practitioner;
 
        public string Practitioner
@@ -60,26 +51,26 @@ namespace amLibrary
            get { return _practitioner; }
            set { _practitioner = value; }
        }
-       private string _dated;
+       private string _payment;
 
-       public string Dated
+       public string Payment
        {
-           get { return _dated; }
-           set { _dated = value; }
+           get { return _payment; }
+           set { _payment = value; }
        }
-       private string _startTime;
+       private string _amount;
 
-       public string StartTime
+       public string Amount
        {
-           get { return _startTime; }
-           set { _startTime = value; }
+           get { return _amount; }
+           set { _amount = value; }
        }
-       private string _endTime;
+       private string _checked;
 
-       public string EndTime
+       public string Checked
        {
-           get { return _endTime; }
-           set { _endTime = value; }
+           get { return _checked; }
+           set { _checked = value; }
        }
        private string _reason;
 
@@ -88,12 +79,26 @@ namespace amLibrary
            get { return _reason; }
            set { _reason = value; }
        }
+       private string _patientimage;
+
+       public string Patientimage
+       {
+           get { return _patientimage; }
+           set { _patientimage = value; }
+       }
        private string _sync;
 
        public string Sync
        {
            get { return _sync; }
            set { _sync = value; }
+       }
+       private string _details;
+
+       public string Details
+       {
+           get { return _details; }
+           set { _details = value; }
        }
 
        public override void Save()
@@ -106,14 +111,15 @@ namespace amLibrary
            else
            {
                SqlCeCommand cmd = con.CreateCommand();
-               cmd.CommandText = "INSERT INTO [appointment](id ,org, patient,practitioner ,dated , startTime ,endTime ,reason ,sync)VALUES(@id ,@org,@patient,@practitioner,@dated,@startTime,@endTime,@reason,@sync)";
+               cmd.CommandText = "INSERT INTO [queue](id,org,patient,practitioner ,payment , amount ,checked,day,reason,sync)VALUES(@id,@org,@patient,@practitioner,@payment,@amount,@checked,@day,@reason,@sync)";
                cmd.Parameters.AddWithValue("@id", Id);
                cmd.Parameters.AddWithValue("@org", Org);
                cmd.Parameters.AddWithValue("@patient", Patient);             
                cmd.Parameters.AddWithValue("@practitioner", Practitioner);              
-               cmd.Parameters.AddWithValue("@dated", Dated);
-               cmd.Parameters.AddWithValue("@startTime", StartTime);              
-               cmd.Parameters.AddWithValue("@endTime", EndTime);
+               cmd.Parameters.AddWithValue("@payment", Payment);
+               cmd.Parameters.AddWithValue("@amount", Amount);              
+               cmd.Parameters.AddWithValue("@checked", Checked);
+               cmd.Parameters.AddWithValue("@day", Day);
                cmd.Parameters.AddWithValue("@reason", Reason); 
                cmd.Parameters.AddWithValue("@sync", Sync);
 
@@ -122,14 +128,14 @@ namespace amLibrary
 
            }
        }
-       // _appointment.Update(Id, fname.Text,lname.Text,gender.Text,dob.Text, height.Text,weight.Text,phone.Text,email.Text,region.Text,"");
+       // _queue.Update(Id, fname.Text,lname.Text,gender.Text,dob.Text, height.Text,weight.Text,phone.Text,email.Text,region.Text,"");
 
        public void Update(string id, string name, string phone, string email, string practice)
         {
 
           
             SqlCeCommand cmd = con.CreateCommand();
-            cmd.CommandText = "UPDATE [appointment] SET fname='" + name + "',phone='" + phone + "',email='" + email + "',practice='" + practice + "' WHERE id = '" + id + "'";
+            cmd.CommandText = "UPDATE [queue] SET fname='" + name + "',phone='" + phone + "',email='" + email + "',practice='" + practice + "' WHERE id = '" + id + "'";
            
          
         ExecuteNonQuery(cmd);            
@@ -140,7 +146,7 @@ namespace amLibrary
         {
             System.Diagnostics.Debug.Write(Id + "|");            
             SqlCeCommand cmd = con.CreateCommand();
-            cmd.CommandText = "DELETE FROM [appointment] WHERE id ='" + Id + "'";
+            cmd.CommandText = "DELETE FROM [queue] WHERE id ='" + Id + "'";
             try
             {
 
@@ -160,7 +166,7 @@ namespace amLibrary
         public bool Deleteall()
         {           
             SqlCeCommand cmd = con.CreateCommand();
-            cmd.CommandText = "DELETE FROM [appointment]";
+            cmd.CommandText = "DELETE FROM [queue]";
             try
             {
 

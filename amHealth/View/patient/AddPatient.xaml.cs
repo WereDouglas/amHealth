@@ -66,11 +66,8 @@ namespace amHealth.View.patient
                 SavePatient();
                 this.DialogResult = true;
             }
-            catch (Exception ex)
+            catch 
             {
-
-                MessageBox.Show(ex.Message.ToString());
-                return;
 
             }
 

@@ -1,4 +1,5 @@
-﻿using amHealth.View.practitioner;
+﻿using amHealth.View.Appointments;
+using amHealth.View.practitioner;
 using amLibrary;
 using System;
 using System.Collections.Generic;
@@ -222,6 +223,14 @@ namespace amHealth
         private void appointmentsButton_Click(object sender, RoutedEventArgs e)
         {
 
+            Button button = sender as System.Windows.Controls.Button;
+            Practitioner user = button.DataContext as Practitioner;
+            //MessageBox.Show(user.Name+user.Id);
+
+            ManageAppointment inputDialog = new ManageAppointment(user.Id, user.Name);
+
+            if (inputDialog.ShowDialog() == true)
+                Refresh();
         }
 
         private void PatientlistView_SelectionChanged(object sender, SelectionChangedEventArgs e)
