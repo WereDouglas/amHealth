@@ -223,7 +223,7 @@ namespace amHealth
         {
             Button button = sender as System.Windows.Controls.Button;
             Patient user = button.DataContext as Patient;
-            PatientAppointment inputDialog = new PatientAppointment(user.Id, user.Fname+" "+user.Lname);
+            PatientAppointment inputDialog = new PatientAppointment(user.Id, user.Fname + " " + user.Lname);
 
             if (inputDialog.ShowDialog() == true)
                 Refresh();

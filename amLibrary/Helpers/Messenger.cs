@@ -13,7 +13,10 @@ namespace amLibrary.Helpers
         private static GsmCommMain comm;
         private delegate void SetTextCallback(string text);
         private static string cmbCOM;
-        public static void Send(string message, string number)
+        private static Message _message;
+        private static string state;
+
+        public static void Send(DBObject parent, string message, string number)
         {
             try
             {
@@ -27,16 +30,63 @@ namespace amLibrary.Helpers
                     comm.SendMessage(pdu);
                 }
 
+                _message = new Message(parent);
+                _message.Org = "test";
+                _message.Type = "sms";
+                _message.Content = message;
+                _message.Contact = number;
+                _message.Dor = DateTime.Now.ToString();
+                _message.Sync = "F";
+                _message.Sent = "T";
+
+                _message.Save();
+
             }
-            catch (Exception ex)
+            catch
             {
-                throw ex;
+                _message = new Message(parent);
+                _message.Org = "test";
+                _message.Type = "sms";
+                _message.Content = message;
+                _message.Contact = number;
+                _message.Dor = DateTime.Now.ToString();
+                _message.Sync = "F";
+                _message.Sent = "F";
+
+                _message.Save();
+
+
+            }
+        }
+
+
+        public static void SendUpdate(DBObject parent, string id, string message, string number)
+        {
+            try
+            {
+
+                SmsSubmitPdu pdu;
+                byte dcs = (byte)DataCodingScheme.GeneralCoding.Alpha7BitDefault;
+                pdu = new SmsSubmitPdu(message, Convert.ToString(number), dcs);
+                int times = 1;
+                for (int i = 0; i < times; i++)
+                {
+                    comm.SendMessage(pdu);
+                }
+                // Update(string id,string sent)
+                _message.Update(id, "T");
+
+
+            }
+            catch
+            {
+
             }
         }
         static bool ports = false;
-        public static void connect()
+        public static string connect()
         {
-
+            state = "false";
             int d = 0;
             do
             {
@@ -48,6 +98,7 @@ namespace amLibrary.Helpers
                 {
                     comm.Open();
                     ports = true;
+                    state = "true";
                 }
                 catch (Exception)
                 {
@@ -60,6 +111,7 @@ namespace amLibrary.Helpers
 
 
             Console.WriteLine(cmbCOM);
+            return state;
 
         }
 

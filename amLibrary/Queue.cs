@@ -101,6 +101,14 @@ namespace amLibrary
            set { _details = value; }
        }
 
+       private string _seen;
+
+       public string Seen
+       {
+           get { return _seen; }
+           set { _seen = value; }
+       }
+
        public override void Save()
        {
            if (Practitioner == "" || Patient == "")
@@ -111,7 +119,7 @@ namespace amLibrary
            else
            {
                SqlCeCommand cmd = con.CreateCommand();
-               cmd.CommandText = "INSERT INTO [queue](id,org,patient,practitioner ,payment , amount ,checked,day,reason,sync)VALUES(@id,@org,@patient,@practitioner,@payment,@amount,@checked,@day,@reason,@sync)";
+               cmd.CommandText = "INSERT INTO [queue](id,org,patient,practitioner ,payment , amount ,checked,day,reason,sync,seen)VALUES(@id,@org,@patient,@practitioner,@payment,@amount,@checked,@day,@reason,@sync,@seen)";
                cmd.Parameters.AddWithValue("@id", Id);
                cmd.Parameters.AddWithValue("@org", Org);
                cmd.Parameters.AddWithValue("@patient", Patient);             
@@ -120,7 +128,8 @@ namespace amLibrary
                cmd.Parameters.AddWithValue("@amount", Amount);              
                cmd.Parameters.AddWithValue("@checked", Checked);
                cmd.Parameters.AddWithValue("@day", Day);
-               cmd.Parameters.AddWithValue("@reason", Reason); 
+               cmd.Parameters.AddWithValue("@reason", Reason);
+               cmd.Parameters.AddWithValue("@seen", Seen);
                cmd.Parameters.AddWithValue("@sync", Sync);
 
                ExecuteNonQuery(cmd);
@@ -130,12 +139,12 @@ namespace amLibrary
        }
        // _queue.Update(Id, fname.Text,lname.Text,gender.Text,dob.Text, height.Text,weight.Text,phone.Text,email.Text,region.Text,"");
 
-       public void Update(string id, string name, string phone, string email, string practice)
+       public void Update(string id, string amount, string payment, string seen)
         {
 
           
             SqlCeCommand cmd = con.CreateCommand();
-            cmd.CommandText = "UPDATE [queue] SET fname='" + name + "',phone='" + phone + "',email='" + email + "',practice='" + practice + "' WHERE id = '" + id + "'";
+            cmd.CommandText = "UPDATE [queue] SET amount='" + amount + "',payment='" + payment + "',seen='" + seen + "' WHERE id = '" + id + "'";
            
          
         ExecuteNonQuery(cmd);            

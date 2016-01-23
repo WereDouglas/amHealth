@@ -86,6 +86,30 @@ namespace amHealth
 
         }
 
+        private void DeleteQueue()
+        {
+
+            string con;
+
+            con = string.Format(@"Data Source=C:\amHealth\amHealth.sdf;Password=access; Persist Security Info=True;");
+
+            SqlCeConnection conn = new SqlCeConnection(con);
+            conn.Open();
+            SqlCeCommand cmd = conn.CreateCommand();
+
+            if (Helper.TableExists(conn, "queue"))
+            {
+                cmd.CommandText = "DROP TABLE queue";
+                cmd.ExecuteNonQuery();
+
+            }
+
+
+            conn.Close();
+
+        }
+
+
         private void Deletepatients_Click(object sender, RoutedEventArgs e)
         {
             if (MessageBox.Show("Are you sure you want to delete all patients in your database?", "Confirmation", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
@@ -101,6 +125,18 @@ namespace amHealth
         private void btnDeleteAll_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void QueueDelete_Click(object sender, RoutedEventArgs e)
+        {
+            if (MessageBox.Show("Are you sure you want to delete all patients in your database?", "Confirmation", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+            {
+                DeleteQueue();
+            }
+            else
+            {
+                return;
+            }        
         }
     }
 }

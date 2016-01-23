@@ -17,7 +17,9 @@ namespace amLibrary
             _appointments = new AppointmentCollection(this);
             _groups = new GroupCollection(this);
             _members = new MemberCollection(this);
-            _queues = new QueueCollection(this); 
+            _queues = new QueueCollection(this);
+            _messages = new MessageCollection(this);
+
 
         }
 
@@ -98,6 +100,20 @@ namespace amLibrary
                 return _queues;
             }
         }
+
+
+        private MessageCollection _messages;
+        public MessageCollection Messages
+        {
+            get
+            {
+                if (!_messages.IsLoaded)
+                    _messages.Refresh();
+                _messages.Load();
+                return _messages;
+            }
+        }
+
 
 
     }

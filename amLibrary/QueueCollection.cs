@@ -65,7 +65,8 @@ namespace amLibrary
                     u.Checked = row["checked"].ToString();
                     u.Day = row["day"].ToString();
                     u.Reason = row["reason"].ToString();                   
-                    u.Sync = row["sync"].ToString(); 
+                    u.Sync = row["sync"].ToString();
+                    u.Seen = row["seen"].ToString(); 
                //  _queues.Add(u);
         }
             IsLoaded = true;

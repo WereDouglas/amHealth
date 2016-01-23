@@ -43,16 +43,18 @@ namespace amHealth.View.practitioner
 
         private void btnDialogOk_Click(object sender, RoutedEventArgs e)
         {
+            string myText = new TextRange(message.Document.ContentStart, message.Document.ContentEnd).Text;
             try
             {
-                string myText = new TextRange(message.Document.ContentStart, message.Document.ContentEnd).Text;
 
-                Messenger.Send(myText, phone.Text);
+
+                Messenger.Send(App.amApp, myText, phone.Text);
+                
                 MessageBox.Show("message sent");
             }
-            catch (Exception ex)
+            catch 
             {
-                MessageBox.Show(ex.Message.ToString());
+              
             }
         }
         private void Window_ContentRendered(object sender, EventArgs e)

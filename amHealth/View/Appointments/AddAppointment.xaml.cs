@@ -71,14 +71,17 @@ namespace amHealth.View.Appointments
             try
             {
                 SaveAppointment();
+                Messenger.Send(App.amApp, "You have `scheduled an appointment with" + _practitionerList.First(x => x.Id == selectedPrac).Practice + "  on:" + startDate.Text + " at:" + endHour.Text + ":" + endMin.Text + "  ", _patientList.First(x => x.Id == patient.Content.ToString()).Phone);
                 this.DialogResult = true;
-            }
-            catch 
-            {               
+
 
             }
-            Messenger.Send("You have `scheduled an appointment with" + _practitionerList.First(x => x.Id == selectedPrac).Practice + "  on:" + startDate.Text + " at:" + endHour.Text + ":" + endMin.Text + "  ", _patientList.First(x => x.Id == patient.Content.ToString()).Phone);    
-         
+            catch
+            {
+
+            }
+
+
 
         }
 
@@ -119,10 +122,11 @@ namespace amHealth.View.Appointments
             string fmt = "00";
             int period = Convert.ToInt32(endHour.Text) - Convert.ToInt32(startHour.Text);
             _appointment = App.amApp.Appointments.Add();
-            string build =startHour.Text;
-            for (int p = 0; p <= period;p++ ) {
+            string build = startHour.Text;
+            for (int p = 0; p <= period; p++)
+            {
                 build += (Convert.ToInt32(startHour.Text) + p).ToString(fmt) + "  ";
-            
+
             }
 
             _appointment.Patient = patient.Content.ToString();
@@ -136,7 +140,7 @@ namespace amHealth.View.Appointments
 
             _appointment.Save();
 
-           
+
             System.Windows.MessageBox.Show("Appointment created ");
             this.DialogResult = true;
 
@@ -159,8 +163,8 @@ namespace amHealth.View.Appointments
             AddPatient inputDialog = new AddPatient();
             if (inputDialog.ShowDialog() == true)
                 _patientList = new ObservableCollection<Patient>(App.amApp.Patients);
-                System.Windows.MessageBox.Show("done");
-          
+            System.Windows.MessageBox.Show("done");
+
         }
 
 

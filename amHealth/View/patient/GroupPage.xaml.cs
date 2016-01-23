@@ -186,7 +186,7 @@ namespace amHealth.View.patient
             {
                 string myText = new TextRange(message.Document.ContentStart, message.Document.ContentEnd).Text;
                 foreach (Patient pt in ageList) {
-                    Messenger.Send(myText, pt.Phone);
+                    Messenger.Send(App.amApp, myText, pt.Phone);
                  
                 }
                 MessageBox.Show("messages sent");

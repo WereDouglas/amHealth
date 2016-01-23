@@ -94,6 +94,12 @@
     <Compile Include="View\Appointments\ManageAppointment .xaml.cs">
       <DependentUpon>ManageAppointment .xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\MessagesPage.xaml.cs">
+      <DependentUpon>MessagesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\CheckDialog.xaml.cs">
+      <DependentUpon>CheckDialog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\MyDialog.xaml.cs">
       <DependentUpon>MyDialog.xaml</DependentUpon>
     </Compile>
@@ -178,6 +184,14 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="View\Appointments\ManageAppointment .xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\MessagesPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\CheckDialog.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -352,6 +366,8 @@
     <Resource Include="image\Settings-02-48.png" />
     <Resource Include="image\Cancel-48.png" />
     <Resource Include="image\Group-Add-48.png" />
+    <Resource Include="image\Logout-48.png" />
+    <Resource Include="image\Messages-48.png" />
     <Content Include="x64\sqlceca35.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

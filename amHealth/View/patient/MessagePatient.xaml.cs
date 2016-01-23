@@ -36,32 +36,32 @@ namespace amHealth.View.patient
         private string Region;
         private string Image;
         private string Sync;
+        
         private ObservableCollection<Patient> _patientList = null;
-
+        private Message _message;     
         //(user.Id, user.Fname, user.Lname,user.Phone, user.Email, user.Region, user.Image)
         public MessagePatient(string id, string fname, string lname, string phone, string email, string region, string image)
         {
             InitializeComponent();
             _patientList = new ObservableCollection<Patient>(App.amApp.Patients);
+           
             Id = id; Fname = fname; Lname = lname; Phone = phone; Email = email; Region = region; Image = image;
             this.DataContext = new CollectionViewSource { Source = _patientList.Where(x => x.Id == Id) };
         }
 
         private void btnDialogOk_Click(object sender, RoutedEventArgs e)
         {
+            string myText = new TextRange(message.Document.ContentStart, message.Document.ContentEnd).Text;
             try
             {
-                string myText = new TextRange(message.Document.ContentStart, message.Document.ContentEnd).Text;
 
-                Messenger.Send(myText, phone.Text);
+                Messenger.Send(App.amApp, myText, phone.Text);
+              
                 MessageBox.Show("message sent");
-                MessagePatient page = new MessagePatient(null,null,null,null,null,null,null);
-                page.Close();
-
             }
-            catch (Exception ex)
+            catch
             {
-                MessageBox.Show(ex.Message.ToString());
+              
             }
         }
         private void Window_ContentRendered(object sender, EventArgs e)

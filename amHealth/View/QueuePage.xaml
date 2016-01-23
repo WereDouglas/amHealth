@@ -32,16 +32,17 @@
                         <TextBlock  Visibility="Hidden" Margin="0,15,0,5" Text="{Binding Patient}" Width="0" />
                         <TextBlock  Visibility="Hidden"  Margin="0,15,0,5" Text="{Binding Practitioner}" Width="0" />
 
-                        <Button Height="36" HorizontalAlignment="Left" x:Name="EditButton" Click="EditButton_Click" Margin="5,0,0,0" Width="36">
+                        
+                        <Button Height="36" HorizontalAlignment="Left" x:Name="CheckOutButton" Click="CheckoutButton_Click"  Margin="5,0,0,0" Width="36">
                             <Button.Template>
                                 <ControlTemplate>
                                     <Grid Background="Transparent">
-                                        <Image Source="/amHealth;component/image/Edits.png" Width="25" Height="25" />
+                                        <Image Source="/amHealth;component/image/Logout-48.png" Width="25" Height="25" />
                                     </Grid>
                                 </ControlTemplate>
                             </Button.Template>
                         </Button>
-                        <Button Height="36" HorizontalAlignment="Left" x:Name="DeleteButton" Click="DeleteButton_Click"  Margin="5,0,0,0" Width="36">
+                        <Button Height="36" HorizontalAlignment="Left" x:Name="DeleteButton" Click="DeleteQueueButton_Click"  Margin="5,0,0,0" Width="36">
                             <Button.Template>
                                 <ControlTemplate>
                                     <Grid Background="Transparent">

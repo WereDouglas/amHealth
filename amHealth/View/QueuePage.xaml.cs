@@ -41,11 +41,15 @@ namespace amHealth
 
         public QueuePage()
         {
+
+           // DeleteQueue();
+
             CreateDB();
             InitializeComponent();
             selectdate.Text = DateTime.Now.Date.Date.ToString();
             Refresh();
         }
+       
 
         private void Refresh()
         {
@@ -54,7 +58,7 @@ namespace amHealth
             _appointmentList = new ObservableCollection<Appointment>(App.amApp.Appointments);
             _queueList = new ObservableCollection<Queue>(App.amApp.Queues);
             appointmentcount.Content = "Appointments:" + _appointmentList.Where(k => k.Dated == selectdate.Text).Count().ToString();
-            queuecount.Content = "People in queue :" + _queueList.Where(k =>Convert.ToDateTime(k.Day).Date == Convert.ToDateTime(selectdate.Text).Date).Count().ToString();
+            queuecount.Content = "People in queue :" + _queueList.Where(k => Convert.ToDateTime(k.Day).Date == Convert.ToDateTime(selectdate.Text).Date).Count().ToString();
             QueuelistView.ItemsSource = null;
             AppointmentlistView.ItemsSource = null;
             _appointment = new Appointment(null);
@@ -62,26 +66,27 @@ namespace amHealth
             ListQueue.Clear();
             ListAppoint.Clear();
 
-           
-            foreach (Queue Q in _queueList.Where( m => Convert.ToDateTime(m.Day).Date == Convert.ToDateTime(selectdate.Text).Date))
+
+            foreach (Queue Q in _queueList.Where(m => Convert.ToDateTime(m.Day).Date == Convert.ToDateTime(selectdate.Text).Date && m.Seen=="F"))
             {
                 _queue = new Queue(null);
                 _queue.Id = Q.Id;
                 _queue.Org = Q.Org;
-                _queue.Details = "PATIENT : \t" + _patientList.First(x => x.Id.Equals(Q.Patient)).Fname + " " + _patientList.First(x => x.Id.Equals(Q.Patient)).Lname + Environment.NewLine + "PRACTITIONER : \t" + _practitionerList.First(x => x.Id.Equals(Q.Practitioner)).Name + " " + Environment.NewLine + "HOURS: \t " + Q.Checked + "REASON : \t" + Q.Reason;
+                _queue.Details = "PATIENT : \t" + _patientList.First(x => x.Id.Equals(Q.Patient)).Fname + " " + _patientList.First(x => x.Id.Equals(Q.Patient)).Lname + Environment.NewLine + "PRACTITIONER : \t" + _practitionerList.First(x => x.Id.Equals(Q.Practitioner)).Name + " " + Environment.NewLine + "HOURS: \t " + Q.Checked + "REASON : \t" + Q.Reason + Environment.NewLine + "State : \t" + Q.Seen+" "+Q.Amount;
                 _queue.Practitioner = Q.Practitioner;
                 _queue.Patient = Q.Patient;
-                _queue.Patientimage = _patientList.First(x => x.Id.Equals(Q.Patient)).Image;           
+                _queue.Patientimage = _patientList.First(x => x.Id.Equals(Q.Patient)).Image;
                 _queue.Payment = Q.Payment;
                 _queue.Amount = Q.Amount;
-                _queue.Checked =Convert.ToDateTime( Q.Checked).ToString("T");           
+                _queue.Checked = Convert.ToDateTime(Q.Checked).ToString("T");
                 _queue.Reason = Q.Reason;
+
                 ListQueue.Add(_queue);
             }
             //apointment list view 
             QueuelistView.ItemsSource = ListQueue;
 
-          
+
             foreach (Appointment T in _appointmentList.Where(i => i.Dated == selectdate.Text))
             {
                 _appointment = new Appointment(null);
@@ -93,7 +98,7 @@ namespace amHealth
                 _appointment.Dated = T.Dated;
                 _appointment.StartTime = T.StartTime;
                 _appointment.EndTime = T.EndTime;
-                _appointment.Patientimage = _patientList.First(x => x.Id.Equals(T.Patient)).Image;              
+                _appointment.Patientimage = _patientList.First(x => x.Id.Equals(T.Patient)).Image;
                 _appointment.Reason = T.Reason;
                 ListAppoint.Add(_appointment);
             }
@@ -115,7 +120,12 @@ namespace amHealth
 
             if (!Helper.TableExists(conn, "queue"))
             {
-                cmd.CommandText = "CREATE TABLE queue (id nvarchar(255)  NULL, org nvarchar(255)  NULL, patient nvarchar(255)  NULL,practitioner nvarchar(255) NULL,payment nvarchar(255) NULL, amount nvarchar(255)  NULL,checked nvarchar(255) NULL,day nvarchar(255) NULL,reason nvarchar(255) NULL,sync nvarchar(255) NULL);";
+                cmd.CommandText = "CREATE TABLE queue (id nvarchar(255)  NULL, org nvarchar(255)  NULL, patient nvarchar(255)  NULL,practitioner nvarchar(255) NULL,payment nvarchar(255) NULL, amount nvarchar(255)  NULL,checked nvarchar(255) NULL,day nvarchar(255) NULL,reason nvarchar(255) NULL,sync nvarchar(255) NULL,seen nvarchar(255) NULL);";
+                cmd.ExecuteNonQuery();
+            }
+            if (!Helper.TableExists(conn, "messages"))
+            {
+                cmd.CommandText = "CREATE TABLE messages (id nvarchar(255)  NULL, org nvarchar(255)  NULL, type nvarchar(255)  NULL,content nvarchar(255) NULL,contact nvarchar(255) NULL, sent nvarchar(255)  NULL,dor nvarchar(255) NULL,sync nvarchar(255) NULL);";
                 cmd.ExecuteNonQuery();
             }
             conn.Close();
@@ -150,10 +160,10 @@ namespace amHealth
                 var dialog = new MyDialog();
                 if (dialog.ShowDialog() == true)
                 {
-                    
+
                     if (dialog.notify == true)
                     {
-                        Messenger.Send("Your appointment with" + _practitionerList.First(x => x.Id == user.Practitioner).Practice + "  on:" + user.Dated + " During:" + user.StartTime + ": " + user.EndTime + "has been cancelled  because " + dialog.ResponseText, _patientList.First(x => x.Id == user.Patient.ToString()).Phone);
+                        Messenger.Send(App.amApp, "Your appointment with" + _practitionerList.First(x => x.Id == user.Practitioner).Practice + "  on:" + user.Dated + " During:" + user.StartTime + ": " + user.EndTime + "has been cancelled  because " + dialog.ResponseText, _patientList.First(x => x.Id == user.Patient.ToString()).Phone);
                     }
                     user.Delete(user.Id.ToString());
                     Refresh();
@@ -210,6 +220,7 @@ namespace amHealth
                 _queue.Reason = " ";
                 _queue.Sync = "F";
                 _queue.Org = "test";
+                _queue.Seen = "F";
                 _queue.Save();
 
                 Refresh();
@@ -220,6 +231,38 @@ namespace amHealth
 
                 return;
             }
+        }
+
+        private void DeleteQueueButton_Click(object sender, RoutedEventArgs e)
+        {
+            Button button = sender as System.Windows.Controls.Button;
+            Queue user = button.DataContext as Queue;
+
+            if (MessageBox.Show("Are you sure you want to  remove from queue ?", "Confirmation", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+            {
+                user.Delete(user.Id.ToString());
+                Refresh();
+            }
+            else
+            {
+
+                return;
+            }
+        }
+
+        private void CheckoutButton_Click(object sender, RoutedEventArgs e)
+        {
+            System.Windows.Controls.Button button = sender as System.Windows.Controls.Button;
+            Queue user = button.DataContext as Queue;
+
+            var dialog = new CheckDialog(user.Id);
+            if (dialog.ShowDialog() == true)
+            {
+                _queue.Update(dialog.QID, dialog.amount.ToString(), dialog.payment.ToString(), "T");
+                Refresh();
+
+            }
+
         }
     }
 }

@@ -60,10 +60,9 @@ namespace amHealth.View.queue
                 SaveQueue();
                 this.DialogResult = true;
             }
-            catch (Exception ex)
+            catch 
             {
 
-                System.Windows.MessageBox.Show(ex.Message.ToString());
                 return;
 
             }
@@ -115,6 +114,7 @@ namespace amHealth.View.queue
             _queue.Reason = reason.Text;
             _queue.Sync = "F";
             _queue.Org = "test";
+            _queue.Seen = "F";
             _queue.Save();
 
            // Messenger.Send("You have `scheduled an appointment with" + _practitionerList.First(x => x.Id == selectedPrac).Practice + "  on:" + startDate.Text + " at:" + endHour.Text + ":" + endMin.Text + "  ", _patientList.First(x => x.Id == patient.Content.ToString()).Phone);    

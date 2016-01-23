@@ -148,7 +148,13 @@ namespace amHealth.View.Appointments
                   
                     if (dialog.notify == true)
                     {
-                        Messenger.Send("Your appointment with" + _practitionerList.First(x => x.Id == user.Practitioner).Practice + "  on:" + user.Dated + " During:" + user.StartTime + ": " + user.EndTime + " because " + dialog.ResponseText, _patientList.First(x => x.Id == user.Patient.ToString()).Phone);
+                        try
+                        {
+                            Messenger.Send(App.amApp, "Your appointment with" + _practitionerList.First(x => x.Id == user.Practitioner).Practice + "  on:" + user.Dated + " During:" + user.StartTime + ": " + user.EndTime + " because " + dialog.ResponseText, _patientList.First(x => x.Id == user.Patient.ToString()).Phone);
+                               }
+                        catch {
+                           
+                        }
                     }
                     user.Delete(user.Id.ToString());
                     Refresh();

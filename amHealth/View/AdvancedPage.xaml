@@ -42,11 +42,11 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <Button Content="Delete selected" HorizontalAlignment="Left" Command="{Binding AddCommand}" Margin="10,121,0,0" x:Name="btnAdd_Copy3"  VerticalAlignment="Top" Width="135" Height="24" Click="btnDeleteAll_Click">
+        <Button Content="Delete queue" HorizontalAlignment="Left" Command="{Binding AddCommand}" Margin="10,121,0,0" x:Name="btnAdd_Copy3"  VerticalAlignment="Top" Width="135" Height="24" Click="QueueDelete_Click">
             <Button.Template>
                 <ControlTemplate>
                     <Grid Background="Transparent">
-                        <TextBlock><Run Text="Delete selected"/></TextBlock>
+                        <TextBlock><Run Text="Delete queue"/></TextBlock>
                         <Image  Stretch="Uniform" Source="/amHealth;component/image/Deletes.png" HorizontalAlignment="Right" />
                     </Grid>
                 </ControlTemplate>

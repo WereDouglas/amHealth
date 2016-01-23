@@ -1,11 +1,11 @@
 C:\Users\DOUGLAS\documents\visual studio 2013\Projects\amHealth\amLibrary\bin\Debug\amLibrary.dll
 C:\Users\DOUGLAS\documents\visual studio 2013\Projects\amHealth\amLibrary\bin\Debug\amLibrary.pdb
+C:\Users\DOUGLAS\documents\visual studio 2013\Projects\amHealth\amLibrary\bin\Debug\GSMCommServer.dll
+C:\Users\DOUGLAS\documents\visual studio 2013\Projects\amHealth\amLibrary\bin\Debug\GSMCommShared.dll
+C:\Users\DOUGLAS\documents\visual studio 2013\Projects\amHealth\amLibrary\bin\Debug\GSMCommunication.dll
 C:\Users\DOUGLAS\documents\visual studio 2013\Projects\amHealth\amLibrary\bin\Debug\Newtonsoft.Json.dll
+C:\Users\DOUGLAS\documents\visual studio 2013\Projects\amHealth\amLibrary\bin\Debug\PDUConverter.dll
 C:\Users\DOUGLAS\documents\visual studio 2013\Projects\amHealth\amLibrary\bin\Debug\Newtonsoft.Json.xml
 C:\Users\DOUGLAS\documents\visual studio 2013\Projects\amHealth\amLibrary\obj\Debug\amLibrary.dll
 C:\Users\DOUGLAS\documents\visual studio 2013\Projects\amHealth\amLibrary\obj\Debug\amLibrary.pdb
 C:\Users\DOUGLAS\documents\visual studio 2013\Projects\amHealth\amLibrary\obj\Debug\amLibrary.csprojResolveAssemblyReference.cache
-C:\Users\DOUGLAS\documents\visual studio 2013\Projects\amHealth\amLibrary\bin\Debug\GSMCommServer.dll
-C:\Users\DOUGLAS\documents\visual studio 2013\Projects\amHealth\amLibrary\bin\Debug\GSMCommShared.dll
-C:\Users\DOUGLAS\documents\visual studio 2013\Projects\amHealth\amLibrary\bin\Debug\GSMCommunication.dll
-C:\Users\DOUGLAS\documents\visual studio 2013\Projects\amHealth\amLibrary\bin\Debug\PDUConverter.dll

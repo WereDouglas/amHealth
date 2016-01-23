@@ -8,9 +8,9 @@ using System.Data.SqlServerCe;
 
 namespace amLibrary
 {
-    public class Group : DBObject
+    public class Message : DBObject
     {
-        public Group(DBObject parent)
+        public Message(DBObject parent)
             : base(parent)
         {
             Id = Guid.NewGuid().ToString();
@@ -23,19 +23,27 @@ namespace amLibrary
             get { return _id; }
             set { _id = value; }
         }
-        private string _name;
+        private string _type;
 
-        public string Name
+        public string Type
         {
-            get { return _name; }
-            set { _name = value; }
+            get { return _type; }
+            set { _type = value; }
         }
-        private string _filters;
 
-        public string Filters
+        private string _contact;
+
+        public string Contact
         {
-            get { return _filters; }
-            set { _filters = value; }
+            get { return _contact; }
+            set { _contact = value; }
+        }
+        private string _content;
+
+        public string Content
+        {
+            get { return _content; }
+            set { _content = value; }
         }
         private string _dor;
 
@@ -68,10 +76,17 @@ namespace amLibrary
             get { return _sync; }
             set { _sync = value; }
         }
+        private string _sent;
+
+        public string Sent
+        {
+            get { return _sent; }
+            set { _sent = value; }
+        }
 
         public override void Save()
         {
-            if (Name == " " || Filters == " ")
+            if (Type == " " || Content == " ")
             {
                 throw new Exception("Empty fields");
             }
@@ -79,12 +94,14 @@ namespace amLibrary
             else
             {
                 SqlCeCommand cmd = con.CreateCommand();
-                cmd.CommandText = "INSERT INTO [groups](id,org,name,filters,dor,sync)VALUES(@id,@org,@name,@filters,@dor,@sync)";
+                cmd.CommandText = "INSERT INTO [message](id,org,type,content,contact,dor,sync,sent)VALUES(@id,@org,@type,@content,@contact,@dor,@sync,@sent)";
                 cmd.Parameters.AddWithValue("@id", Id);
                 cmd.Parameters.AddWithValue("@org", Org);
-                cmd.Parameters.AddWithValue("@name", Name);
-                cmd.Parameters.AddWithValue("@filters", Filters);
+                cmd.Parameters.AddWithValue("@type", Type);
+                cmd.Parameters.AddWithValue("@content", Content);
+                cmd.Parameters.AddWithValue("@contact", Contact);
                 cmd.Parameters.AddWithValue("@dor", Dor);
+                cmd.Parameters.AddWithValue("@sent", Sent);
                 cmd.Parameters.AddWithValue("@sync", Sync);
 
                 ExecuteNonQuery(cmd);
@@ -92,14 +109,13 @@ namespace amLibrary
 
             }
         }
-        // _group.Update(Id, fname.Text,lname.Text,dor.Text,dob.Text, height.Text,weight.Text,phone.Text,email.Text,region.Text,"");
+        // _message.Update(Id, ftype.Text,ltype.Text,dor.Text,dob.Text, height.Text,weight.Text,phone.Text,email.Text,region.Text,"");
 
-        public void Update(string id, string name, string filters)
+        public void Update(string id,string sent)
         {
             SqlCeCommand cmd = con.CreateCommand();
-            cmd.CommandText = "UPDATE [groups] SET name='" + name + "',filters='" + filters + "' WHERE id = '" + id + "'";
-
-
+            cmd.CommandText = "UPDATE [message] SET sent='" + sent + "' WHERE id = '" + id + "'";
+            
             ExecuteNonQuery(cmd);
 
         }
@@ -108,7 +124,7 @@ namespace amLibrary
         {
             System.Diagnostics.Debug.Write(Id + "|");
             SqlCeCommand cmd = con.CreateCommand();
-            cmd.CommandText = "DELETE FROM [groups] WHERE id ='" + Id + "'";
+            cmd.CommandText = "DELETE FROM [message] WHERE id ='" + Id + "'";
             try
             {
 
@@ -128,7 +144,7 @@ namespace amLibrary
         public bool Deleteall()
         {
             SqlCeCommand cmd = con.CreateCommand();
-            cmd.CommandText = "DELETE FROM [groups]";
+            cmd.CommandText = "DELETE FROM [message]";
             try
             {
 

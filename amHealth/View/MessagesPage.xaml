@@ -1,0 +1,65 @@
+﻿<Page x:Class="amHealth.MessagesPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"       
+      mc:Ignorable="d"
+	Title="Daily weather records" MinWidth="800" MinHeight="600" Background="White" Height="417" >
+    <Page.Resources>
+
+
+
+    </Page.Resources>
+    <Grid Margin="0,0,0,10">
+        <Label Content="" x:Name="internet" HorizontalAlignment="Left" Margin="883,9,0,0" VerticalAlignment="Top" Width="85"/>
+        <DataGrid x:Name="dtGrid" HorizontalAlignment="Left" Margin="10,59,0,0" VerticalAlignment="Top" Height="521" Width="948"  CanUserReorderColumns="True" CanUserResizeColumns="True" 
+        	CanUserResizeRows="False" CanUserSortColumns="True" AutoGenerateColumns="False" HorizontalGridLinesBrush="WhiteSmoke" VerticalGridLinesBrush="#FFE7E8EC" >
+            <DataGrid.Columns>
+                <DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn.Header>
+
+                        <CheckBox  x:Name="chkSelectAll" Content="check/uncheck" Click="CheckBox_Checked" />
+
+                    </DataGridTemplateColumn.Header>
+
+                    <DataGridTemplateColumn.CellTemplate>
+
+                        <DataTemplate>
+
+                            <CheckBox x:Name="chkDiscontinue" IsChecked="{Binding values, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  />
+
+                        </DataTemplate>
+
+                    </DataGridTemplateColumn.CellTemplate>
+
+                </DataGridTemplateColumn>
+
+                <DataGridTextColumn Header="Contact" Binding="{Binding Contact}" />
+                <DataGridTextColumn Header="Message" Binding="{Binding Content}" />
+                <DataGridTextColumn Header="Date" Binding="{Binding Dor}" />
+                <DataGridTextColumn Header="Sent" Binding="{Binding Sent}" />
+                <DataGridTextColumn Header="Sync" Binding="{Binding Sync}" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label Content="Type" HorizontalAlignment="Left" Margin="502,7,0,0" VerticalAlignment="Top" Width="48"/>
+        <ComboBox HorizontalAlignment="Left"  x:Name="gender"  SelectedValue="{Binding CurrentUser.Station}" SelectedValuePath="Content"  Margin="555,9,0,0" VerticalAlignment="Top" Width="166" RenderTransformOrigin="0.302,-0.056" SelectionChanged="gender_SelectionChanged">
+            <ListBoxItem Content=""/>
+            <ListBoxItem Content="All"/>
+            <ListBoxItem Content="Sent"/>
+            <ListBoxItem Content="Not sent"/>
+
+        </ComboBox>
+        <Label Content="Messages" HorizontalAlignment="Left" Margin="10,9,0,0" VerticalAlignment="Top" Width="214" FontWeight="Bold" Height="26"/>
+        <Button Content="Delete selected" HorizontalAlignment="Left" Command="{Binding AddCommand}" Margin="10,30,0,0" x:Name="btnAdd_Copy"  VerticalAlignment="Top" Width="106" Height="24" Click="btnDeleteAll_Click" RenderTransformOrigin="0.802,-0.479">
+            <Button.Template>
+                <ControlTemplate>
+                    <Grid Background="Transparent">
+                        <TextBlock><Run Text="Delete selected"/></TextBlock>
+                        <Image  Stretch="Uniform" Source="/amHealth;component/image/Deletes.png" HorizontalAlignment="Right" />
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+    </Grid>
+</Page>
