@@ -72,7 +72,7 @@ namespace amHealth
                 _queue = new Queue(null);
                 _queue.Id = Q.Id;
                 _queue.Org = Q.Org;
-                _queue.Details = "PATIENT : \t" + _patientList.First(x => x.Id.Equals(Q.Patient)).Fname + " " + _patientList.First(x => x.Id.Equals(Q.Patient)).Lname + Environment.NewLine + "PRACTITIONER : \t" + _practitionerList.First(x => x.Id.Equals(Q.Practitioner)).Name + " " + Environment.NewLine + "HOURS: \t " + Q.Checked + "REASON : \t" + Q.Reason + Environment.NewLine + "State : \t" + Q.Seen+" "+Q.Amount;
+                _queue.Details = "PATIENT : \t" + _patientList.First(x => x.Id.Equals(Q.Patient)).Fname + " " + _patientList.First(x => x.Id.Equals(Q.Patient)).Lname + Environment.NewLine + "PRACTITIONER : \t" + _practitionerList.First(x => x.Id.Equals(Q.Practitioner)).Name + " " + Environment.NewLine + "TIME : \t " + Q.Checked + " REASON: \t" + Q.Reason + " " + Environment.NewLine + "State : \t" + Q.Seen + " " + Q.Amount;
                 _queue.Practitioner = Q.Practitioner;
                 _queue.Patient = Q.Patient;
                 _queue.Patientimage = _patientList.First(x => x.Id.Equals(Q.Patient)).Image;
@@ -92,7 +92,7 @@ namespace amHealth
                 _appointment = new Appointment(null);
                 _appointment.Id = T.Id;
                 _appointment.Org = T.Org;
-                _appointment.Details = "PATIENT : \t" + _patientList.First(x => x.Id.Equals(T.Patient)).Fname + " " + _patientList.First(x => x.Id.Equals(T.Patient)).Lname + Environment.NewLine + "PRACTITIONER : \t" + _practitionerList.First(x => x.Id.Equals(T.Practitioner)).Name + " " + Environment.NewLine + "HOURS: \t " + T.StartTime + "-END" + T.EndTime + Environment.NewLine + "REASON : \t" + T.Reason;
+                _appointment.Details = "PATIENT : \t" + _patientList.First(x => x.Id.Equals(T.Patient)).Fname + " " + _patientList.First(x => x.Id.Equals(T.Patient)).Lname + Environment.NewLine + "PRACTITIONER : \t" + _practitionerList.First(x => x.Id.Equals(T.Practitioner)).Name + " " + Environment.NewLine + "PERIOD: \t \t " + T.Meet + "-" + T.EndTime +" "+ Environment.NewLine + " REASON : \t" + T.Reason;
                 _appointment.Practitioner = T.Practitioner;
                 _appointment.Patient = T.Patient;
                 _appointment.Dated = T.Dated;
@@ -163,7 +163,7 @@ namespace amHealth
 
                     if (dialog.notify == true)
                     {
-                        Messenger.Send(App.amApp, "Your appointment with" + _practitionerList.First(x => x.Id == user.Practitioner).Practice + "  on:" + user.Dated + " During:" + user.StartTime + ": " + user.EndTime + "has been cancelled  because " + dialog.ResponseText, _patientList.First(x => x.Id == user.Patient.ToString()).Phone);
+                        Messenger.Send(App.amApp, "Your appointment with a " + _practitionerList.First(x => x.Id == user.Practitioner).Practice + " on:" + user.Dated + " at " + user.Meet + " to " + user.EndTime + " has been cancelled  because " + dialog.ResponseText, _patientList.First(x => x.Id == user.Patient.ToString()).Phone);
                     }
                     user.Delete(user.Id.ToString());
                     Refresh();
@@ -215,7 +215,7 @@ namespace amHealth
                 _queue.Practitioner = user.Practitioner;
                 _queue.Payment = " ";
                 _queue.Amount = " ";
-                _queue.Checked = DateTime.Now.TimeOfDay.ToString();
+                _queue.Checked = DateTime.Now.ToString("hh:mm:ss");
                 _queue.Day = DateTime.Now.ToString();
                 _queue.Reason = " ";
                 _queue.Sync = "F";

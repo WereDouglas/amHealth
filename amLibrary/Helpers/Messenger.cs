@@ -3,6 +3,7 @@ using GsmComm.PduConverter;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -42,7 +43,7 @@ namespace amLibrary.Helpers
                 _message.Save();
 
             }
-            catch
+            catch(Exception r)
             {
                 _message = new Message(parent);
                 _message.Org = "test";
@@ -52,16 +53,25 @@ namespace amLibrary.Helpers
                 _message.Dor = DateTime.Now.ToString();
                 _message.Sync = "F";
                 _message.Sent = "F";
-
                 _message.Save();
+                throw r;
 
 
             }
+        }
+        [DllImport("wininet.dll")]
+        private extern static bool InternetGetConnectedState(out int description, int reservedValue);
+
+        public static bool IsInternetAvailable()
+        {
+            int description;
+            return InternetGetConnectedState(out description, 0);
         }
 
 
         public static void SendUpdate(DBObject parent, string id, string message, string number)
         {
+            // Messenger.SendUpdate(App.amApp, u.Id, u.Content, u.Contact);
             try
             {
 
@@ -72,15 +82,16 @@ namespace amLibrary.Helpers
                 for (int i = 0; i < times; i++)
                 {
                     comm.SendMessage(pdu);
+                    _message = new Message(parent);
+                    _message.Update(id, "T");
+                    
                 }
                 // Update(string id,string sent)
-                _message.Update(id, "T");
-
 
             }
-            catch
+            catch(Exception r)
             {
-
+                throw r;
             }
         }
         static bool ports = false;
@@ -96,18 +107,30 @@ namespace amLibrary.Helpers
                 Console.WriteLine(cmbCOM);
                 try
                 {
-                    comm.Open();
-                    ports = true;
-                    state = "true";
+                    if (comm.IsConnected())
+                    {
+                        Console.WriteLine("comm is already open");
+                        ports = true;
+                        state = "true";
+                        break;
+                    }
+                    else {
+                        Console.WriteLine("comm is not open");
+                        comm.Open();
+                        ports = true;
+                        state = "true";
+                    }
+                    
                 }
                 catch (Exception)
                 {
                     ports = false;
+                    state = "true";
 
                 }
 
             }
-            while (ports == false && d < 30);
+            while (!comm.IsConnected() && d < 30);
 
 
             Console.WriteLine(cmbCOM);

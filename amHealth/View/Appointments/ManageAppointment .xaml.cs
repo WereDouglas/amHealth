@@ -68,7 +68,7 @@ namespace amHealth.View.Appointments
                 _appointment = new Appointment(null);
                 _appointment.Id = T.Id;
                 _appointment.Org = T.Org;
-                _appointment.Details = "PATIENT : \t" + _patientList.First(x => x.Id.Equals(T.Patient)).Fname + " " + _patientList.First(x => x.Id.Equals(T.Patient)).Lname + Environment.NewLine + "PRACTITIONER : \t" + _practitionerList.First(x => x.Id.Equals(T.Practitioner)).Name + " " + Environment.NewLine + "HOURS: \t " + T.StartTime + "-END" + T.EndTime + Environment.NewLine + "REASON : \t" + T.Reason;
+                _appointment.Details = "PATIENT : \t" + _patientList.First(x => x.Id.Equals(T.Patient)).Fname + " " + _patientList.First(x => x.Id.Equals(T.Patient)).Lname + Environment.NewLine + "PRACTITIONER : \t" + _practitionerList.First(x => x.Id.Equals(T.Practitioner)).Name + " " + Environment.NewLine + "HOURS: \t " + T.StartTime + "-END" + T.EndTime + Environment.NewLine + "REASON : \t" + T.Reason + Environment.NewLine + "Notify : \t" + T.Reminder;
                 _appointment.Practitioner = T.Practitioner;
                 _appointment.Patient = T.Patient;
                 _appointment.Dated = T.Dated;
@@ -150,7 +150,7 @@ namespace amHealth.View.Appointments
                     {
                         try
                         {
-                            Messenger.Send(App.amApp, "Your appointment with" + _practitionerList.First(x => x.Id == user.Practitioner).Practice + "  on:" + user.Dated + " During:" + user.StartTime + ": " + user.EndTime + " because " + dialog.ResponseText, _patientList.First(x => x.Id == user.Patient.ToString()).Phone);
+                            Messenger.Send(App.amApp, "Your appointment with" + _practitionerList.First(x => x.Id == user.Practitioner).Practice + "  on:" + user.Dated + " at" + user.Meet + " to " + user.EndTime + " because " + dialog.ResponseText, _patientList.First(x => x.Id == user.Patient.ToString()).Phone);
                                }
                         catch {
                            

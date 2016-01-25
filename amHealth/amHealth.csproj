@@ -85,6 +85,7 @@
     </ApplicationDefinition>
     <Compile Include="Helper.cs" />
     <Compile Include="modem\Operation.cs" />
+    <Compile Include="Reminder.cs" />
     <Compile Include="View\AppointmentPage.xaml.cs">
       <DependentUpon>AppointmentPage.xaml</DependentUpon>
     </Compile>

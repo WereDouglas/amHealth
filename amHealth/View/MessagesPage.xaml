@@ -12,7 +12,7 @@
     </Page.Resources>
     <Grid Margin="0,0,0,10">
         <Label Content="" x:Name="internet" HorizontalAlignment="Left" Margin="883,9,0,0" VerticalAlignment="Top" Width="85"/>
-        <DataGrid x:Name="dtGrid" HorizontalAlignment="Left" Margin="10,59,0,0" VerticalAlignment="Top" Height="521" Width="948"  CanUserReorderColumns="True" CanUserResizeColumns="True" 
+        <DataGrid x:Name="dtGrid" Margin="10,40,10,10"  CanUserReorderColumns="True" CanUserResizeColumns="True" 
         	CanUserResizeRows="False" CanUserSortColumns="True" AutoGenerateColumns="False" HorizontalGridLinesBrush="WhiteSmoke" VerticalGridLinesBrush="#FFE7E8EC" >
             <DataGrid.Columns>
                 <DataGridTemplateColumn>
@@ -40,6 +40,7 @@
                 <DataGridTextColumn Header="Date" Binding="{Binding Dor}" />
                 <DataGridTextColumn Header="Sent" Binding="{Binding Sent}" />
                 <DataGridTextColumn Header="Sync" Binding="{Binding Sync}" />
+                <DataGridTextColumn Header="ID#" Binding="{Binding Id}" />
             </DataGrid.Columns>
         </DataGrid>
         <Label Content="Type" HorizontalAlignment="Left" Margin="502,7,0,0" VerticalAlignment="Top" Width="48"/>
@@ -50,8 +51,8 @@
             <ListBoxItem Content="Not sent"/>
 
         </ComboBox>
-        <Label Content="Messages" HorizontalAlignment="Left" Margin="10,9,0,0" VerticalAlignment="Top" Width="214" FontWeight="Bold" Height="26"/>
-        <Button Content="Delete selected" HorizontalAlignment="Left" Command="{Binding AddCommand}" Margin="10,30,0,0" x:Name="btnAdd_Copy"  VerticalAlignment="Top" Width="106" Height="24" Click="btnDeleteAll_Click" RenderTransformOrigin="0.802,-0.479">
+        <Label Content="Messages" HorizontalAlignment="Left" Margin="10,9,0,0" VerticalAlignment="Top" Width="106" FontWeight="Bold" Height="26"/>
+        <Button Content="Delete selected" HorizontalAlignment="Left" Command="{Binding AddCommand}" Margin="282,10,0,0" x:Name="btnAdd_Copy"  VerticalAlignment="Top" Width="106" Height="24" Click="btnDeleteAll_Click" RenderTransformOrigin="0.802,-0.479">
             <Button.Template>
                 <ControlTemplate>
                     <Grid Background="Transparent">

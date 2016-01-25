@@ -55,13 +55,12 @@ namespace amHealth.View.patient
             try
             {
 
-                Messenger.Send(App.amApp, myText, phone.Text);
-              
+                Messenger.Send(App.amApp, myText, phone.Text);              
                 MessageBox.Show("message sent");
             }
-            catch
+            catch(Exception p)
             {
-              
+                //MessageBox.Show(p.Message);
             }
         }
         private void Window_ContentRendered(object sender, EventArgs e)

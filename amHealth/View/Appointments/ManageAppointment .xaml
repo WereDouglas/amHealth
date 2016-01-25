@@ -25,7 +25,7 @@
                         <TextBlock  Visibility="Hidden" Margin="0,15,0,5" Text="{Binding Patient}" Width="0" />
                         <TextBlock  Visibility="Hidden"  Margin="0,15,0,5" Text="{Binding Practitioner}" Width="0" />
                         <TextBlock  Visibility="Hidden"  Margin="0,15,0,5" Text="{Binding Dated}" Width="0" />
-                        <TextBlock  Visibility="Hidden"  Margin="0,15,0,5" Text="{Binding StartTime}" Width="0" />
+                        <TextBlock  Visibility="Hidden"  Margin="0,15,0,5" Text="{Binding Meet}" Width="0" />
                         <TextBlock  Visibility="Hidden"  Margin="0,15,0,5" Text="{Binding EndTime}" Width="0" />
 
 

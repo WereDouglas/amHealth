@@ -5,7 +5,7 @@
     <Grid ScrollViewer.HorizontalScrollBarVisibility="Auto">
         <Rectangle Margin="0,68,0,0" HorizontalAlignment="Left" Width="112" Fill="White"/>
         <Image HorizontalAlignment="Left" Width="235" Source="image/amhealthlogo.png" Height="63" VerticalAlignment="Top"/>
-        <DockPanel LastChildFill="False" Margin="117,68,0,0" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="True"   >
+        <DockPanel LastChildFill="False" Margin="117,68,0,41" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="True"   >
             <Frame x:Name="_mainFrame" NavigationUIVisibility="Hidden" HorizontalContentAlignment="Center" VerticalContentAlignment="Stretch" BorderBrush="#FF0F509F" DockPanel.Dock="Top" ScrollViewer.HorizontalScrollBarVisibility="Auto" />
 
         </DockPanel>
@@ -50,7 +50,7 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <Label Content="John Luberenga" Name="username" Margin="0,0,66,0"  VerticalAlignment="Top" Height="27" Foreground="#FF3399FF" Background="White" HorizontalAlignment="Right" Width="103" BorderBrush="#FF3399FF"/>
+        <Label Content="John Luberenga" Name="username" Margin="0,8,423,0"  VerticalAlignment="Top" Height="27" Foreground="#FF3399FF" Background="White" HorizontalAlignment="Right" Width="103" BorderBrush="#FF3399FF"/>
         <Button Content="Update" HorizontalAlignment="Left" Margin="10,669,0,0" VerticalAlignment="Top" Width="83" Click="Button_Click_Update" RenderTransformOrigin="0.915,0.455" BorderBrush="{x:Null}" Foreground="#FF4E8FB2" Background="#FFDDDDDD" HorizontalContentAlignment="Left" FontWeight="Medium" Padding="3"/>
         <Button Content="Add new" Command="{Binding AddCommand}" Margin="18,309,0,0" x:Name="patients_Copy"  VerticalAlignment="Top" Height="53" Click="Prac_Click" HorizontalAlignment="Left" Width="64"  Foreground="#FF4E8FB2" FontWeight="Medium" Padding="3" >
             <Button.Template>
@@ -64,9 +64,9 @@
             </Button.Template>
         </Button>
         <Image Stretch="Fill" Source="image/User-48.png" Height="39" VerticalAlignment="Top" Margin="0,10,10,0" HorizontalAlignment="Right" Width="38"/>
-        <Label Content="John test org" x:Name="username_Copy1" Margin="0,0,184,0"  VerticalAlignment="Top" Height="27" Foreground="#FF3399FF" Background="White" HorizontalAlignment="Right" Width="117" BorderBrush="#FF3399FF"/>
-        <Label Content="410 credits remaining" x:Name="username_Copy2" Margin="0,27,169,0"  VerticalAlignment="Top" Height="27" Foreground="#FF3399FF" Background="White" HorizontalAlignment="Right" Width="132" BorderBrush="#FF3399FF"/>
-        <Button Content="Add new" Command="{Binding AddCommand}" Margin="0,32,96,0" x:Name="btnAdd_Copy"  VerticalAlignment="Top" Height="21" Click="btnAdd_Click_1" Background="#FF3399FF" Foreground="#FF4E8FB2" FontWeight="Medium" Padding="3" HorizontalAlignment="Right" Width="68" >
+        <Label Content="John test org" x:Name="username_Copy1" Margin="0,8,283,0"  VerticalAlignment="Top" Height="27" Foreground="#FF3399FF" Background="White" HorizontalAlignment="Right" Width="117" BorderBrush="#FF3399FF"/>
+        <Label Content="410 credits remaining" x:Name="username_Copy2" Margin="0,10,146,0"  VerticalAlignment="Top" Height="27" Foreground="#FF3399FF" Background="White" HorizontalAlignment="Right" Width="132" BorderBrush="#FF3399FF"/>
+        <Button Content="Add new" Command="{Binding AddCommand}" Margin="0,10,73,0" x:Name="btnAdd_Copy"  VerticalAlignment="Top" Height="21" Click="btnAdd_Click_1" Background="#FF3399FF" Foreground="#FF4E8FB2" FontWeight="Medium" Padding="3" HorizontalAlignment="Right" Width="68" >
             <Button.Template>
                 <ControlTemplate>
                     <Grid Background="Transparent">
@@ -109,6 +109,8 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <Label Content="state" x:Name="modem" Margin="0,26,306,0"  VerticalAlignment="Top" Height="27" Foreground="#FF3399FF" Background="White" HorizontalAlignment="Right" Width="133" BorderBrush="#FF3399FF"/>
+        <Label Content="state" x:Name="modem" Margin="736,0,0,12"  VerticalAlignment="Bottom" Height="22" Foreground="#FF3399FF" Background="White" BorderBrush="#FF3399FF" HorizontalAlignment="Left" Width="244" FontSize="10"/>
+        <Label Content="info" x:Name="internet" Margin="123,0,0,10"  VerticalAlignment="Bottom" Height="22" Foreground="#FF3399FF" Background="White" BorderBrush="#FF3399FF" HorizontalAlignment="Left" Width="192" FontSize="10"/>
+        <Label Content="Sync"  x:Name="tbProgress" Margin="466,0,0,8" VerticalAlignment="Bottom" Height="22" Foreground="#FF00B4FF" HorizontalAlignment="Left" Width="244" FontSize="10"/>
     </Grid>
 </Window>

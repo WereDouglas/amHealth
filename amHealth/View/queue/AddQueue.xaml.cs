@@ -109,7 +109,7 @@ namespace amHealth.View.queue
             _queue.Practitioner = selectedPrac;
             _queue.Payment = payment.Text;
             _queue.Amount = amount.Text;
-            _queue.Checked = DateTime.Now.TimeOfDay.ToString();
+            _queue.Checked = DateTime.Now.ToString("hh:mm:ss");
             _queue.Day = DateTime.Now.ToString();
             _queue.Reason = reason.Text;
             _queue.Sync = "F";

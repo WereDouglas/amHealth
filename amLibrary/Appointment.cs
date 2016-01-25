@@ -74,6 +74,21 @@ namespace amLibrary
            get { return _startTime; }
            set { _startTime = value; }
        }
+       private string _meet;
+
+       public string Meet
+       {
+           get { return _meet; }
+           set { _meet = value; }
+       }
+
+       private string _reminder;
+
+       public string Reminder
+       {
+           get { return _reminder; }
+           set { _reminder = value; }
+       }
        private string _endTime;
 
        public string EndTime
@@ -106,13 +121,15 @@ namespace amLibrary
            else
            {
                SqlCeCommand cmd = con.CreateCommand();
-               cmd.CommandText = "INSERT INTO [appointment](id ,org, patient,practitioner ,dated , startTime ,endTime ,reason ,sync)VALUES(@id ,@org,@patient,@practitioner,@dated,@startTime,@endTime,@reason,@sync)";
+               cmd.CommandText = "INSERT INTO [appointment](id ,org, patient,practitioner ,dated , startTime ,endTime ,reason ,sync,meet,reminder)VALUES(@id ,@org,@patient,@practitioner,@dated,@startTime,@endTime,@reason,@sync,@meet,@reminder)";
                cmd.Parameters.AddWithValue("@id", Id);
                cmd.Parameters.AddWithValue("@org", Org);
                cmd.Parameters.AddWithValue("@patient", Patient);             
                cmd.Parameters.AddWithValue("@practitioner", Practitioner);              
                cmd.Parameters.AddWithValue("@dated", Dated);
-               cmd.Parameters.AddWithValue("@startTime", StartTime);              
+               cmd.Parameters.AddWithValue("@startTime", StartTime);
+               cmd.Parameters.AddWithValue("@meet", Meet);
+               cmd.Parameters.AddWithValue("@reminder", Reminder); 
                cmd.Parameters.AddWithValue("@endTime", EndTime);
                cmd.Parameters.AddWithValue("@reason", Reason); 
                cmd.Parameters.AddWithValue("@sync", Sync);
@@ -135,6 +152,14 @@ namespace amLibrary
         ExecuteNonQuery(cmd);            
 
         }
+       public void UpdateReminder(string id, string sent)
+       {
+           SqlCeCommand cmd = con.CreateCommand();
+           cmd.CommandText = "UPDATE [appointment] SET reminder='" + sent + "' WHERE id = '" + id + "'";
+
+           ExecuteNonQuery(cmd);
+
+       }
 
         public bool Delete(string Id)
         {

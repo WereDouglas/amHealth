@@ -70,10 +70,13 @@ namespace amHealth.View.Appointments
         {
             try
             {
+               
                 SaveAppointment();
-                Messenger.Send(App.amApp, "You have `scheduled an appointment with" + _practitionerList.First(x => x.Id == selectedPrac).Practice + "  on:" + startDate.Text + " at:" + endHour.Text + ":" + endMin.Text + "  ", _patientList.First(x => x.Id == patient.Content.ToString()).Phone);
-                this.DialogResult = true;
-
+                 if (ChkNotify.IsChecked==true){
+                Messenger.Send(App.amApp, "You have scheduled an appointment with a " + _practitionerList.First(x => x.Id == selectedPrac).Practice + "  on:" + startDate.Text + " at:"+ startHour.Text + ":" + startMin.Text +" to"+ endHour.Text + ":" + endMin.Text + "  ", _patientList.First(x => x.Id == patient.Content.ToString()).Phone);
+                 }
+                     this.DialogResult = true;
+                
 
             }
             catch
@@ -129,14 +132,26 @@ namespace amHealth.View.Appointments
 
             }
 
+            if (ChkNotify.IsChecked == true)
+            {
+                _appointment.Reminder = "false";
+            }
+            else {
+                _appointment.Reminder = "true";
+
+            }
+
             _appointment.Patient = patient.Content.ToString();
             _appointment.Practitioner = selectedPrac;
             _appointment.Dated = startDate.Text;
             _appointment.StartTime = build;
+            _appointment.Meet  = startHour.Text +":" + startMin.Text;
             _appointment.EndTime = endHour.Text + ":" + endMin.Text;
             _appointment.Reason = reason.Text;
             _appointment.Sync = "F";
             _appointment.Org = "test";
+
+
 
             _appointment.Save();
 

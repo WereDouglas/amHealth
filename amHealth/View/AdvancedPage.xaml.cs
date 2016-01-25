@@ -85,6 +85,28 @@ namespace amHealth
             conn.Close();
 
         }
+        private void DeleteAppoint()
+        {
+
+            string con;
+
+            con = string.Format(@"Data Source=C:\amHealth\amHealth.sdf;Password=access; Persist Security Info=True;");
+
+            SqlCeConnection conn = new SqlCeConnection(con);
+            conn.Open();
+            SqlCeCommand cmd = conn.CreateCommand();
+
+            if (Helper.TableExists(conn, "appointment"))
+            {
+                cmd.CommandText = "DROP TABLE appointment";
+                cmd.ExecuteNonQuery();
+
+            }
+
+
+            conn.Close();
+
+        }
 
         private void DeleteQueue()
         {

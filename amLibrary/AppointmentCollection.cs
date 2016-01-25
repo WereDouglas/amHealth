@@ -21,15 +21,15 @@ namespace amLibrary
         public bool IsLoaded { get; private set; }
         #endregion
         public AppointmentCollection(DBObject parent)
-            :base(parent)
-        {          
+            : base(parent)
+        {
             _appointments = new List<Appointment>();
-           // _appointments.Clear();
+            // _appointments.Clear();
         }
 
         public Appointment Add()
         {
-            Appointment u = new Appointment(this);            
+            Appointment u = new Appointment(this);
             _appointments.Add(u);
             return u;
         }
@@ -37,7 +37,7 @@ namespace amLibrary
         public IEnumerator<Appointment> GetEnumerator()
         {
             foreach (var item in _appointments)
-            yield return item;
+                yield return item;
         }
 
         System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
@@ -55,18 +55,20 @@ namespace amLibrary
 
             foreach (DataRow row in table.Rows)
             {
-                    Appointment u=Add();
-                    u.Id = row["id"].ToString();
-                    u.Org = row["org"].ToString();
-                    u.Patient = row["patient"].ToString();                  
-                    u.Practitioner = row["practitioner"].ToString();                   
-                    u.Dated = row["dated"].ToString();
-                    u.StartTime = row["startTime"].ToString();
-                    u.EndTime = row["endTime"].ToString();
-                    u.Reason = row["reason"].ToString();                   
-                    u.Sync = row["sync"].ToString(); 
-               //  _appointments.Add(u);
-        }
+                Appointment u = Add();
+                u.Id = row["id"].ToString();
+                u.Org = row["org"].ToString();
+                u.Patient = row["patient"].ToString();
+                u.Practitioner = row["practitioner"].ToString();
+                u.Dated = row["dated"].ToString();
+                u.StartTime = row["startTime"].ToString();
+                u.EndTime = row["endTime"].ToString();
+                u.Reason = row["reason"].ToString();
+                u.Sync = row["sync"].ToString();
+                u.Meet = row["meet"].ToString();
+                u.Reminder = row["reminder"].ToString();
+                //  _appointments.Add(u);
+            }
             IsLoaded = true;
         }
 

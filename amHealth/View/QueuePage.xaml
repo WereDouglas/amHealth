@@ -79,6 +79,7 @@
                         <TextBlock  Visibility="Hidden"  Margin="0,15,0,5" Text="{Binding Dated}" Width="0" />
                         <TextBlock  Visibility="Hidden"  Margin="0,15,0,5" Text="{Binding StartTime}" Width="0" />
                         <TextBlock  Visibility="Hidden"  Margin="0,15,0,5" Text="{Binding EndTime}" Width="0" />
+                        <TextBlock  Visibility="Hidden"  Margin="0,15,0,5" Text="{Binding Meet}" Width="0" />
 
 
                         <Button Height="36" HorizontalAlignment="Left" x:Name="EditButton" Click="EditButton_Click" Margin="5,0,0,0" Width="36">

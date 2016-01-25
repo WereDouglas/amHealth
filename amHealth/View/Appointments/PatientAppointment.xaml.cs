@@ -68,7 +68,7 @@ namespace amHealth.View.Appointments
                 _appointment = new Appointment(null);
                 _appointment.Id = T.Id;
                 _appointment.Org = T.Org;
-                _appointment.Details = "PATIENT : \t" + _patientList.First(x => x.Id.Equals(T.Patient)).Fname + " " + _patientList.First(x => x.Id.Equals(T.Patient)).Lname + Environment.NewLine + "PRACTITIONER : \t" + _practitionerList.First(x => x.Id.Equals(T.Practitioner)).Name + " " + Environment.NewLine + "HOURS: \t " + T.StartTime + "-END" + T.EndTime + Environment.NewLine + "REASON : \t" + T.Reason;
+                _appointment.Details = "PATIENT : \t" + _patientList.First(x => x.Id.Equals(T.Patient)).Fname + " " + _patientList.First(x => x.Id.Equals(T.Patient)).Lname + Environment.NewLine + "PRACTITIONER : \t" + _practitionerList.First(x => x.Id.Equals(T.Practitioner)).Name + " " + Environment.NewLine + "HOURS: \t " + T.StartTime + "-END" + T.EndTime + Environment.NewLine + "REASON : \t" + T.Reason + Environment.NewLine + "Notify : \t" + T.Reminder; 
                 _appointment.Practitioner = T.Practitioner;
                 _appointment.Patient = T.Patient;
                 _appointment.Dated = T.Dated;
