@@ -15,8 +15,7 @@
             <ColumnDefinition Width="399*"/>
             <ColumnDefinition Width="401*"/>
         </Grid.ColumnDefinitions>
-        <Label Content="Patient Queue" x:Name="queue" Margin="0,-5,10,0" VerticalAlignment="Top" FontWeight="Bold" Height="30" HorizontalAlignment="Right" Width="97"/>
-        <ListView Background="LightGray" Margin="10,64,5,0" x:Name="QueuelistView" SelectionChanged="QueuelistView_SelectionChanged">
+        <ListView  Margin="10,64,5,0" x:Name="QueuelistView" SelectionChanged="QueuelistView_SelectionChanged">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Background="White" Margin="5,5,5,5" Orientation="Horizontal">
@@ -29,6 +28,7 @@
                         </Button>
                         <TextBlock  Margin="0,15,0,5" Text="{Binding Checked}" Width="50" />
                         <TextBlock  Margin="0,15,0,5" Text="{Binding Details}" Width="200" />
+                       
                         <TextBlock  Visibility="Hidden" Margin="0,15,0,5" Text="{Binding Patient}" Width="0" />
                         <TextBlock  Visibility="Hidden"  Margin="0,15,0,5" Text="{Binding Practitioner}" Width="0" />
 
@@ -62,18 +62,18 @@
         </ListView>
         <Button IsDefault="True" x:Name="btnDialogOk" Click="btnDialogOk_Click" MinWidth="60" Margin="0,30,5,0" Content="INTAKE PATIENT" Background="{x:Null}" Foreground="#FF2799F0" Height="33" VerticalAlignment="Top" BorderBrush="#FF2799F0" HorizontalAlignment="Right" Width="120" BorderThickness="0,0,0,5"/>
         <DatePicker x:Name="selectdate"  VerticalAlignment="Top" LostFocus="selectdate_LostFocus" Height="25" HorizontalAlignment="Left" Width="167" Margin="10,37,0,0"/>
-        <ListView Background="LightGray" Margin="0,64,10,0" x:Name="AppointmentlistView" SelectionChanged="AppointlistView_SelectionChanged" Grid.Column="1">
+        <ListView  Margin="0,64,10,0" x:Name="AppointmentlistView" SelectionChanged="AppointlistView_SelectionChanged" Grid.Column="1">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Background="White" Margin="5,5,5,5" Orientation="Horizontal">
                         <Button Height="50" Width="50"  Click="image_Click">
                             <Button.Template>
                                 <ControlTemplate>
-                                    <Image Height="50" Margin="5,5,5,5" Source="{Binding Patientimage}"  Stretch="UniformToFill" Width="50"/>
+                                    <Image Height="50" Margin="5,5,5,5" Source="{Binding Patientimage}"  Stretch="UniformToFill" Width="70"/>
                                 </ControlTemplate>
                             </Button.Template>
                         </Button>
-                        <TextBlock  Margin="0,15,0,5" Text="{Binding Details}" Width="200" />
+                        <TextBlock  Margin="0,15,0,5" Text="{Binding Details}" Width="220" />
                         <TextBlock  Visibility="Hidden" Margin="0,15,0,5" Text="{Binding Patient}" Width="0" />
                         <TextBlock  Visibility="Hidden"  Margin="0,15,0,5" Text="{Binding Practitioner}" Width="0" />
                         <TextBlock  Visibility="Hidden"  Margin="0,15,0,5" Text="{Binding Dated}" Width="0" />
@@ -118,7 +118,6 @@
                 </ItemsPanelTemplate>
             </ListView.ItemsPanel>
         </ListView>
-        <Label Content="Appointments" x:Name="appointment" HorizontalAlignment="Left" Margin="10,-5,0,0" VerticalAlignment="Top" Width="96" FontWeight="Bold" Height="30" Grid.Column="1"/>
         <Button IsDefault="True" x:Name="btnDialogOk_Copy" Click="Schedule_Click" MinWidth="60" Margin="0,34,0,0" Content="NEW APPOINTMENT" HorizontalAlignment="Left" Width="138" Background="{x:Null}" Foreground="#FF2799F0" Height="27" VerticalAlignment="Top" FontFamily="Calibri Light" FontSize="14" BorderBrush="#FF2799F0" Grid.Column="1" BorderThickness="0,0,0,5"/>
         <Label Content="Info:" x:Name="appointmentcount" Margin="0,0,7,0" VerticalAlignment="Top" Grid.Column="1" HorizontalAlignment="Right" Width="216" Height="29"/>
         <Label Content="Info:" x:Name="queuecount" Margin="10,0,0,0" VerticalAlignment="Top" Height="29" HorizontalAlignment="Left" Width="198"/>

@@ -11,13 +11,13 @@
         <Button IsCancel="True" MinWidth="60" Style="{StaticResource CancelButton}" Content="_Cancel" Margin="162,141,0,0" Height="31" VerticalAlignment="Top" HorizontalAlignment="Left" Width="58"/>
         <Label Content="Amount" HorizontalAlignment="Left" Margin="10,87,0,0" VerticalAlignment="Top" Width="57"/>
         <TextBox HorizontalAlignment="Left" Height="23" x:Name="amount" Margin="10,113,0,0" TextWrapping="Wrap" Text="{Binding CurrentUser.Name}" VerticalAlignment="Top" Width="212" RenderTransformOrigin="-1.893,1.016"/>
-        <ComboBox HorizontalAlignment="Left"  x:Name="payment"  SelectedValuePath="Content"  Margin="10,65,0,0" VerticalAlignment="Top" Width="212" RenderTransformOrigin="0.302,-0.056" SelectionChanged="PractitionerSelectionChanged">
+        <ComboBox  x:Name="payment"  SelectedValuePath="Content"   Width="212"  SelectionChanged="PractitionerSelectionChanged" Margin="10,56,17,0" Height="26" VerticalAlignment="Top">
             <ListBoxItem Content=""/>
             <ListBoxItem Content="CASH"/>
             <ListBoxItem Content="INSURANCE"/>
             <ListBoxItem Content="CREDIT CARD"/>
         </ComboBox>
-        <Label Content="Payment method" HorizontalAlignment="Left" Margin="10,31,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.214,0.731" Width="144" FontSize="15" Height="31"/>
+        <Label Content="Payment method" HorizontalAlignment="Left" Margin="10,25,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.214,0.731" Width="144" FontSize="15" Height="31"/>
         <Label Content="Check Out Patient" HorizontalAlignment="Left" Margin="48,0,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.214,0.731" Width="144" FontSize="15" Height="31"/>
     </Grid>
 </Window>

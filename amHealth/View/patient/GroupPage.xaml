@@ -11,7 +11,7 @@
         <WrapPanel HorizontalAlignment="Right" Margin="0,6,164,9"/>
         <TextBox HorizontalAlignment="Left" Height="23" x:Name="name" Margin="10,13,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="164" RenderTransformOrigin="-1.893,1.016" BorderBrush="{x:Null}" IsEnabled="False"/>
         <Label Content="Group members" HorizontalAlignment="Left" Margin="297,10,0,0" VerticalAlignment="Top" Width="101"/>
-        <ListView Background="LightGray" Margin="193,41,0,10" x:Name="PatientListView" SelectionChanged="PatientlistView_SelectionChanged">
+        <ListView  Margin="193,41,0,10" x:Name="PatientListView" SelectionChanged="PatientlistView_SelectionChanged">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Background="White" Margin="5,5,5,5" Orientation="Horizontal">

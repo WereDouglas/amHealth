@@ -72,8 +72,8 @@ namespace amHealth
                 _queue = new Queue(null);
                 _queue.Id = Q.Id;
                 _queue.Org = Q.Org;
-                _queue.Details = "PATIENT : \t" + _patientList.First(x => x.Id.Equals(Q.Patient)).Fname + " " + _patientList.First(x => x.Id.Equals(Q.Patient)).Lname + Environment.NewLine + "PRACTITIONER : \t" + _practitionerList.First(x => x.Id.Equals(Q.Practitioner)).Name + " " + Environment.NewLine + "TIME : \t " + Q.Checked + " REASON: \t" + Q.Reason + " " + Environment.NewLine + "State : \t" + Q.Seen + " " + Q.Amount;
-                _queue.Practitioner = Q.Practitioner;
+                _queue.Details = "PATIENT : \t" + _patientList.First(x => x.Id.Equals(Q.Patient)).Fname + " " + _patientList.First(x => x.Id.Equals(Q.Patient)).Lname + Environment.NewLine + "PRACTITIONER : \t" + _practitionerList.First(x => x.Id.Equals(Q.Practitioner)).Name + " " + Environment.NewLine + "TIME :" + Q.Checked + Environment.NewLine + "REASON: \t" + Q.Reason + " " + Environment.NewLine + "State:" + Q.Seen + " Amount paid:" + Q.Amount; ;
+                _queue.Practitioner = Q.Practitioner;               
                 _queue.Patient = Q.Patient;
                 _queue.Patientimage = _patientList.First(x => x.Id.Equals(Q.Patient)).Image;
                 _queue.Payment = Q.Payment;

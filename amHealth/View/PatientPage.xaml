@@ -6,80 +6,175 @@
       mc:Ignorable="d"
 	Title="Daily weather records" MinWidth="800" MinHeight="600" Background="White" Height="417" >
     <Grid>
-        <GroupBox Header="Patients" Height="Auto" Name="groupBox7" Margin="15,43,5,0" FontWeight="Bold" FontSize="18" Foreground="#FFCCCEDB">
-            
-                <ListView Margin="0,10,6,10" Name="PatientlistView" SelectionChanged="PatientlistView_SelectionChanged">
-                    <ListView.ItemTemplate>
+        <DataGrid  AutoGenerateColumns="False"   Style="{StaticResource infoGrid}"		x:Name="dtGrid"    Margin="0,57,0,0"  >
+            <DataGrid.Resources>
+                <Style TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="Background" Value="#A5A5A5"  />
+                    <Setter Property="VerticalContentAlignment" Value="Center" />
+
+                </Style>
+            </DataGrid.Resources>
+
+            <DataGrid.Columns >
+
+                <DataGridTemplateColumn Header="">
+                    <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <StackPanel Background="White" Margin="1,1,1,1" Orientation="Horizontal">
-                                <CheckBox  x:Name="cbSelectRow" IsChecked="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListViewItem}}, Path=IsSelected}"/>
-                                <Button Height="50" Width="50"  Click="image_Click">
-                                    <Button.Template>
-                                        <ControlTemplate>
-                                            <Image Height="50" Margin="5,5,5,5" Source="{Binding Image}"  Stretch="UniformToFill" Width="50"/>
-                                        </ControlTemplate>
-                                    </Button.Template>
-                                </Button>
-                                <TextBlock  Margin="0,15,0,5" Text="{Binding Lname}" Width="50" />
-                                <TextBlock Margin="5,15,0,5" Text="{Binding Fname}" Width="50" />
-                                <TextBlock Margin="5,15,0,5"  Text="{Binding Gender}" Width="50" />
-                                <TextBlock Margin="5,15,0,5"  Text="{Binding Dob}" Width="100" />
-                                <TextBlock Margin="5,15,0,5"  Text="{Binding Age}" Width="50" />
-                                <TextBlock Margin="0,15,0,5"  Text="{Binding Height}" Width="80" />
-                                <TextBlock Margin="0,15,0,5"  Text="{Binding Weight}" Width="80" />
-                                <TextBlock Margin="0,15,0,5"  Text="{Binding Phone}" Width="80" />
-                                <TextBlock Margin="0,15,0,5"  Text="{Binding Email}" Width="120" />
-                                <TextBlock Margin="0,15,0,5"  Text="{Binding Region}" Width="50" />
-                                <TextBlock Margin="0,15,0,5"  Text="{Binding Sync}" Width="50" />
+                            <StackPanel>
+                                <Image Height="60" Width="60" Source="{Binding Image}"   />
+                                <TextBlock  FontSize="12" Width="140" Text="{Binding Fname}" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+               
+              
+                <DataGridTemplateColumn Header="First name">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Vertical">
+                                <TextBlock  Style="{StaticResource CalendarText}" Text="{Binding Fname}" />
 
-                                <Button Height="36" HorizontalAlignment="Left" x:Name="EditButton" Click="EditButton_Click" Margin="5,0,0,0" Width="36">
-                                    <Button.Template>
-                                        <ControlTemplate>
-                                            <Grid Background="Transparent">
-                                                <Image Source="/amHealth;component/image/Edits.png" Width="25" Height="25" />
-                                            </Grid>
-                                        </ControlTemplate>
-                                    </Button.Template>
-                                </Button>
-                                <Button Height="36" HorizontalAlignment="Left" x:Name="DeleteButton" Click="DeleteButton_Click"  Margin="5,0,0,0" Width="36">
-                                    <Button.Template>
-                                        <ControlTemplate>
-                                            <Grid Background="Transparent">
-                                                <Image Source="/amHealth;component/image/Deletes.png" Width="25" Height="25" />
-                                            </Grid>
-                                        </ControlTemplate>
-                                    </Button.Template>
-                                </Button>
-                                <Button Height="36" HorizontalAlignment="Left" x:Name="MessageButton" Click="MessageButton_Click"  Margin="5,0,0,0" Width="36">
-                                    <Button.Template>
-                                        <ControlTemplate>
-                                            <Grid Background="Transparent">
-                                                <Image Source="/amHealth;component/image/Messages-Information-48.png" Width="25" Height="25" />
-                                            </Grid>
-                                        </ControlTemplate>
-                                    </Button.Template>
-                                </Button>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
 
-                                <Button Height="36" HorizontalAlignment="Left" x:Name="AppointmentButton" Click="appointmentsButton_Click"  Margin="5,0,0,0" Width="36">
-                                    <Button.Template>
-                                        <ControlTemplate>
-                                            <Grid Background="Transparent">
-                                                <Image Source="/amHealth;component/image/Calendar-Date-48.png" Width="25" Height="25" />
-                                            </Grid>
-                                        </ControlTemplate>
-                                    </Button.Template>
+                <DataGridTemplateColumn Header="Last name">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock  Style="{StaticResource CalendarText}" Text="{Binding Lname}" />
+
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Header="Gender">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <Button   Click="image_Click"  Style="{StaticResource CalendarButton}">
+                                    <StackPanel>
+                                        <TextBlock  Style="{StaticResource CalendarText}"  Text="{Binding Gender}" />
+                                    </StackPanel>
                                 </Button>
                             </StackPanel>
                         </DataTemplate>
-                    </ListView.ItemTemplate>
-                    <ListView.ItemsPanel>
-                        <ItemsPanelTemplate>
-                            <StackPanel Orientation="Vertical" />
-                        </ItemsPanelTemplate>
-                    </ListView.ItemsPanel>
-                </ListView>
-            
-        </GroupBox>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Date of birth">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <Button   Click="image_Click" Style="{StaticResource CalendarButton}">
+                                    <StackPanel>
+                                        <TextBlock  FontSize="10" Text="{Binding Dob}" />
+                                    </StackPanel>
+                                </Button>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Header="Height">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <Button   Click="image_Click" Style="{StaticResource CalendarButton}">
+                                    <StackPanel>
+                                        <TextBlock  FontSize="10" Text="{Binding Height}" />
+                                    </StackPanel>
+                                </Button>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Weight">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <Button   Click="image_Click" Style="{StaticResource CalendarButton}">
+                                    <StackPanel>
+                                        <TextBlock  FontSize="10" Text="{Binding Weight}" />
+                                    </StackPanel>
+                                </Button>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Phone">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <Button   Click="image_Click" Style="{StaticResource CalendarButton}">
+                                    <StackPanel>
+                                        <TextBlock  FontSize="10" Text="{Binding Phone}" />
+                                    </StackPanel>
+                                </Button>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Header="E-mail">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <Button   Click="image_Click" Style="{StaticResource CalendarButton}">
+                                    <StackPanel>
+                                        <TextBlock  FontSize="10" Text="{Binding Email}" />
+                                    </StackPanel>
+                                </Button>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Header="Region">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+
+                                <StackPanel>
+                                    <TextBlock  FontSize="10" Text="{Binding Region}" />
+                                </StackPanel>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Header="Edit">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <Button   Click="EditButton_Click" Style="{StaticResource CalendarButton}" >
+                                    <StackPanel>
+                                        <Image  Source="/amHealth;component/image/Edits.png"   />
+
+                                    </StackPanel>
+                                </Button>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Delete">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <Button   Click="DeleteButton_Click"  Style="{StaticResource CalendarButton}" >
+                                    <StackPanel>
+                                        <Image  Source="/amHealth;component/image/Deletes.png"   />
+
+                                    </StackPanel>
+                                </Button>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+
+            </DataGrid.Columns>
+        </DataGrid>
         <Button Content="Add new" HorizontalAlignment="Left" Command="{Binding Path=AddCommand}" Margin="10,10,0,0" x:Name="btnAdd"  VerticalAlignment="Top" Width="74" Height="24" Click="btnAdd_Click_1" >
             <Button.Template>
                 <ControlTemplate>

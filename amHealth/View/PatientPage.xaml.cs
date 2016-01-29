@@ -35,10 +35,11 @@ namespace amHealth
         {
 
             _patientList = new ObservableCollection<Patient>(App.amApp.Patients);
-            PatientlistView.ItemsSource = null;
-            PatientlistView.ItemsSource = _patientList;
-            CollectionView view = (CollectionView)CollectionViewSource.GetDefaultView(PatientlistView.ItemsSource);
+            dtGrid.ItemsSource = null;
+            dtGrid.ItemsSource = _patientList;
+            CollectionView view = (CollectionView)CollectionViewSource.GetDefaultView(dtGrid.ItemsSource);
             view.Filter = UserFilter;
+           
 
         }
         private void EditButton_Click(object sender, RoutedEventArgs e)
@@ -114,7 +115,7 @@ namespace amHealth
 
         private void txtFilter_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
         {
-            CollectionViewSource.GetDefaultView(PatientlistView.ItemsSource).Refresh();
+            CollectionViewSource.GetDefaultView(dtGrid.ItemsSource).Refresh();
         }
         private bool UserFilter(object item)
         {
@@ -141,11 +142,11 @@ namespace amHealth
         {
             if (chkSelectAll.IsChecked.Value == true)
             {
-                PatientlistView.SelectAll();
+                dtGrid.SelectAll();
             }
             else
             {
-                PatientlistView.UnselectAll();
+                dtGrid.UnselectAll();
             }
         }
 
@@ -153,7 +154,7 @@ namespace amHealth
         {
             if (MessageBox.Show("Are you sure you want to delete all these patients?", "Confirmation", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
             {
-                foreach (Patient u in PatientlistView.SelectedItems)
+                foreach (Patient u in dtGrid.SelectedItems)
                 {
                     u.Delete(u.Id.ToString());
                 }
@@ -189,12 +190,12 @@ namespace amHealth
         }
         private void ExportToExcel()
         {
-            PatientlistView.SelectAll();
-            //PatientlistView.ClipboardCopyMode = DataGridClipboardCopyMode.IncludeHeader;
-            ApplicationCommands.Copy.Execute(null, PatientlistView);
+            dtGrid.SelectAll();
+           dtGrid.ClipboardCopyMode = DataGridClipboardCopyMode.IncludeHeader;
+           ApplicationCommands.Copy.Execute(null, dtGrid);
             String resultat = (string)Clipboard.GetData(DataFormats.CommaSeparatedValue);
             String result = (string)Clipboard.GetData(DataFormats.Text);
-            PatientlistView.UnselectAll();
+            dtGrid.UnselectAll();
             System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\amHealth\patient.xls");
             file.WriteLine(result.Replace(',', ' '));
             file.Close();

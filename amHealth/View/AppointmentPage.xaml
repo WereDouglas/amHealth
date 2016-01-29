@@ -12,13 +12,13 @@
     </Page.Resources>
     <Grid>
         <Label Content="" x:Name="internet" HorizontalAlignment="Left" Margin="883,9,0,0" VerticalAlignment="Top" Width="85"/>
-        <Label Content="Appointments" HorizontalAlignment="Left" Margin="10,-1,0,0" VerticalAlignment="Top" Width="139" Foreground="Black" FontSize="20" Height="35" FontFamily="Calibri"/>
-        <Button IsDefault="True" x:Name="btnDialogOk" Click="btnDialogOk_Click" MinWidth="60" Margin="0,9,10,0" Content="SCHEDULE APPOINTMENT" HorizontalAlignment="Right" Width="150" Background="{x:Null}" Foreground="#FF3399FF" Height="22" VerticalAlignment="Top" FontFamily="Calibri Light" FontSize="14" BorderBrush="#FF2799F0" BorderThickness="0,0,0,5"/>
-        <Button IsDefault="True" x:Name="btnDialogOk_Copy" Click="btnCalendar" MinWidth="60" Margin="0,9,165,0" Content="VIEW CALENDAR" HorizontalAlignment="Right" Width="144" Background="{x:Null}" Foreground="#FF2799F0" Height="25" VerticalAlignment="Top" FontFamily="Calibri Light" FontSize="14" BorderBrush="#FF2799F0" BorderThickness="0,0,0,6" FontWeight="Bold"/>
+        <Label Content="Appointments" HorizontalAlignment="Left" Margin="10,17,0,0" VerticalAlignment="Top" Width="139" Foreground="Black" FontSize="20" Height="35" FontFamily="Calibri"/>
+        <Button IsDefault="True" x:Name="btnDialogOk" Click="btnDialogOk_Click" MinWidth="60" Margin="0,27,10,0" Content="SCHEDULE APPOINTMENT" HorizontalAlignment="Right" Width="150" Background="{x:Null}" Foreground="#FF3399FF" Height="22" VerticalAlignment="Top" FontFamily="Calibri Light" FontSize="14" BorderBrush="#FF2799F0" BorderThickness="0,0,0,5"/>
+        <Button IsDefault="True" x:Name="btnDialogOk_Copy" Click="btnCalendar" MinWidth="60" Margin="0,27,165,0" Content="VIEW CALENDAR" HorizontalAlignment="Right" Width="144" Background="{x:Null}" Foreground="#FF2799F0" Height="25" VerticalAlignment="Top" FontFamily="Calibri Light" FontSize="14" BorderBrush="#FF2799F0" BorderThickness="0,0,0,6" FontWeight="Bold"/>
         <DataGrid  AutoGenerateColumns="False"  CanUserAddRows="False" FrozenColumnCount ="1" HorizontalScrollBarVisibility="Auto" 
         		x:Name="AppointmentListView"  Background="{x:Null}" RowBackground="LightYellow" 
         		AlternatingRowBackground="LightBlue" BorderBrush="#FFC5C5C5" BorderThickness="1" 
-        		SelectionMode="Extended" Height="auto" VerticalAlignment="Top" Width="auto"  HorizontalGridLinesBrush="#FFC5C5C5" VerticalGridLinesBrush="#FFC5C5C5" Margin="0,46,0,0"  >
+        		SelectionMode="Extended" Height="auto" VerticalAlignment="Top" Width="auto"  HorizontalGridLinesBrush="#FFC5C5C5" VerticalGridLinesBrush="#FFC5C5C5" Margin="0,57,0,0"  >
             <DataGrid.Resources>
                 <Style TargetType="{x:Type DataGridColumnHeader}">
                     <Setter Property="Background" Value="#A5A5A5"  />
@@ -292,7 +292,7 @@
             </DataGrid.Columns>
         </DataGrid>
 
-        <DatePicker Name="selectdate" HorizontalAlignment="Left" Margin="164,6,0,0"  VerticalAlignment="Top" Width="171" LostFocus="selectdate_LostFocus"/>
-        <Label Content="Info:" Name="count" HorizontalAlignment="Left" Margin="340,6,0,0" VerticalAlignment="Top" Width="260"/>
+        <DatePicker Name="selectdate" HorizontalAlignment="Left" Margin="164,24,0,0"  VerticalAlignment="Top" Width="171" LostFocus="selectdate_LostFocus"/>
+        <Label Content="Info:" Name="count" HorizontalAlignment="Left" Margin="340,24,0,0" VerticalAlignment="Top" Width="260"/>
     </Grid>
 </Page>

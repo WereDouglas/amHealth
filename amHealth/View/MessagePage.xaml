@@ -42,7 +42,7 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <ListView Background="LightGray" Margin="10,60,10,10" x:Name="GroupListView" SelectionChanged="PatientlistView_SelectionChanged">
+        <ListView  Margin="10,60,10,10" x:Name="GroupListView" SelectionChanged="PatientlistView_SelectionChanged">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Background="White" Margin="5,5,5,5" Orientation="Horizontal">

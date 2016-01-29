@@ -36,9 +36,9 @@ namespace amHealth
         {
 
             _practitionerList = new ObservableCollection<Practitioner>(App.amApp.Practitioners);
-            PractitionerlistView.ItemsSource = null;
-            PractitionerlistView.ItemsSource = _practitionerList;
-            CollectionView view = (CollectionView)CollectionViewSource.GetDefaultView(PractitionerlistView.ItemsSource);
+            dtGrid.ItemsSource = null;
+            dtGrid.ItemsSource = _practitionerList;
+            CollectionView view = (CollectionView)CollectionViewSource.GetDefaultView(dtGrid.ItemsSource);
             view.Filter = UserFilter;
 
         }
@@ -117,7 +117,7 @@ namespace amHealth
 
         private void txtFilter_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
         {
-            CollectionViewSource.GetDefaultView(PractitionerlistView.ItemsSource).Refresh();
+            CollectionViewSource.GetDefaultView(dtGrid.ItemsSource).Refresh();
         }
         private bool UserFilter(object item)
         {
@@ -144,11 +144,11 @@ namespace amHealth
         {
             if (chkSelectAll.IsChecked.Value == true)
             {
-                PractitionerlistView.SelectAll();
+                dtGrid.SelectAll();
             }
             else
             {
-                PractitionerlistView.UnselectAll();
+                dtGrid.UnselectAll();
             }
         }
 
@@ -156,7 +156,7 @@ namespace amHealth
         {
             if (MessageBox.Show("Are you sure you want to delete all these practitioners?", "Confirmation", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
             {
-                foreach (Practitioner u in PractitionerlistView.SelectedItems)
+                foreach (Practitioner u in dtGrid.SelectedItems)
                 {
                     u.Delete(u.Id.ToString());
                 }
@@ -193,12 +193,12 @@ namespace amHealth
         }
         private void ExportToExcel()
         {
-            PractitionerlistView.SelectAll();
-            //PractitionerlistView.ClipboardCopyMode = DataGridClipboardCopyMode.IncludeHeader;
-            ApplicationCommands.Copy.Execute(null, PractitionerlistView);
+            dtGrid.SelectAll();
+            dtGrid.ClipboardCopyMode = DataGridClipboardCopyMode.IncludeHeader;
+            ApplicationCommands.Copy.Execute(null, dtGrid);
             String resultat = (string)Clipboard.GetData(DataFormats.CommaSeparatedValue);
             String result = (string)Clipboard.GetData(DataFormats.Text);
-            PractitionerlistView.UnselectAll();
+            dtGrid.UnselectAll();
             System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\amHealth\practitioner.xls");
             file.WriteLine(result.Replace(',', ' '));
             file.Close();

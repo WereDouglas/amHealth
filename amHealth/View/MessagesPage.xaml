@@ -43,16 +43,16 @@
                 <DataGridTextColumn Header="ID#" Binding="{Binding Id}" />
             </DataGrid.Columns>
         </DataGrid>
-        <Label Content="Type" HorizontalAlignment="Left" Margin="502,7,0,0" VerticalAlignment="Top" Width="48"/>
-        <ComboBox HorizontalAlignment="Left"  x:Name="gender"  SelectedValue="{Binding CurrentUser.Station}" SelectedValuePath="Content"  Margin="555,9,0,0" VerticalAlignment="Top" Width="166" RenderTransformOrigin="0.302,-0.056" SelectionChanged="gender_SelectionChanged">
+        <Label Content="Type" HorizontalAlignment="Left" Margin="502,-3,0,0" VerticalAlignment="Top" Width="48"/>
+        <ComboBox HorizontalAlignment="Left"  x:Name="gender"  SelectedValue="{Binding CurrentUser.Station}" SelectedValuePath="Content"  Margin="555,0,0,0" VerticalAlignment="Top" Width="166" RenderTransformOrigin="0.302,-0.056" SelectionChanged="gender_SelectionChanged" Height="23">
             <ListBoxItem Content=""/>
             <ListBoxItem Content="All"/>
             <ListBoxItem Content="Sent"/>
             <ListBoxItem Content="Not sent"/>
 
         </ComboBox>
-        <Label Content="Messages" HorizontalAlignment="Left" Margin="10,9,0,0" VerticalAlignment="Top" Width="106" FontWeight="Bold" Height="26"/>
-        <Button Content="Delete selected" HorizontalAlignment="Left" Command="{Binding AddCommand}" Margin="282,10,0,0" x:Name="btnAdd_Copy"  VerticalAlignment="Top" Width="106" Height="24" Click="btnDeleteAll_Click" RenderTransformOrigin="0.802,-0.479">
+        <Label Content="Messages" HorizontalAlignment="Left" Margin="10,5,0,0" VerticalAlignment="Top" Width="106" FontWeight="Bold" Height="26"/>
+        <Button Content="Delete selected" HorizontalAlignment="Left" Command="{Binding AddCommand}" Margin="184,7,0,0" x:Name="btnAdd_Copy"  VerticalAlignment="Top" Width="106" Height="24" Click="btnDeleteAll_Click" RenderTransformOrigin="0.802,-0.479">
             <Button.Template>
                 <ControlTemplate>
                     <Grid Background="Transparent">

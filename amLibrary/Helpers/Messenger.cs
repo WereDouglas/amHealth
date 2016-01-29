@@ -43,7 +43,7 @@ namespace amLibrary.Helpers
                 _message.Save();
 
             }
-            catch(Exception r)
+            catch
             {
                 _message = new Message(parent);
                 _message.Org = "test";
@@ -54,8 +54,7 @@ namespace amLibrary.Helpers
                 _message.Sync = "F";
                 _message.Sent = "F";
                 _message.Save();
-                throw r;
-
+               
 
             }
         }
