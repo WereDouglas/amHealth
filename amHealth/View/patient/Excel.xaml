@@ -7,7 +7,6 @@
         Title="Add user" MinHeight="600" MinWidth="800"  WindowStyle="None" Height="526.866" Width="695">
 
     <Grid IsHitTestVisible="True" Margin="0,0,2,0" Height="590" VerticalAlignment="Top">
-        <Button IsCancel="True" MinWidth="60" Content="_Cancel" Margin="0,5,14,0" Height="29" VerticalAlignment="Top" HorizontalAlignment="Right" Width="55" Click="Button_Click" BorderBrush="{x:Null}"/>
         <Label Content="Import excel list" HorizontalAlignment="Left" Margin="28,5,0,0" VerticalAlignment="Top" Width="110" FontWeight="Bold"/>
         <TextBox Name="txtFilePath" Visibility="Hidden" Margin="0,10,42,0" FontSize="15" Opacity="1" Height="21" VerticalAlignment="Top" HorizontalAlignment="Right" Width="207" />
         <TextBox x:Name="txtFilter" TextChanged="txtFilter_TextChanged" Height="28" VerticalAlignment="Top" HorizontalAlignment="Left" Width="503" Margin="273,186,0,0" />
@@ -53,7 +52,7 @@
         <GroupBox Header="New list" HorizontalAlignment="Left" Margin="10,36,0,0" VerticalAlignment="Top" Height="144" Width="258">
             <Grid Margin="0,0,-2,-12">
                 <TextBox HorizontalAlignment="Left" Height="20" x:Name="groupname" Margin="39,32,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="180" RenderTransformOrigin="-1.893,1.016"/>
-                <Button IsDefault="True" x:Name="browse" Click="btnBrowse_Click" MinWidth="60" Margin="39,82,0,0" Content="Browse / import" HorizontalAlignment="Left" Width="180" Background="#FFFFE100" Foreground="White" Height="30" VerticalAlignment="Top" BorderBrush="{x:Null}"/>
+                <Button IsDefault="True" x:Name="browse" Click="btnBrowse_Click" MinWidth="60" Margin="39,57,0,0" Content="Browse / import" HorizontalAlignment="Left" Width="180" Background="{x:Null}" Foreground="#FF3C8DBC" Height="30" VerticalAlignment="Top" BorderBrush="#FF3C8DBC" BorderThickness="0,0,0,3"/>
                 <Label Content="Grouping Name" HorizontalAlignment="Left" Margin="24,0,0,0" VerticalAlignment="Top" Width="100" Height="27"/>
             </Grid>
         </GroupBox>
@@ -66,10 +65,20 @@
                         </Paragraph>
                     </FlowDocument>
                 </RichTextBox>
-                <Button IsDefault="True" x:Name="btnDialogOk" Click="btnDialogOk_Click" MinWidth="60" Margin="10,79,0,0" Content="Send message" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" Width="199"/>
+                <Button IsDefault="True" Style="{StaticResource SaveButton}" x:Name="btnDialogOk" Click="btnDialogOk_Click" MinWidth="60" Margin="10,79,0,0" Content="Send message" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" Width="199"/>
             </Grid>
         </GroupBox>
         <Label Content="Search" HorizontalAlignment="Left" Margin="207,190,0,0" VerticalAlignment="Top" Width="61" FontWeight="Bold"/>
+        <Button Content="Delete selected" IsCancel="True" Command="{Binding AddCommand}" Margin="0,5,10,0" x:Name="btnExport_Copy"  VerticalAlignment="Top" Height="23"  HorizontalAlignment="Right" Width="97">
+            <Button.Template>
+                <ControlTemplate>
+                    <Grid Background="Transparent">
+                        <TextBlock Style="{StaticResource ResourceKey=HeaderText}"><Run Text="Close"/></TextBlock>
+                        <Image  Stretch="Uniform" Source="/amHealth;component/image/Cancel-48.png" HorizontalAlignment="Left" />
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
 
     </Grid>
 

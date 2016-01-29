@@ -38,9 +38,8 @@
             </ListView.ItemsPanel>
         </ListView>
         <TextBox x:Name="txtFilter" TextChanged="txtFilter_TextChanged" Height="26" VerticalAlignment="Top" HorizontalAlignment="Left" Width="166" Margin="403,6,0,0" />
-        <Button IsCancel="True" MinWidth="60" Content="_Cancel" Height="29" VerticalAlignment="Top" HorizontalAlignment="Right" Width="76" Click="Button_Click_1" Margin="0,5,23,0"/>
         <WrapPanel HorizontalAlignment="Right" Margin="0,-207,548,169"/>
-        <Button IsCancel="True" MinWidth="60" Content="_Cancel" Margin="98,295,0,0" Height="29" VerticalAlignment="Top" HorizontalAlignment="Left" Width="76"/>
+        <Button IsCancel="True" MinWidth="60" Style="{StaticResource CancelButton}" Content="_Cancel" Margin="98,295,0,0" Height="29" VerticalAlignment="Top" HorizontalAlignment="Left" Width="76"/>
         <Label Content="Subject" HorizontalAlignment="Left" Margin="0,95,0,0" VerticalAlignment="Top" Width="48"/>
         <TextBox HorizontalAlignment="Left" Height="23" x:Name="subject" Margin="7,121,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="164" RenderTransformOrigin="-1.893,1.016"/>
         <Label Content="Message" HorizontalAlignment="Left" Margin="8,149,0,0" VerticalAlignment="Top" Width="65"/>
@@ -53,7 +52,17 @@
         </RichTextBox>
         <CheckBox Content="Phone" x:Name="PhoneChk" HorizontalAlignment="Left" Margin="10,63,0,0" VerticalAlignment="Top"/>
         <CheckBox Content="Email" x:Name="EmailChk" HorizontalAlignment="Left" Margin="78,63,0,0" VerticalAlignment="Top"/>
-        <Button IsDefault="True" x:Name="btnDialogOk" Click="btnDialogOk_Click" MinWidth="60" Margin="7,295,0,0" Content="Send message" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" Width="86"/>
+        <Button IsDefault="True" Style="{StaticResource SaveButton}" x:Name="btnDialogOk" Click="btnDialogOk_Click" MinWidth="60" Margin="7,295,0,0" Content="Send message" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" Width="86"/>
+        <Button Content="Delete selected" IsCancel="True" Command="{Binding AddCommand}" Margin="0,6,10,0" x:Name="btnExport_Copy"  VerticalAlignment="Top" Height="26"  HorizontalAlignment="Right" Width="97">
+            <Button.Template>
+                <ControlTemplate>
+                    <Grid Background="Transparent">
+                        <TextBlock Style="{StaticResource ResourceKey=HeaderText}"><Run Text="Close"/></TextBlock>
+                        <Image  Stretch="Uniform" Source="/amHealth;component/image/Cancel-48.png" HorizontalAlignment="Left" />
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
     </Grid>
 
 </Window>

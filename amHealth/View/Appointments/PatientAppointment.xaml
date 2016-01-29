@@ -9,7 +9,7 @@
     <Grid IsHitTestVisible="True" Margin="0,0,2,0" Height="592" VerticalAlignment="Top">
         <Button IsDefault="True" x:Name="btnDialogOk" Click="btnDialogOk_Click" MinWidth="60" Margin="0,530,118,0" Content="Create" HorizontalAlignment="Right" Width="83" Background="#FF2799F0" Foreground="White" Height="30" VerticalAlignment="Top"/>
         <Button IsCancel="True" MinWidth="60" Content="_Cancel" Margin="0,531,37,0" Height="29" VerticalAlignment="Top" HorizontalAlignment="Right" Width="76"/>
-        <Label Content="Manage appointment" Margin="0,5,297,0" VerticalAlignment="Top" RenderTransformOrigin="1.214,0.731" FontSize="15" FontWeight="Bold" HorizontalAlignment="Right" Width="177"/>
+        <Label Content="Manage appointment" Margin="0,5,260,0" VerticalAlignment="Top" RenderTransformOrigin="1.214,0.731" Style="{StaticResource HeaderLabel}"  HorizontalAlignment="Right" Width="214" Height="40"/>
         <ListView Background="LightGray" Margin="0,76,0,0" x:Name="AppointmentlistView" SelectionChanged="AppointlistView_SelectionChanged">
             <ListView.ItemTemplate>
                 <DataTemplate>
@@ -58,8 +58,17 @@
         </ListView>
         <DatePicker x:Name="selectdate" Margin="284,46,0,0"  VerticalAlignment="Top" LostFocus="selectdate_LostFocus" Height="25" HorizontalAlignment="Left" Width="108"/>
         <Label Content="Info:" x:Name="appointmentcount" HorizontalAlignment="Left" Margin="397,45,0,0" VerticalAlignment="Top" Width="233"/>
-        <Button IsCancel="True" MinWidth="60" Content="_Cancel" Margin="0,5,13,0" Height="29" VerticalAlignment="Top" HorizontalAlignment="Right" Width="76"/>
         <Label Content="Info:" x:Name="prac" HorizontalAlignment="Left" Margin="10,45,0,0" VerticalAlignment="Top" Width="233"/>
+        <Button Content="Delete selected" IsCancel="True" Command="{Binding AddCommand}" Margin="0,10,13,0" x:Name="btnExport_Copy"  VerticalAlignment="Top" Height="25"  HorizontalAlignment="Right" Width="97">
+            <Button.Template>
+                <ControlTemplate>
+                    <Grid Background="Transparent">
+                        <TextBlock Style="{StaticResource ResourceKey=HeaderText}"><Run Text="Close"/></TextBlock>
+                        <Image  Stretch="Uniform" Source="/amHealth;component/image/Cancel-48.png" HorizontalAlignment="Left" />
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
     </Grid>
 
 </Window>

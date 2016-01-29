@@ -235,5 +235,10 @@ namespace amHealth.View.patient
                 return;
             }
         }
+
+        private void Button_Click_export(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

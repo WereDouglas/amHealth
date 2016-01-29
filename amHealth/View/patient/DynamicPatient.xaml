@@ -7,8 +7,18 @@
         Title="Add user" MinHeight="600" MinWidth="800"  WindowStyle="None" Height="526.866" Width="695">
 
     <Grid IsHitTestVisible="True" Margin="0,0,2,0" Height="590" VerticalAlignment="Top">
-        <Button IsCancel="True" MinWidth="60" Content="_Cancel" Margin="0,10,14,0" Height="29" VerticalAlignment="Top" HorizontalAlignment="Right" Width="88" Click="Button_Click" BorderBrush="{x:Null}"/>
-        <Label Content="Message patients" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="137" FontWeight="Bold"/>
+        <Button Content="Delete selected" IsCancel="True" Command="{Binding AddCommand}" Margin="0,8,14,0" x:Name="btnExport_Copy"  VerticalAlignment="Top" Height="23"  HorizontalAlignment="Right" Width="97">
+            <Button.Template>
+                <ControlTemplate>
+                    <Grid Background="Transparent">
+                        <TextBlock Style="{StaticResource HeaderText}"><Run Text="Close"/></TextBlock>
+                        <Image  Stretch="Uniform" Source="/amHealth;component/image/Cancel-48.png" HorizontalAlignment="Left" />
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <Label Content="Message patients" Style="{StaticResource HeaderLabel}" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="171" FontWeight="Bold" Height="34"/>
         <TextBox Name="txtFilePath" Visibility="Hidden" Margin="0,10,42,0" FontSize="15" Opacity="1" Height="21" VerticalAlignment="Top" HorizontalAlignment="Right" Width="207" />
         <TextBox x:Name="txtFilter" TextChanged="txtFilter_TextChanged" Height="28" VerticalAlignment="Top" HorizontalAlignment="Left" Width="700" Margin="76,193,0,0" />
         <DataGrid Name="dtGrid" HorizontalAlignment="Left" Margin="10,226,0,0" VerticalAlignment="Top" Height="354" Width="766"  CanUserReorderColumns="True" CanUserResizeColumns="True" 
@@ -23,7 +33,7 @@
                         <DataTemplate>
                             <CheckBox  x:Name="cbSelectRow" IsChecked="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListViewItem}}, Path=IsSelected}"/>
 
-                             </DataTemplate>
+                        </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
 
                 </DataGridTemplateColumn>
@@ -49,7 +59,7 @@
                         </Paragraph>
                     </FlowDocument>
                 </RichTextBox>
-                <Button IsDefault="True" x:Name="btnDialogOk" Click="btnDialogOk_Click" MinWidth="60" Margin="648,64,0,0" Content="Send message" Height="42" VerticalAlignment="Top" HorizontalAlignment="Left" Width="92"/>
+                <Button IsDefault="True" Style="{StaticResource SaveButton}" x:Name="btnDialogOk" Click="btnDialogOk_Click" MinWidth="60" Margin="648,64,0,0" Content="Send message" Height="42" VerticalAlignment="Top" HorizontalAlignment="Left" Width="92"/>
             </Grid>
         </GroupBox>
         <Label Content="Search" HorizontalAlignment="Left" Margin="10,193,0,0" VerticalAlignment="Top" Width="61" FontWeight="Bold"/>

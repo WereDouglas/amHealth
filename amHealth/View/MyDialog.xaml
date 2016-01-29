@@ -9,8 +9,8 @@
     <Grid HorizontalAlignment="Left" Width="239">
         <TextBlock Text="Reason for cancellation" Margin="26,5,0,0" HorizontalAlignment="Left" Width="127" Height="23" VerticalAlignment="Top" />
         <TextBox x:Name="ResponseTextBox" Height="38" Margin="26,33,0,0" HorizontalAlignment="Left" Width="195" VerticalAlignment="Top" />
-        <Button Content="Ok" Click="OKButton_Click" Margin="26,101,0,0" HorizontalAlignment="Left" Width="72" Height="31" VerticalAlignment="Top" />
+        <Button Content="Ok" Style="{StaticResource SaveButton}" Click="OKButton_Click" Margin="26,101,0,0" HorizontalAlignment="Left" Width="72" Height="31" VerticalAlignment="Top" />
         <CheckBox Content="Notify patient?" Margin="26,76,0,0" Name="ChkNotify" HorizontalAlignment="Left" Width="111" Height="19" VerticalAlignment="Top"/>
-        <Button IsCancel="True" MinWidth="60" Content="_Cancel" Margin="127,101,0,0" Height="31" VerticalAlignment="Top" HorizontalAlignment="Left" Width="58"/>
+        <Button IsCancel="True" Style="{StaticResource CancelButton}" MinWidth="60" Content="_Cancel" Margin="161,101,0,0" Height="31" VerticalAlignment="Top" HorizontalAlignment="Left" Width="58"/>
     </Grid>
 </Window>

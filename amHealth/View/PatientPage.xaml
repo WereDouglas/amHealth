@@ -6,17 +6,13 @@
       mc:Ignorable="d"
 	Title="Daily weather records" MinWidth="800" MinHeight="600" Background="White" Height="417" >
     <Grid>
-        <GroupBox Header="Patients" Height="Auto" Name="groupBox7" Margin="10,72,10,10">
-            <Grid >
-                <ListView Background="LightGray" Margin="0,10,6,10" Name="PatientlistView" SelectionChanged="PatientlistView_SelectionChanged">
+        <GroupBox Header="Patients" Height="Auto" Name="groupBox7" Margin="15,43,5,0" FontWeight="Bold" FontSize="18" Foreground="#FFCCCEDB">
+            
+                <ListView Margin="0,10,6,10" Name="PatientlistView" SelectionChanged="PatientlistView_SelectionChanged">
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <StackPanel Background="White" Margin="5,5,5,5" Orientation="Horizontal">
-
+                            <StackPanel Background="White" Margin="1,1,1,1" Orientation="Horizontal">
                                 <CheckBox  x:Name="cbSelectRow" IsChecked="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListViewItem}}, Path=IsSelected}"/>
-
-
-
                                 <Button Height="50" Width="50"  Click="image_Click">
                                     <Button.Template>
                                         <ControlTemplate>
@@ -82,9 +78,9 @@
                         </ItemsPanelTemplate>
                     </ListView.ItemsPanel>
                 </ListView>
-            </Grid>
+            
         </GroupBox>
-        <Button Content="Add new" HorizontalAlignment="Left" Command="{Binding Path=AddCommand}" Margin="15,5,0,0" x:Name="btnAdd"  VerticalAlignment="Top" Width="74" Height="24" Click="btnAdd_Click_1" >
+        <Button Content="Add new" HorizontalAlignment="Left" Command="{Binding Path=AddCommand}" Margin="10,10,0,0" x:Name="btnAdd"  VerticalAlignment="Top" Width="74" Height="24" Click="btnAdd_Click_1" >
             <Button.Template>
                 <ControlTemplate>
                     <Grid Background="Transparent">
@@ -94,7 +90,7 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <Button Content="Delete selected" HorizontalAlignment="Left" Command="{Binding AddCommand}" Margin="397,5,0,0" x:Name="btnAdd_Copy"  VerticalAlignment="Top" Width="105" Height="24" Click="btnDeleteAll_Click">
+        <Button Content="Delete selected" HorizontalAlignment="Left" Command="{Binding AddCommand}" Margin="436,10,0,0" x:Name="btnAdd_Copy"  VerticalAlignment="Top" Width="105" Height="24" Click="btnDeleteAll_Click">
             <Button.Template>
                 <ControlTemplate>
                     <Grid Background="Transparent">
@@ -104,7 +100,7 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <Button Content="Delete selected" Command="{Binding AddCommand}" Margin="94,5,0,0" x:Name="btnExport"  VerticalAlignment="Top" Height="24" Click="Button_Click_export" HorizontalAlignment="Left" Width="106">
+        <Button Content="Delete selected" Command="{Binding AddCommand}" Margin="89,10,0,0" x:Name="btnExport"  VerticalAlignment="Top" Height="24" Click="Button_Click_export" HorizontalAlignment="Left" Width="106">
             <Button.Template>
                 <ControlTemplate>
                     <Grid Background="Transparent">
@@ -114,13 +110,10 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <TextBlock x:Name="lblName" Margin="507,5,0,0" TextAlignment="Center" FontWeight="Bold" RenderTransformOrigin="0.5,0.5" Foreground="#FF0A518F" Height="21" VerticalAlignment="Top" HorizontalAlignment="Left" Width="58"><InlineUIContainer>
-        		
-        	</InlineUIContainer></TextBlock>
-        <TextBox Name="txtFilter" TextChanged="txtFilter_TextChanged" Height="21" VerticalAlignment="Top" HorizontalAlignment="Right" Width="181" Margin="0,5,2,0" />
-        <Label Content="Search by phone/contact" HorizontalAlignment="Right" Margin="0,2,187,0" VerticalAlignment="Top" Width="149" Height="27"/>
-        <CheckBox Margin="313,5,521,574" x:Name="chkSelectAll"  Click="chkSelectAll_Click" Content="Check all" />
-        <Button Content="Delete selected" Command="{Binding AddCommand}" Margin="207,5,0,0" x:Name="btnExport_Copy"  VerticalAlignment="Top" Height="28" Click="Button_Click_export" HorizontalAlignment="Left" Width="106">
+        <TextBox Name="txtFilter" TextChanged="txtFilter_TextChanged" Height="21" VerticalAlignment="Top" HorizontalAlignment="Right" Width="181" Margin="0,10,5,0" />
+        <Label Content="Search by phone/contact" HorizontalAlignment="Right" Margin="0,7,191,0" VerticalAlignment="Top" Width="149" Height="27" />
+        <CheckBox Margin="343,10,491,0" x:Name="chkSelectAll"  Click="chkSelectAll_Click" Content="Check all" Height="21" VerticalAlignment="Top" />
+        <Button Content="Delete selected" Command="{Binding AddCommand}" Margin="213,10,0,0" x:Name="btnExport_Copy"  VerticalAlignment="Top" Height="28" Click="Button_Click_export" HorizontalAlignment="Left" Width="106">
             <Button.Template>
                 <ControlTemplate>
                     <Grid Background="Transparent">
@@ -130,7 +123,6 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <Label Content="Patients" HorizontalAlignment="Left" Margin="297,33,0,0" VerticalAlignment="Top" Width="83" FontFamily="Calibri" FontSize="20" Foreground="#FF007ACC"/>
 
 
 

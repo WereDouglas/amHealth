@@ -7,7 +7,7 @@
         Title="Add user"  MinHeight="600" Width="327.677"  WindowStyle="None">
 
     <Grid IsHitTestVisible="True" Margin="0,0,2,0" Height="592" VerticalAlignment="Top">
-        <GroupBox Header="" HorizontalAlignment="Left" Margin="10,83,0,0" Name="groupBox10" Width="298" BorderBrush="#FFE7E8EC" Height="150" VerticalAlignment="Top">
+        <GroupBox Header="" HorizontalAlignment="Left" Margin="10,117,0,0" Name="groupBox10" Width="298" BorderBrush="#FFE7E8EC" Height="150" VerticalAlignment="Top">
             <Grid Margin="0,0,-2,-2" Height="130" VerticalAlignment="Top">
                 <Image Margin="161,10,0,0" x:Name="imgCapture" Source="{Binding Image}" HorizontalAlignment="Left" Width="117" Height="110" VerticalAlignment="Top" />
                 <Label Content="{Binding Fname}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,32,0,0" Background="WhiteSmoke" Width="151" Height="25"/>
@@ -20,29 +20,28 @@
         <Label x:Name="lblQuestion" Margin="20,9,298,391">
 
         </Label>
-        <Button IsDefault="True" x:Name="btnDialogOk" Click="btnDialogOk_Click" MinWidth="60" Margin="0,530,118,0" Content="CHECK IN" HorizontalAlignment="Right" Width="83" Background="#FF2799F0" Foreground="White" Height="30" VerticalAlignment="Top"/>
-        <Button IsCancel="True" MinWidth="60" Content="_Cancel" Margin="0,531,37,0" Height="29" VerticalAlignment="Top" HorizontalAlignment="Right" Width="76"/>
-        <TextBox HorizontalAlignment="Left" Height="23" x:Name="reason" Margin="20,305,0,0" TextWrapping="Wrap" Text="{Binding CurrentUser.Name}" VerticalAlignment="Top" Width="256" RenderTransformOrigin="-1.893,1.016"/>
-        <TextBox x:Name="txtFilter" TextChanged="txtFilter_TextChanged" Height="28" VerticalAlignment="Top" HorizontalAlignment="Right" Width="202" Margin="0,50,10,0" />
-        <Label Content="Intake Patient" HorizontalAlignment="Left" Margin="12,0,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.214,0.731" Width="165" FontSize="15" FontWeight="Bold" Height="32"/>
-        <Label Content="Appointment information" HorizontalAlignment="Left" Margin="20,233,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.214,0.731" Width="288" FontSize="15"/>
-        <Label Content="Reason for visit" HorizontalAlignment="Left" Margin="19,268,0,0" VerticalAlignment="Top" Width="256"/>
-        <Label Content="Amount" HorizontalAlignment="Left" Margin="25,456,0,0" VerticalAlignment="Top" Width="57"/>
-        <ComboBox HorizontalAlignment="Left"  x:Name="practitioners"  SelectedValuePath="Content"  Margin="19,363,0,0" VerticalAlignment="Top" Width="262" RenderTransformOrigin="0.302,-0.056" SelectionChanged="PractitionerSelectionChanged">
+        <Button IsDefault="True" Style="{StaticResource SaveButton}" x:Name="btnDialogOk" Click="btnDialogOk_Click" MinWidth="60" Margin="0,548,118,0" Content="CHECK IN" HorizontalAlignment="Right" Width="83" Background="#FF2799F0" Foreground="White" Height="30" VerticalAlignment="Top"/>
+        <Button IsCancel="True" MinWidth="60" Style="{StaticResource CancelButton}" Content="_Cancel" Margin="0,549,37,0" Height="28" VerticalAlignment="Top" HorizontalAlignment="Right" Width="76"/>
+        <TextBox HorizontalAlignment="Left" Height="23" x:Name="reason" Margin="20,339,0,0" TextWrapping="Wrap" Text="{Binding CurrentUser.Name}" VerticalAlignment="Top" Width="261" RenderTransformOrigin="-1.893,1.016"/>
+        <TextBox x:Name="txtFilter" TextChanged="txtFilter_TextChanged" Height="28" VerticalAlignment="Top" HorizontalAlignment="Right" Width="296" Margin="0,90,10,0" />
+        <Label Content="Intake Patient" Style="{StaticResource HeaderLabel}" HorizontalAlignment="Left" Margin="86,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.214,0.731" Width="136" FontSize="15" FontWeight="Bold" Height="32"/>
+        <Label Content="Reason for visit" HorizontalAlignment="Left" Margin="19,302,0,0" VerticalAlignment="Top" Width="256" Height="32"/>
+        <Label Content="Amount" HorizontalAlignment="Left" Margin="25,490,0,0" VerticalAlignment="Top" Width="57" Height="26"/>
+        <ComboBox HorizontalAlignment="Left"  x:Name="practitioners"  SelectedValuePath="Content"  Margin="19,397,0,0" VerticalAlignment="Top" Width="262" RenderTransformOrigin="0.302,-0.056" SelectionChanged="PractitionerSelectionChanged">
 
 
         </ComboBox>
-        <Label Content="Choose practitioner" HorizontalAlignment="Left" Margin="19,328,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.214,0.731" Width="144" FontSize="15"/>
-        <Label Content="Find patient" HorizontalAlignment="Left" Margin="10,49,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.214,0.731" Width="91" FontSize="14"/>
-        <TextBox HorizontalAlignment="Left" Height="23" x:Name="amount" Margin="25,487,0,0" TextWrapping="Wrap" Text="{Binding CurrentUser.Name}" VerticalAlignment="Top" Width="256" RenderTransformOrigin="-1.893,1.016"/>
-        <ComboBox HorizontalAlignment="Left"  x:Name="payment"  SelectedValuePath="Content"  Margin="25,429,0,0" VerticalAlignment="Top" Width="262" RenderTransformOrigin="0.302,-0.056" SelectionChanged="PractitionerSelectionChanged">
+        <Label Content="Choose practitioner" HorizontalAlignment="Left" Margin="19,362,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.214,0.731" Width="144" FontSize="15" Height="30"/>
+        <Label Content="Find patient" HorizontalAlignment="Left" Margin="12,65,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.214,0.731" Width="91" FontSize="14"/>
+        <TextBox HorizontalAlignment="Left" Height="22" x:Name="amount" Margin="25,522,0,0" TextWrapping="Wrap" Text="{Binding CurrentUser.Name}" VerticalAlignment="Top" Width="256" RenderTransformOrigin="-1.893,1.016"/>
+        <ComboBox HorizontalAlignment="Left"  x:Name="payment"  SelectedValuePath="Content"  Margin="25,463,0,0" VerticalAlignment="Top" Width="262" RenderTransformOrigin="0.302,-0.056" SelectionChanged="PractitionerSelectionChanged">
             <ListBoxItem Content=""/>
             <ListBoxItem Content="CASH"/>
             <ListBoxItem Content="INSURANCE"/>
             <ListBoxItem Content="CREDIT CARD"/>
         </ComboBox>
-        <Label Content="Payment method" HorizontalAlignment="Left" Margin="20,394,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.214,0.731" Width="144" FontSize="15"/>
-        <Button Content="Add new" HorizontalAlignment="Left" Command="{Binding AddCommand}" Margin="234,8,0,0" x:Name="btnAdd"  VerticalAlignment="Top" Width="74" Height="24" Click="btnAdd_Click_1" RenderTransformOrigin="1.458,0.869" >
+        <Label Content="Payment method" HorizontalAlignment="Left" Margin="20,419,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.214,0.731" Width="144" FontSize="15" Height="34"/>
+        <Button Content="Add new" HorizontalAlignment="Left" Command="{Binding AddCommand}" Margin="234,61,0,0" x:Name="btnAdd"  VerticalAlignment="Top" Width="74" Height="24" Click="btnAdd_Click_1" RenderTransformOrigin="1.458,0.869" >
             <Button.Template>
                 <ControlTemplate>
                     <Grid Background="Transparent">

@@ -9,8 +9,8 @@
     <Grid IsHitTestVisible="True" Margin="0,0,2,0" Height="590" VerticalAlignment="Top">
 
         <WrapPanel HorizontalAlignment="Right" Margin="0,6,164,9"/>
-        <Button IsDefault="True" x:Name="btnDialogOk" Click="btnDialogOk_Click" MinWidth="60" Margin="12,515,0,0" Content="Create" HorizontalAlignment="Left" Width="83" Background="#FF2799F0" Foreground="White" Height="30" VerticalAlignment="Top" BorderBrush="{x:Null}"/>
-        <Button IsCancel="True" MinWidth="60" Content="_Cancel" Margin="100,515,0,0" Height="29" VerticalAlignment="Top" HorizontalAlignment="Left" Width="76" Click="Button_Click" BorderBrush="{x:Null}"/>
+        <Button IsDefault="True" Style="{StaticResource SaveButton}" x:Name="btnDialogOk" Click="btnDialogOk_Click" MinWidth="60" Margin="12,515,0,0" Content="Create" HorizontalAlignment="Left" Width="83" Background="#FF2799F0" Foreground="White" Height="30" VerticalAlignment="Top" BorderBrush="{x:Null}"/>
+        <Button IsCancel="True" Style="{StaticResource CancelButton}" MinWidth="60" Content="_Cancel" Margin="100,515,0,0" Height="29" VerticalAlignment="Top" HorizontalAlignment="Left" Width="76" Click="Button_Click" BorderBrush="{x:Null}"/>
         <TextBox HorizontalAlignment="Left" Height="23" x:Name="name" Margin="65,36,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="111" RenderTransformOrigin="-1.893,1.016"/>
         <Label Content="Create message group from patients" HorizontalAlignment="Left" Margin="186,5,0,0" VerticalAlignment="Top" Width="271"/>
         <ListView Background="LightGray" Margin="186,36,0,0" x:Name="PatientlistView" SelectionChanged="PatientlistView_SelectionChanged">
@@ -68,7 +68,7 @@
         <TextBox x:Name="txtFilterLocations" TextChanged="txtFilter_TextChanged" Height="29" VerticalAlignment="Top" HorizontalAlignment="Left" Width="166" Margin="10,214,0,0" />
         <TextBox x:Name="txtFilterConditions" TextChanged="txtFilter_TextChanged" Height="29" VerticalAlignment="Top" HorizontalAlignment="Left" Width="166" Margin="8,280,0,0" />
         <Label Content="Age to" HorizontalAlignment="Left" Margin="0,148,0,0" VerticalAlignment="Top" Width="60" Height="27"/>
-        <Button IsDefault="True" x:Name="btnPreview" Click="Preview_Click" MinWidth="60" Margin="10,421,0,0" Content="Preview" HorizontalAlignment="Left" Width="164" Background="#FFFFBE00" Foreground="White" Height="30" VerticalAlignment="Top" BorderBrush="{x:Null}"/>
+        <Button IsDefault="True" x:Name="btnPreview" Click="Preview_Click" MinWidth="60" Margin="10,421,0,0" Content="Preview" HorizontalAlignment="Left" Width="164" Background="{x:Null}" Foreground="#FF2799F0" Height="30" VerticalAlignment="Top" BorderBrush="#FF2799F0" BorderThickness="0,0,0,3" FontWeight="Bold"/>
     </Grid>
 
 </Window>

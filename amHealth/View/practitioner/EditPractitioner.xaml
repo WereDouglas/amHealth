@@ -12,11 +12,11 @@
         </Label>
 
         <WrapPanel HorizontalAlignment="Right" Margin="0,-86,105,101"/>
-        <Button IsDefault="True" x:Name="btnDialogOk" Click="btnDialogOk_Click" MinWidth="60" Margin="116,335,0,0" Content="Update" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" Width="83"/>
+        <Button IsDefault="True"  Style="{StaticResource SaveButton}" x:Name="btnDialogOk" Click="btnDialogOk_Click" MinWidth="60" Margin="116,335,0,0" Content="Update" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" Width="83"/>
 
-        <Button IsCancel="True" MinWidth="60" Content="_Cancel" Margin="0,336,38,0" Height="29" VerticalAlignment="Top" HorizontalAlignment="Right" Width="76"/>
+        <Button IsCancel="True"  Style="{StaticResource CancelButton}" MinWidth="60" Content="_Cancel" Margin="0,336,38,0" Height="29" VerticalAlignment="Top" HorizontalAlignment="Right" Width="76"/>
 
-        <Image Margin="114,27,0,0" x:Name="imgCapture" Source="{Binding Image}" HorizontalAlignment="Left" Width="164" Height="110" VerticalAlignment="Top" />
+        <Image Margin="114,27,0,0"  x:Name="imgCapture" Source="{Binding Image}" HorizontalAlignment="Left" Width="164" Height="110" VerticalAlignment="Top" />
         <Label Content="Name" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,183,0,0"/>
         <WrapPanel HorizontalAlignment="Right" Margin="0,-140,166,116"/>
         <TextBox HorizontalAlignment="Left" x:Name="name" Margin="114,183,0,0" TextWrapping="Wrap" Text="{Binding Name}" Width="164" RenderTransformOrigin="-1.893,1.016" Height="26" VerticalAlignment="Top"/>

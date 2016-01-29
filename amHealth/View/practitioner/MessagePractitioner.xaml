@@ -13,29 +13,29 @@
 
         </Label>
 
-        <WrapPanel HorizontalAlignment="Right" Margin="0,5,106,10"/>
-        <Button IsDefault="True" x:Name="btnDialogOk" Click="btnDialogOk_Click" MinWidth="60" Margin="114,498,0,0" Content="Send message" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" Width="83"/>
+        <WrapPanel HorizontalAlignment="Right" Margin="0,-55,106,70"/>
+        <Button IsDefault="True" Style="{StaticResource SaveButton}" x:Name="btnDialogOk" Click="btnDialogOk_Click" MinWidth="60" Margin="114,438,0,0" Content="Send message" Height="29" VerticalAlignment="Top" HorizontalAlignment="Left" Width="83"/>
 
-        <Button IsCancel="True" MinWidth="60" Content="_Cancel" Margin="0,498,40,0" Height="29" VerticalAlignment="Top" HorizontalAlignment="Right" Width="76"/>
+        <Button Style="{StaticResource CancelButton}" IsCancel="True" MinWidth="60" Content="_Cancel" Margin="0,438,40,0" Height="29" VerticalAlignment="Top" HorizontalAlignment="Right" Width="76"/>
         <TextBox HorizontalAlignment="Left" x:Name="name" Margin="114,183,0,434" TextWrapping="Wrap" Text="{Binding Name}" Width="164" RenderTransformOrigin="-1.893,1.016"/>
-        <Label Content="Subject" HorizontalAlignment="Left" Margin="20,340,0,0" VerticalAlignment="Top" Width="48"/>
-        <TextBox HorizontalAlignment="Left" Height="23" x:Name="subject" Margin="114,343,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="164" RenderTransformOrigin="-1.893,1.016"/>
-        <TextBox HorizontalAlignment="Left" x:Name="phone" Margin="114,273,0,0" TextWrapping="Wrap" Text="{Binding Phone}" Width="164" RenderTransformOrigin="-1.893,1.016" Height="23" VerticalAlignment="Top"/>
-        <Label Content="Phone" HorizontalAlignment="Left" Margin="58,276,0,0" VerticalAlignment="Top" Width="48"/>
-        <Label Content="Email" HorizontalAlignment="Left" Margin="58,307,0,0" VerticalAlignment="Top" Width="48"/>
-        <TextBox HorizontalAlignment="Left" x:Name="email" Margin="114,307,0,0" TextWrapping="Wrap" Text="{Binding Email}" Width="164" RenderTransformOrigin="-1.893,1.016" Height="23" VerticalAlignment="Top"/>
+        <Label Content="Subject" HorizontalAlignment="Left" Margin="20,280,0,0" VerticalAlignment="Top" Width="48"/>
+        <TextBox HorizontalAlignment="Left" Height="23" x:Name="subject" Margin="114,283,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="164" RenderTransformOrigin="-1.893,1.016"/>
+        <TextBox HorizontalAlignment="Left" x:Name="phone" Margin="114,213,0,0" TextWrapping="Wrap" Text="{Binding Phone}" Width="164" RenderTransformOrigin="-1.893,1.016" Height="23" VerticalAlignment="Top"/>
+        <Label Content="Phone" HorizontalAlignment="Left" Margin="58,216,0,0" VerticalAlignment="Top" Width="48"/>
+        <Label Content="Email" HorizontalAlignment="Left" Margin="58,247,0,0" VerticalAlignment="Top" Width="48"/>
+        <TextBox HorizontalAlignment="Left" x:Name="email" Margin="114,247,0,0" TextWrapping="Wrap" Text="{Binding Email}" Width="164" RenderTransformOrigin="-1.893,1.016" Height="23" VerticalAlignment="Top"/>
 
-        <Image Margin="114,46,0,0" x:Name="imgCapture" Source="{Binding Image}" HorizontalAlignment="Left" Width="164" Height="91" VerticalAlignment="Top" />
-        <Label Content="Message" HorizontalAlignment="Left" Margin="20,371,0,0" VerticalAlignment="Top" Width="65"/>
-        <RichTextBox HorizontalAlignment="Left" Name="message" Height="100" Margin="114,371,0,0" VerticalAlignment="Top" Width="164">
+        <Image Margin="114,46,0,0" x:Name="imgCapture" Source="{Binding Image}" HorizontalAlignment="Left" Width="164" Height="91" VerticalAlignment="Top" OpacityMask="#FFCCCEDB" />
+        <Label Content="Message" HorizontalAlignment="Left" Margin="20,311,0,0" VerticalAlignment="Top" Width="65"/>
+        <RichTextBox HorizontalAlignment="Left" Name="message" Height="100" Margin="114,311,0,0" VerticalAlignment="Top" Width="164">
             <FlowDocument>
                 <Paragraph>
                     <Run Text=""/>
                 </Paragraph>
             </FlowDocument>
         </RichTextBox>
-        <CheckBox Content="" Name="PhoneChk" HorizontalAlignment="Left" Margin="20,284,0,0" VerticalAlignment="Top"/>
-        <CheckBox Content="" Name="EmailChk" HorizontalAlignment="Left" Margin="20,311,0,0" VerticalAlignment="Top"/>
+        <CheckBox Content="" Name="PhoneChk" HorizontalAlignment="Left" Margin="20,224,0,0" VerticalAlignment="Top"/>
+        <CheckBox Content="" Name="EmailChk" HorizontalAlignment="Left" Margin="20,251,0,0" VerticalAlignment="Top"/>
     </Grid>
 
 </Window>

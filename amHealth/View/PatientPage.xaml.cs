@@ -50,8 +50,7 @@ namespace amHealth
 
             EditPatient inputDialog = new EditPatient(user.Id, user.Fname, user.Lname, user.Gender, user.Dob, user.Height, user.Weight, user.Phone, user.Email, user.Region, user.Image);
             if (inputDialog.ShowDialog() == true)
-                lblName.Text = inputDialog.Answer;
-            lblName.Visibility = System.Windows.Visibility.Visible;
+             
 
             Refresh();
 
@@ -76,8 +75,7 @@ namespace amHealth
         {
             AddPatient inputDialog = new AddPatient();
             if (inputDialog.ShowDialog() == true)
-                lblName.Text = inputDialog.Answer;
-            lblName.Visibility = System.Windows.Visibility.Visible;
+               
             // alert.Visibility = System.Windows.Visibility.Visible;
             Refresh();
         }
@@ -160,8 +158,7 @@ namespace amHealth
                     u.Delete(u.Id.ToString());
                 }
                 Refresh();
-                lblName.Text = "patient deleted!";
-                lblName.Visibility = System.Windows.Visibility.Visible;
+               
 
             }
             else
@@ -213,8 +210,7 @@ namespace amHealth
 
             MessagePatient inputDialog = new MessagePatient(user.Id, user.Fname, user.Lname, user.Phone, user.Email, user.Region, user.Image);
             if (inputDialog.ShowDialog() == true)
-                lblName.Text = inputDialog.Answer;
-            lblName.Visibility = System.Windows.Visibility.Visible;
+               
 
             Refresh();
         }

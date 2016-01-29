@@ -15,5 +15,111 @@
             <Setter Property="FontSize" Value="10"/>
             <Setter Property="HorizontalAlignment" Value="Right"/>
         </Style>
+        <Style TargetType="Window" x:Key="window">
+            <Setter Property="Icon" Value="image/amhealth.ico"/>
+        </Style>
+        <Style TargetType="TextBlock" x:Key="HeaderText">
+            <Setter Property="FontStyle" Value="Normal"/>
+            <Setter Property="FontSize" Value="21"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="HorizontalAlignment" Value="Right"/>
+        </Style>
+        <Style TargetType="Button" x:Key="SaveButton">
+            <Setter Property="Background" Value="#3C8DBC"/>
+            <Setter Property="BorderBrush" Value="{x:Null}"/>
+            <Setter Property="Foreground" Value="#FFFFFF"/>
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="MinHeight" Value="20"/>
+            <Setter Property="MinWidth" Value="20"/>
+        </Style>
+        <Style TargetType="Label">
+            <Setter Property="Height" Value="25"/>
+            <Setter Property="FontSize" Value="11"/>
+            <Setter Property="BorderBrush" Value="{x:Null}"/>
+            <Setter Property="Foreground" Value="#000000"/>
+
+        </Style>
+        <Style TargetType="Label" x:Key="HeaderLabel">
+            <Setter Property="Height" Value="25"/>
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="BorderBrush" Value="{x:Null}"/>
+            <Setter Property="Foreground" Value="#000000"/>
+
+        </Style>
+        <Style TargetType="TextBlock" x:Key="ButtonText">
+            <Setter Property="Height" Value="25"/>
+            <Setter Property="FontSize" Value="9"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="VerticalAlignment" Value="Bottom"/>
+
+        </Style>
+        <Style TargetType="TextBlock" >
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="FontFamily" Value="Segoe UI"/>
+            <Setter Property="FontWeight" Value="Normal"/>
+            <Setter Property="Foreground" Value="Black"/>
+           
+
+        </Style>
+        <Style TargetType="ListView" >
+
+            <Setter Property="Background" Value="#C5DFFB"/>
+
+
+        </Style>
+
+        <Style TargetType="TextBox">
+            <Setter Property="Height" Value="25"/>
+
+        </Style>
+        <Style TargetType="DataGrid">
+            <Setter Property="RowBackground" Value="#C5DFFB"/>
+            <Setter Property="AlternatingRowBackground" Value="LightYellow"/>
+            <Setter Property="CanUserReorderColumns" Value="True"/>
+            <Setter Property="CanUserResizeColumns" Value="True"/>
+            <Setter Property="ScrollViewer.CanContentScroll" Value="True"/>
+            <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
+            <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto"/>
+            <Setter Property="CanUserResizeRows" Value="True"/>
+            <Setter Property="AutoGenerateColumns" Value="False"/>
+            <Setter Property="HorizontalGridLinesBrush" Value="WhiteSmoke"/>
+            <Setter Property="VerticalGridLinesBrush" Value="#FFE7E8EC"/>
+
+        </Style>
+        <Style TargetType="Window" x:Key="Dialog">
+            <Setter Property="Background" Value="#FFE6EAEE"/>
+            <Setter Property="WindowStyle" Value="None"/>
+            <Setter Property="ShowInTaskbar" Value="False"/>
+
+        </Style>
+        <Style TargetType="Button" x:Key="UpdateButton">
+            <Setter Property="Background" Value="#6EB81F"/>
+            <Setter Property="BorderBrush" Value="{x:Null}"/>
+            <Setter Property="Foreground" Value="#FFFFFF"/>
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="MinHeight" Value="20"/>
+            <Setter Property="MinWidth" Value="20"/>
+        </Style>
+        <Style TargetType="Button" x:Key="CancelButton">
+            <Setter Property="Background" Value="#C37981"/>
+            <Setter Property="BorderBrush" Value="#0000"/>
+            <Setter Property="Foreground" Value="#FFFFFF"/>
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="MinHeight" Value="20"/>
+            <Setter Property="MinWidth" Value="20"/>
+        </Style>
+        <Style TargetType="Button" x:Key="CloseButton">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderBrush" Value="#0000"/>
+            <Setter Property="Foreground" Value="#C37981"/>
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontWeight" Value="ExtraBold"/>
+            <Setter Property="MinHeight" Value="20"/>
+            <Setter Property="MinWidth" Value="20"/>
+        </Style>
     </Application.Resources>
 </Application>

@@ -369,6 +369,8 @@
     <Resource Include="image\Group-Add-48.png" />
     <Resource Include="image\Logout-48.png" />
     <Resource Include="image\Messages-48.png" />
+    <Resource Include="image\amhealthlogo.ico" />
+    <Resource Include="image\amhealth.ico" />
     <Content Include="x64\sqlceca35.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

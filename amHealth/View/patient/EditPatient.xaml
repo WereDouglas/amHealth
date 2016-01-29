@@ -14,9 +14,9 @@
         </Label>
 
         <WrapPanel HorizontalAlignment="Right" Margin="0,5,106,10"/>
-        <Button IsDefault="True" x:Name="btnDialogOk" Click="btnDialogOk_Click" MinWidth="60" Margin="114,476,0,0" Content="Update" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" Width="83"/>
+        <Button IsDefault="True" Style="{StaticResource SaveButton}" x:Name="btnDialogOk" Click="btnDialogOk_Click" MinWidth="60" Margin="114,476,0,0" Content="Update" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" Width="83"/>
 
-        <Button IsCancel="True" MinWidth="60" Content="_Cancel" Margin="0,477,40,0" Height="29" VerticalAlignment="Top" HorizontalAlignment="Right" Width="76" Click="Button_Click"/>
+        <Button IsCancel="True" Style="{StaticResource CancelButton}" MinWidth="60" Content="_Cancel" Margin="0,477,40,0" Height="29" VerticalAlignment="Top" HorizontalAlignment="Right" Width="76" Click="Button_Click"/>
         <TextBox HorizontalAlignment="Left" Height="23" x:Name="lname" Margin="114,214,0,0" TextWrapping="Wrap" Text="{Binding Lname}" VerticalAlignment="Top" Width="164" RenderTransformOrigin="-1.893,1.016"/>
         <Label Content="Last name" HorizontalAlignment="Left" Margin="10,214,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.214,0.731"/>
         <TextBox HorizontalAlignment="Left" x:Name="fname" Margin="114,183,0,434" TextWrapping="Wrap" Text="{Binding Fname}" Width="164" RenderTransformOrigin="-1.893,1.016"/>
@@ -40,7 +40,7 @@
         <TextBox HorizontalAlignment="Left" x:Name="email" Margin="114,399,0,0" TextWrapping="Wrap" Text="{Binding Email}" Width="164" RenderTransformOrigin="-1.893,1.016" Height="23" VerticalAlignment="Top"/>
         <TextBox HorizontalAlignment="Left" x:Name="region" Margin="114,430,0,0" TextWrapping="Wrap" Text="{Binding Region}" Width="164" RenderTransformOrigin="-1.893,1.016" Height="23" VerticalAlignment="Top"/>
 
-        <Image Margin="147,46,0,0" x:Name="imgCapture" Source="{Binding Image}" HorizontalAlignment="Left" Width="93" Height="91" VerticalAlignment="Top" />
+        <Image Margin="114,46,0,0" x:Name="imgCapture" Source="{Binding Image}" HorizontalAlignment="Left" Width="164" Height="118" VerticalAlignment="Top" />
     </Grid>
 
 </Window>
