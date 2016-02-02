@@ -1,5 +1,8 @@
-﻿using System;
+﻿using amHealth.View.patient;
+using amLibrary;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Data.SqlServerCe;
 using System.Linq;
 using System.Text;
@@ -21,9 +24,16 @@ namespace amHealth
     /// </summary>
     public partial class AdvancedPage : Page
     {
+        private Chronic _chronic;
+        private ObservableCollection<Chronic> _chronicList = null;
+
+        private Allergy _allergy;
+        private ObservableCollection<Allergy> _allergyList = null;
+
         public AdvancedPage()
         {
             InitializeComponent();
+            Refresh();
         }
 
         private void btnDelete_imports(object sender, RoutedEventArgs e)
@@ -159,6 +169,51 @@ namespace amHealth
             {
                 return;
             }        
+        }
+
+        private void btnAdd_allergy(object sender, RoutedEventArgs e)
+        {
+            AddAllergy inputDialog = new AddAllergy(null);
+            if (inputDialog.ShowDialog() == true)
+                Refresh();
+        }
+
+        private void btnAdd_condition(object sender, RoutedEventArgs e)
+        {
+             AddChronic inputDialog = new AddChronic(null);
+            if (inputDialog.ShowDialog() == true)
+                Refresh();
+        }
+
+        private void Refresh()
+        {
+
+            _chronicList = new ObservableCollection<Chronic>(App.amApp.Chronics);
+            dtGrid.ItemsSource = null;
+            dtGrid.ItemsSource = _chronicList;
+            CollectionView view = (CollectionView)CollectionViewSource.GetDefaultView(dtGrid.ItemsSource);
+           // view.Filter = UserFilter;
+
+
+             _allergyList = new ObservableCollection<Allergy>(App.amApp.Allergys);
+            dtGrid_allergy.ItemsSource = null;
+            dtGrid_allergy.ItemsSource = _allergyList;
+
+
+        }
+        private void txtFilter_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        {
+            CollectionViewSource.GetDefaultView(dtGrid.ItemsSource).Refresh();
+        }
+
+        private void EditButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void DeleteButton_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

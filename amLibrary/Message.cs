@@ -68,7 +68,6 @@ namespace amLibrary
             set { _org = value; }
         }
 
-
         private string _sync;
 
         public string Sync

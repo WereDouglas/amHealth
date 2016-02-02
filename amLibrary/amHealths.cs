@@ -19,6 +19,13 @@ namespace amLibrary
             _members = new MemberCollection(this);
             _queues = new QueueCollection(this);
             _messages = new MessageCollection(this);
+            _familys = new FamilyCollection(this);
+            _chronics = new ChronicCollection(this);
+            _allergys = new AllergyCollection(this);
+
+
+            _chronicMaps = new ChronicMapCollection(this);
+            _allergyMaps = new AllergyMapCollection(this);
 
 
         }
@@ -33,6 +40,20 @@ namespace amLibrary
                     _patients.Refresh();
                 _patients.Load();
                 return _patients;
+            }
+        }
+
+
+        private FamilyCollection _familys;
+
+        public FamilyCollection Familys
+        {
+            get
+            {
+                if (!_familys.IsLoaded)
+                    _familys.Refresh();
+                _familys.Load();
+                return _familys;
             }
         }
         private GroupCollection _groups;
@@ -113,6 +134,59 @@ namespace amLibrary
                 return _messages;
             }
         }
+
+        private AllergyCollection _allergys;
+        public AllergyCollection Allergys
+        {
+            get
+            {
+                if (!_allergys.IsLoaded)
+                    _allergys.Refresh();
+                _allergys.Load();
+                return _allergys;
+            }
+        }
+
+        private ChronicCollection _chronics;
+        public ChronicCollection Chronics
+        {
+            get
+            {
+                if (!_chronics.IsLoaded)
+                    _chronics.Refresh();
+                _chronics.Load();
+                return _chronics;
+            }
+        }
+
+
+
+        private AllergyMapCollection _allergyMaps;
+        public AllergyMapCollection AllergyMaps
+        {
+            get
+            {
+                if (!_allergyMaps.IsLoaded)
+                    _allergyMaps.Refresh();
+                _allergyMaps.Load();
+                return _allergyMaps;
+            }
+        }
+
+        private ChronicMapCollection _chronicMaps;
+        public ChronicMapCollection ChronicMaps
+        {
+            get
+            {
+                if (!_chronicMaps.IsLoaded)
+                    _chronicMaps.Refresh();
+                _chronicMaps.Load();
+                return _chronicMaps;
+            }
+        }
+
+
+
 
 
 

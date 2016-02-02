@@ -9,11 +9,11 @@
         </Grid.ColumnDefinitions>
         <Rectangle Margin="-2,109,0,0" Fill="#FF171717"/>
         <Image HorizontalAlignment="Left" Width="165" Source="image/amhealthlogo.png" Height="38" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
-        <DockPanel LastChildFill="False" Margin="3,43,0,24" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="True" Grid.Column="1"   >
+        <DockPanel LastChildFill="False" Margin="3,43,0,32" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="True" Grid.Column="1"   >
             <Frame x:Name="_mainFrame" NavigationUIVisibility="Hidden" HorizontalContentAlignment="Center" VerticalContentAlignment="Stretch" BorderBrush="#FF0F509F" DockPanel.Dock="Top" ScrollViewer.HorizontalScrollBarVisibility="Auto" />
 
         </DockPanel>
-        <Button Content="Add new" Command="{Binding Path=AddCommand}" Margin="10,151,10,0" x:Name="btnAdd"  VerticalAlignment="Top" Height="52" Click="Queue_Click"  Foreground="#FF4E8FB2" FontWeight="Medium" Padding="3" >
+        <Button Content="Add new" Command="{Binding Path=AddCommand}" Margin="2,141,2,0" x:Name="btnAdd"  VerticalAlignment="Top" Height="62" Click="Queue_Click"  Foreground="#FF4E8FB2" FontWeight="Medium" Padding="3" >
             <Button.Template>
                 <ControlTemplate>
                     <Grid Background="Transparent">
@@ -23,7 +23,7 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <Button Content="Add new" Command="{Binding Path=AddCommand}" Margin="0,208,10,0" x:Name="messaging"  VerticalAlignment="Top" Height="34" Click="btnAdd_Click_1"  Foreground="#FF4E8FB2" FontWeight="Medium" Padding="3" >
+        <Button Content="Add new" Command="{Binding Path=AddCommand}" Margin="0,208,2,0" x:Name="messaging"  VerticalAlignment="Top" Height="39" Click="btnAdd_Click_1"  Foreground="#FF4E8FB2" FontWeight="Medium" Padding="3" >
             <Button.Template>
                 <ControlTemplate>
                     <Grid Background="Transparent" Margin="0,0,0,-26">
@@ -33,7 +33,7 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <Button Content="Add new" Command="{Binding Path=AddCommand}" Margin="10,270,10,0" x:Name="appointments"  VerticalAlignment="Top" Height="52" Click="btnAppointment"  Foreground="#FF4E8FB2" FontWeight="Medium" Padding="3" >
+        <Button Content="Add new" Command="{Binding Path=AddCommand}" Margin="2,264,2,0" x:Name="appointments"  VerticalAlignment="Top" Height="58" Click="btnAppointment"  Foreground="#FF4E8FB2" FontWeight="Medium" Padding="3" >
             <Button.Template>
                 <ControlTemplate>
                     <Grid Background="Transparent">
@@ -54,8 +54,8 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <Label Content="John Luberenga" Name="username" Margin="-4,38,2,0"  VerticalAlignment="Top" Height="66" Foreground="#FF111313" Background="White" BorderBrush="#FF3399FF"/>
-        <Button Content="Update" Margin="0,0,0,13" VerticalAlignment="Bottom" Click="Button_Click_Update" RenderTransformOrigin="0.915,0.455" BorderBrush="White" Foreground="White" Background="{x:Null}" HorizontalContentAlignment="Left" FontWeight="Medium" Padding="3" BorderThickness="0,0,0,1"/>
+        <Label Content="John Luberenga" Name="username" Margin="2,38,2,0"  VerticalAlignment="Top" Height="66" Foreground="#FF111313" Background="White" BorderBrush="#FF3399FF"/>
+        <Button Content="Update" Margin="23,0,0,20" Style="{StaticResource CalendarButton}" VerticalAlignment="Bottom" Click="Button_Click_Update" RenderTransformOrigin="0.915,0.455" BorderBrush="White" Foreground="White" Background="{x:Null}" HorizontalContentAlignment="Left" FontWeight="Medium" Padding="3" BorderThickness="0,0,0,1" HorizontalAlignment="Left" Width="65"/>
         <Button Content="Add new" Command="{Binding AddCommand}" Margin="-2,389,2,0" x:Name="patients_Copy"  VerticalAlignment="Top" Height="62" Click="Prac_Click"  Foreground="#FF4E8FB2" FontWeight="Medium" Padding="3" >
             <Button.Template>
                 <ControlTemplate>
@@ -78,7 +78,7 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <Button Content="Add new" Command="{Binding AddCommand}" Margin="0,456,2,0" x:Name="patients_Copy1"  VerticalAlignment="Top" Height="53" Click="Advanced_Click"  Foreground="#FF4E8FB2" FontWeight="Medium" Padding="3" >
+        <Button Content="Add new" Command="{Binding AddCommand}" Margin="-2,519,0,0" x:Name="patients_Copy1"  VerticalAlignment="Top" Height="52" Click="Advanced_Click"  Foreground="#FF4E8FB2" FontWeight="Medium" Padding="3" >
             <Button.Template>
                 <ControlTemplate>
                     <Grid Background="Transparent">
@@ -89,7 +89,7 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <Button Content="Add new" Command="{Binding AddCommand}" Margin="2,572,0,0" x:Name="patients_Copy2"  VerticalAlignment="Top" Height="53" Click="Modem_Click"  Foreground="#FF4E8FB2" FontWeight="Medium" Padding="3" >
+        <Button Content="Add new" Command="{Binding AddCommand}" Margin="2,576,0,0" x:Name="patients_Copy2"  VerticalAlignment="Top" Height="53" Click="Modem_Click"  Foreground="#FF4E8FB2" FontWeight="Medium" Padding="3" >
             <Button.Template>
                 <ControlTemplate>
                     <Grid Background="Transparent">
@@ -100,7 +100,7 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <Button Content="Add new" Command="{Binding AddCommand}" Margin="0,514,2,0" x:Name="Messages"  VerticalAlignment="Top" Height="53" Click="Messages_Click"  Foreground="#FF4E8FB2" FontWeight="Medium" Padding="3" >
+        <Button Content="Add new" Command="{Binding AddCommand}" Margin="-4,456,2,0" x:Name="Messages"  VerticalAlignment="Top" Height="53" Click="Messages_Click"  Foreground="#FF4E8FB2" FontWeight="Medium" Padding="3" >
             <Button.Template>
                 <ControlTemplate>
                     <Grid Background="Transparent">
@@ -111,8 +111,8 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <Label Content="state" x:Name="modem" Margin="505,0,0,2"  VerticalAlignment="Bottom" Height="22" Foreground="#FF3399FF" Background="White" BorderBrush="#FF3399FF" HorizontalAlignment="Left" Width="244" FontSize="10" Grid.Column="1"/>
-        <Label Content="info" x:Name="internet" Margin="10,0,0,2"  VerticalAlignment="Bottom" Height="22" Foreground="#FF3399FF" Background="White" BorderBrush="#FF3399FF" HorizontalAlignment="Left" Width="192" FontSize="10" Grid.Column="1"/>
-        <Label Content="Sync"  x:Name="tbProgress" Margin="256,0,0,2" VerticalAlignment="Bottom" Height="22" Foreground="#FF00B4FF" HorizontalAlignment="Left" Width="244" FontSize="10" Grid.Column="1"/>
+        <Label Content="state" x:Name="modem" Margin="477,0,0,1"  VerticalAlignment="Bottom" Height="26" Foreground="#FF3399FF" Background="{x:Null}" BorderBrush="#FF3399FF" FontSize="10" Grid.Column="1" HorizontalAlignment="Left" Width="534"/>
+        <Label Content="info" x:Name="internet"  VerticalAlignment="Bottom" Height="26" Foreground="#FF3399FF" Background="{x:Null}" BorderBrush="#FF3399FF" FontSize="10" Grid.Column="1" Margin="0,0,0,1" HorizontalAlignment="Left" Width="228"/>
+        <Label Content="Sync"  x:Name="tbProgress" Margin="228,0,0,1" VerticalAlignment="Bottom" Height="26" Foreground="#FF00B4FF" FontSize="10" Grid.Column="1" Background="{x:Null}" HorizontalAlignment="Left" Width="249"/>
     </Grid>
 </Window>

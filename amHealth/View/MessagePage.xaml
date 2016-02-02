@@ -42,7 +42,7 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <ListView  Margin="10,60,10,10" x:Name="GroupListView" SelectionChanged="PatientlistView_SelectionChanged">
+        <ListView  Margin="10,39,10,10" x:Name="GroupListView" SelectionChanged="PatientlistView_SelectionChanged">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Background="White" Margin="5,5,5,5" Orientation="Horizontal">
@@ -78,6 +78,6 @@
                 </ItemsPanelTemplate>
             </ListView.ItemsPanel>
         </ListView>
-        <Label Content="Messaging groups" HorizontalAlignment="Left" Margin="10,35,0,0" VerticalAlignment="Top" Width="113" FontWeight="Bold"/>
+        <Label Content="Messaging groups" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Width="113" FontWeight="Bold"/>
     </Grid>
 </Page>

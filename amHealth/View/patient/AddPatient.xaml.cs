@@ -83,7 +83,6 @@ namespace amHealth.View.patient
                 encoder.Save(stream);
 
             _patient = App.amApp.Patients.Add();
-
             _patient.Lname = lname.Text;
             _patient.Fname = fname.Text;
             _patient.Gender = gender.Text;

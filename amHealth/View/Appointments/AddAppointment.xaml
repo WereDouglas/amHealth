@@ -17,15 +17,15 @@
                 <Label Content="{Binding Id}" Name="patient" Visibility="Hidden" HorizontalAlignment="Left" Margin="156,1,0,0" VerticalAlignment="Top" Width="122" Background="#FFE7E8EC" Height="26"/>
             </Grid>
         </GroupBox>
-        <Label x:Name="lblQuestion" Margin="20,9,298,391">
-
+        <Label x:Name="lblQuestion" Margin="14,88,10,0" Height="25" VerticalAlignment="Top">
+           
         </Label>
-        <Button IsDefault="True"  Style="{StaticResource SaveButton}" x:Name="btnDialogOk" Click="btnDialogOk_Click" MinWidth="60" Margin="0,535,204,0" Content="Create" HorizontalAlignment="Right" Width="83" Background="#FF2799F0" Foreground="White" Height="30" VerticalAlignment="Top"/>
-        <Button IsCancel="True"  Style="{StaticResource CancelButton}" MinWidth="60" Content="_Cancel" Margin="0,535,12,0" Height="29" VerticalAlignment="Top" HorizontalAlignment="Right" Width="76"/>
+        <Button IsDefault="True"  Style="{StaticResource SaveButton}" x:Name="btnDialogOk" Click="btnDialogOk_Click" MinWidth="60" Margin="10,0,0,40" Content="Create" HorizontalAlignment="Left" Width="83" Background="#FF2799F0" Foreground="White" Height="30" VerticalAlignment="Bottom"/>
+        <Button IsCancel="True"  Style="{StaticResource CancelButton}" MinWidth="60" Content="_Cancel" Margin="0,0,4,41" Height="29" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="76"/>
         <DatePicker x:Name="startDate" HorizontalAlignment="Left" Margin="112,295,0,0" VerticalAlignment="Top" Width="202"/>
         <TextBox HorizontalAlignment="Left" Height="23" x:Name="reason" Margin="114,392,0,0" TextWrapping="Wrap" Text="{Binding CurrentUser.Name}" VerticalAlignment="Top" Width="202" RenderTransformOrigin="-1.893,1.016"/>
-        <TextBox x:Name="txtFilter" TextChanged="txtFilter_TextChanged" Height="28" VerticalAlignment="Top" HorizontalAlignment="Right" Width="296" Margin="0,75,2,0" />
-        <Label Content="Schedule appointment" HorizontalAlignment="Left" Margin="26,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.214,0.731" Width="218" Style="{StaticResource HeaderLabel}"  Height="38"/>
+        <TextBox x:Name="txtFilter" TextChanged="txtFilter_TextChanged" Height="28" VerticalAlignment="Top" Margin="10,55,12,0" />
+        <Label Content="Schedule appointment" HorizontalAlignment="Left" Margin="43,0,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.214,0.731" Width="218" Style="{StaticResource HeaderLabel}"  Height="38"/>
         <Label Content="Appointment information" HorizontalAlignment="Left" Margin="18,258,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.214,0.731" Width="288" FontSize="15" Height="32"/>
         <Label Content="Reason for visit" HorizontalAlignment="Left" Margin="15,392,0,0" VerticalAlignment="Top" Width="92"/>
         <Label Content="start time" HorizontalAlignment="Left" Margin="18,340,0,0" VerticalAlignment="Top" Width="68"/>
@@ -51,13 +51,10 @@
             <ListBoxItem Content="Female"/>
 
         </ComboBox>
-        <ComboBox HorizontalAlignment="Left"  x:Name="practitioners"  SelectedValuePath="Content"  Margin="20,462,0,0" VerticalAlignment="Top" Width="296" RenderTransformOrigin="0.302,-0.056" SelectionChanged="PractitionerSelectionChanged" Height="31">
-
-
-        </ComboBox>
-        <Label Content="Choose practitioner" HorizontalAlignment="Left" Margin="18,424,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.214,0.731" Width="144" FontSize="15" Height="33"/>
-        <Label Content="Find patient" HorizontalAlignment="Left" Margin="18,41,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.214,0.731" Width="91" FontSize="14" Height="29"/>
-        <Button Content="Add new" HorizontalAlignment="Left" Command="{Binding AddCommand}" Margin="244,48,0,0" x:Name="btnAdd"  VerticalAlignment="Top" Width="74" Height="24" Click="btnAdd_Click_1" >
+        <ComboBox  x:Name="practitioners"  SelectedValuePath="Content"  Margin="10,462,2,0" VerticalAlignment="Top" RenderTransformOrigin="0.302,-0.056" SelectionChanged="PractitionerSelectionChanged" Height="31"/>
+        <Label Content="Choose practitioner" HorizontalAlignment="Left" Margin="10,424,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.214,0.731" Width="152" FontSize="15" Height="33"/>
+        <Label Content="Find patient" HorizontalAlignment="Left" Margin="10,26,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.214,0.731" Width="91" FontSize="14" Height="29"/>
+        <Button Content="Add new" HorizontalAlignment="Right" Command="{Binding AddCommand}" Margin="0,31,14,0" x:Name="btnAdd"  VerticalAlignment="Top" Width="74" Height="24" Click="btnAdd_Click_1" >
             <Button.Template>
                 <ControlTemplate>
                     <Grid Background="Transparent">
@@ -67,7 +64,7 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <CheckBox Content="Notify patient?" Margin="39,498,0,0" x:Name="ChkNotify" HorizontalAlignment="Left" Width="111" Height="19" VerticalAlignment="Top"/>
+        <CheckBox Content="Notify patient?" Margin="10,0,0,75" x:Name="ChkNotify" HorizontalAlignment="Left" Width="111" Height="19" VerticalAlignment="Bottom"/>
     </Grid>
 
 </Window>

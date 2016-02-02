@@ -28,56 +28,13 @@ namespace amHealth
         private ObservableCollection<Group> _groupList = null;
         public MessagePage()
         {
-            InitializeComponent();
-            CreateDB();
-            CreateDB2();
+            InitializeComponent();           
+           
             Refresh();
         }
-        private void CreateDB2()
-        {
+       
 
-            string con;
-
-            con = string.Format(@"Data Source=C:\amHealth\amHealth.sdf;Password=access; Persist Security Info=True;");
-
-            SqlCeConnection conn = new SqlCeConnection(con);
-            conn.Open();
-            SqlCeCommand cmd = conn.CreateCommand();
-
-            if (!Helper.TableExists(conn, "member"))
-            {
-                cmd.CommandText = "CREATE TABLE member (id nvarchar(255)  NULL, org nvarchar(255)  NULL, uploadname nvarchar(255) NULL,name nvarchar(255) NULL, contact nvarchar(255) NULL,sync nvarchar(255) NULL);";
-                cmd.ExecuteNonQuery();
-                System.Diagnostics.Debug.WriteLine("Created table member");
-            }
-
-
-            conn.Close();
-
-        }
-
-        private void CreateDB()
-        {
-
-            string con;
-
-            con = string.Format(@"Data Source=C:\amHealth\amHealth.sdf;Password=access; Persist Security Info=True;");
-
-            SqlCeConnection conn = new SqlCeConnection(con);
-            conn.Open();
-            SqlCeCommand cmd = conn.CreateCommand();
-
-            if (!Helper.TableExists(conn, "groups"))
-            {
-                cmd.CommandText = "CREATE TABLE groups (id nvarchar(255)  NULL, org nvarchar(255)  NULL,name nvarchar(255) NULL, filters nvarchar(255) NULL, dor nvarchar(255) NULL,sync nvarchar(255) NULL);";
-                cmd.ExecuteNonQuery();
-                System.Diagnostics.Debug.WriteLine("Created table group");
-            }
-
-
-            conn.Close();
-
-        }
+       
         private void Refresh()
         {
 

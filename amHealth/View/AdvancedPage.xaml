@@ -4,15 +4,17 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"       
       mc:Ignorable="d"
-	Title="Daily weather records" MinWidth="800" MinHeight="600" Background="White" Height="417" >
-    <Page.Resources>
+	Title="Daily weather records" MinWidth="800" MinHeight="600" Background="White" Height="567.164" >
 
-
-
-    </Page.Resources>
     <Grid Margin="0,0,0,10">
-        <Label Content="" x:Name="internet" HorizontalAlignment="Left" Margin="883,9,0,0" VerticalAlignment="Top" Width="85"/>
-        <Button Content="Delete selected" HorizontalAlignment="Left" Command="{Binding AddCommand}" Margin="10,22,0,0" x:Name="btnAdd_Copy"  VerticalAlignment="Top" Width="135" Height="24" Click="Deletepatients_Click">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="145*"/>
+            <ColumnDefinition Width="219*"/>
+            <ColumnDefinition Width="212*"/>
+            <ColumnDefinition Width="224*"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="" x:Name="internet" Margin="60,123,34,0" VerticalAlignment="Top" Grid.Column="1"/>
+        <Button Content="Delete selected" Command="{Binding AddCommand}" Margin="10,91,0,0" x:Name="btnAdd_Copy"  VerticalAlignment="Top" Height="24" Click="Deletepatients_Click">
             <Button.Template>
                 <ControlTemplate>
                     <Grid Background="Transparent">
@@ -22,7 +24,7 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <Button Content="Delete selected" HorizontalAlignment="Left" Command="{Binding AddCommand}" Margin="10,67,0,0" x:Name="btnAdd_Copy1"  VerticalAlignment="Top" Width="135" Height="24" Click="btnDeleteAll_Click" RenderTransformOrigin="0.488,1.757">
+        <Button Content="Delete selected" Command="{Binding AddCommand}" Margin="10,123,0,0" x:Name="btnAdd_Copy1"  VerticalAlignment="Top" Height="24" Click="btnDeleteAll_Click" RenderTransformOrigin="0.488,1.757">
             <Button.Template>
                 <ControlTemplate>
                     <Grid Background="Transparent">
@@ -32,7 +34,7 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <Button Content="Delete imports" HorizontalAlignment="Left" Command="{Binding AddCommand}" Margin="10,164,0,0" x:Name="btnAdd_Copy2"  VerticalAlignment="Top" Width="135" Height="24" Click="btnDelete_imports">
+        <Button Content="Delete imports" Command="{Binding AddCommand}" Margin="10,184,0,0" x:Name="btnAdd_Copy2"  VerticalAlignment="Top" Height="24" Click="btnDelete_imports">
             <Button.Template>
                 <ControlTemplate>
                     <Grid Background="Transparent">
@@ -42,7 +44,7 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <Button Content="Delete queue" HorizontalAlignment="Left" Command="{Binding AddCommand}" Margin="10,121,0,0" x:Name="btnAdd_Copy3"  VerticalAlignment="Top" Width="135" Height="24" Click="QueueDelete_Click">
+        <Button Content="Delete queue" Command="{Binding AddCommand}" Margin="10,155,0,0" x:Name="btnAdd_Copy3"  VerticalAlignment="Top" Height="24" Click="QueueDelete_Click" RenderTransformOrigin="0.479,0.307">
             <Button.Template>
                 <ControlTemplate>
                     <Grid Background="Transparent">
@@ -52,5 +54,141 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
+        <Button Content="Add new" HorizontalAlignment="Right" Command="{Binding AddCommand}" Margin="0,80,26,0" x:Name="btnAdd_Copy4"  VerticalAlignment="Top" Width="108" Height="24" Click="btnAdd_condition" Grid.Column="2" >
+            <Button.Template>
+                <ControlTemplate>
+                    <Grid Background="Transparent">
+                        <TextBlock><Run Text="Add conditions"/></TextBlock>
+                        <Image  Stretch="Uniform" Source="/amHealth;component/image/Add.png" HorizontalAlignment="Right" />
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button Content="Add new" HorizontalAlignment="Right" Command="{Binding AddCommand}" Margin="0,80,50,0" x:Name="btnAdd_Copy5"  VerticalAlignment="Top" Width="108" Height="24" Click="btnAdd_allergy" Grid.Column="3" >
+            <Button.Template>
+                <ControlTemplate>
+                    <Grid Background="Transparent">
+                        <TextBlock><Run Text="Add Allergies"/></TextBlock>
+                        <Image  Stretch="Uniform" Source="/amHealth;component/image/Add.png" HorizontalAlignment="Right" />
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <DataGrid  AutoGenerateColumns="False"		x:Name="dtGrid"    Margin="0,109,10,-1" Grid.Column="2" HorizontalAlignment="Right" Width="200"  >
+            <DataGrid.Resources>
+                <Style TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="Background" Value="#A5A5A5"  />
+                    <Setter Property="VerticalContentAlignment" Value="Center" />
+
+                </Style>
+            </DataGrid.Resources>
+
+            <DataGrid.Style>
+                <StaticResource ResourceKey="infoGrid"/>
+            </DataGrid.Style>
+
+            <DataGrid.Columns >
+
+
+                <DataGridTemplateColumn Header="Name">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock  Style="{StaticResource CalendarText}" Text="{Binding Name}" />
+
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Header="Edit">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <Button   Click="EditButton_Click" Style="{StaticResource CalendarButton}" >
+                                    <StackPanel>
+                                        <Image  Source="/amHealth;component/image/Edits.png"   />
+                                    </StackPanel>
+                                </Button>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Delete">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <Button   Click="DeleteButton_Click"  Style="{StaticResource CalendarButton}" >
+                                    <StackPanel>
+                                        <Image  Source="/amHealth;component/image/Deletes.png"   />
+
+                                    </StackPanel>
+                                </Button>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+
+            </DataGrid.Columns>
+        </DataGrid>
+        <DataGrid  AutoGenerateColumns="False"		x:Name="dtGrid_allergy"    Margin="0,109,10,-1" Grid.Column="3" HorizontalAlignment="Right" Width="211"  >
+            <DataGrid.Resources>
+                <Style TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="Background" Value="#A5A5A5"  />
+                    <Setter Property="VerticalContentAlignment" Value="Center" />
+
+                </Style>
+            </DataGrid.Resources>
+
+            <DataGrid.Style>
+                <StaticResource ResourceKey="infoGrid"/>
+            </DataGrid.Style>
+
+            <DataGrid.Columns >
+
+
+                <DataGridTemplateColumn Header="Name">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock  Style="{StaticResource CalendarText}" Text="{Binding Name}" />
+
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+
+
+                <DataGridTemplateColumn Header="Edit">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <Button   Click="EditButton_Click" Style="{StaticResource CalendarButton}" >
+                                    <StackPanel>
+                                        <Image  Source="/amHealth;component/image/Edits.png"   />
+                                    </StackPanel>
+                                </Button>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Delete">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <Button   Click="DeleteButton_Click"  Style="{StaticResource CalendarButton}" >
+                                    <StackPanel>
+                                        <Image  Source="/amHealth;component/image/Deletes.png"   />
+
+                                    </StackPanel>
+                                </Button>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+
+            </DataGrid.Columns>
+        </DataGrid>
+        <TextBox x:Name="txtFilter" TextChanged="txtFilter_TextChanged" Height="21" VerticalAlignment="Top" Margin="0,52,50,0" Grid.Column="3" HorizontalAlignment="Right" Width="164" />
+        <TextBox x:Name="txtFilter_Copy" TextChanged="txtFilter_TextChanged" Height="21" VerticalAlignment="Top" HorizontalAlignment="Right" Width="176" Margin="0,52,26,0" Grid.Column="2" />
     </Grid>
 </Page>

@@ -66,12 +66,10 @@ namespace amHealth.View.practitioner
                 SavePractitioner();
                 this.DialogResult = true;
             }
-            catch (Exception ex)
+            catch 
             {
 
-                MessageBox.Show(ex.Message.ToString());
-                return;
-
+               
             }
 
         }

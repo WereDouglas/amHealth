@@ -1,5 +1,7 @@
-﻿using amLibrary;
+﻿using amHealth.View;
+using amLibrary;
 using amLibrary.Helpers;
+using AutoUpdaterDotNET;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -34,10 +36,9 @@ namespace amHealth
         private BackgroundWorker bw = new BackgroundWorker();
         public MainWindow()
         {
-
-            InitializeComponent();
-            createDb();
-            CreateDB2();
+            Loading inputDialog = new Loading();
+            if (inputDialog.ShowDialog() == true)
+                InitializeComponent();
 
             _messageList = new ObservableCollection<Message>(App.amApp.Messages);
             _mainFrame.NavigationService.Navigate(new Uri("view/QueuePage.xaml", UriKind.Relative));
@@ -51,50 +52,18 @@ namespace amHealth
                 internet.Content = "No Internet connection";
             }
 
-            tasks();
-            Timer timer = new Timer(1000 * 60);
-            timer.Elapsed += timer_Elapsed;
-            timer.Start();
-
+           
+              Timer timer = new Timer(1000*60*60);
+              timer.Elapsed += timer_Elapsed;
+              timer.Start();
         }
         void timer_Elapsed(object sender, ElapsedEventArgs e)
         {
             if (!bw.IsBusy)
-                bw.RunWorkerAsync();
-            Console.WriteLine("this is another call doug every minute");
+                tasks();
+                 Console.WriteLine("this is another call doug every minute");
         }
-
-
-        private void CreateDB2()
-        {
-            string con;
-
-            con = string.Format(@"Data Source=C:\amHealth\amHealth.sdf;Password=access; Persist Security Info=True;");
-
-            SqlCeConnection conn = new SqlCeConnection(con);
-            conn.Open();
-            SqlCeCommand cmd = conn.CreateCommand();
-
-            if (!Helper.TableExists(conn, "queue"))
-            {
-                cmd.CommandText = "CREATE TABLE queue (id nvarchar(255)  NULL, org nvarchar(255)  NULL, patient nvarchar(255)  NULL,practitioner nvarchar(255) NULL,payment nvarchar(255) NULL, amount nvarchar(255)  NULL,checked nvarchar(255) NULL,day nvarchar(255) NULL,reason nvarchar(255) NULL,sync nvarchar(255) NULL,seen nvarchar(255) NULL);";
-                cmd.ExecuteNonQuery();
-            }
-            if (!Helper.TableExists(conn, "messages"))
-            {
-                cmd.CommandText = "CREATE TABLE messages (id nvarchar(255)  NULL, org nvarchar(255)  NULL, type nvarchar(255)  NULL,content nvarchar(255) NULL,contact nvarchar(255) NULL, sent nvarchar(255)  NULL,dor nvarchar(255) NULL,sync nvarchar(255) NULL);";
-                cmd.ExecuteNonQuery();
-            }
-
-            if (!Helper.TableExists(conn, "appointment"))
-            {
-                cmd.CommandText = "CREATE TABLE appointment (id nvarchar(255)  NULL, org nvarchar(255)  NULL, patient nvarchar(255)  NULL,practitioner nvarchar(255) NULL, dated nvarchar(255) NULL, startTime nvarchar(255)  NULL,endTime nvarchar(255) NULL,reason nvarchar(255) NULL,sync nvarchar(255) NULL,meet nvarchar(255) NULL,reminder nvarchar(255) NULL);";
-                cmd.ExecuteNonQuery();
-                System.Diagnostics.Debug.WriteLine("Created table appointments");
-            }
-            conn.Close();
-        }
-
+        
         public void tasks()
         {
 
@@ -105,99 +74,12 @@ namespace amHealth
             bw.ProgressChanged += new ProgressChangedEventHandler(bw_ProgressChanged);
             bw.RunWorkerCompleted += new RunWorkerCompletedEventHandler(bw_RunWorkerCompleted);
         }
-        private void createDb()
-        {
-
-            string fileName = @"c:\amHealth\amHealth.sdf";
-            if (!File.Exists(fileName))
-            {
-                CreateDB();
-            }
-            _patientList = new ObservableCollection<Patient>(App.amApp.Patients);
-
-        }
-
-        private void CreateDB()
-        {
-            // public static string conString = @"Data Source=C:\transporter\wimea.sdf;Password=wimea; Persist Security Info=True;";
-            string path = @"c:\amHealth";
-            if (Directory.Exists(path))
-            {
-                Console.WriteLine("That path exists already.");
-                return;
-            }
-            // Try to create the directory.
-            DirectoryInfo di = Directory.CreateDirectory(path);
-            Console.WriteLine("The directory was created successfully at {0}.",
-            Directory.GetCreationTime(path));
-
-
-
-
-            string paths = @"c:\amHealth\images";
-            if (Directory.Exists(paths))
-            {
-                Console.WriteLine("That path exists already.");
-                return;
-            }
-            // Try to create the directory.
-            DirectoryInfo dim = Directory.CreateDirectory(paths);
-            Console.WriteLine("The directory was created successfully at {0}.",
-            Directory.GetCreationTime(paths));
-
-            string con;
-
-            con = string.Format(@"Data Source=C:\amHealth\amHealth.sdf;Password=access; Persist Security Info=True;");
-            SqlCeEngine en = new SqlCeEngine(con);
-            en.CreateDatabase();
-
-            SqlCeConnection conn = new SqlCeConnection(con);
-            conn.Open();
-            SqlCeCommand cmd = conn.CreateCommand();
-
-            if (!TableExists(conn, "patient"))
-            {
-                cmd.CommandText = "CREATE TABLE patient (id nvarchar(255)  NULL, org nvarchar(255)  NULL,fname nvarchar(255) NULL, lname nvarchar(255) NULL, gender nvarchar(255) NULL, dob nvarchar(255) NULL, height nvarchar(255)  NULL, weight nvarchar(255)  NULL, phone nvarchar(255)  NULL,email nvarchar(255) NULL,region nvarchar(255) NULL,image nvarchar(255) NULL,sync nvarchar(255) NULL);";
-                cmd.ExecuteNonQuery();
-                System.Diagnostics.Debug.WriteLine("Created table users");
-            }
-
-            if (!TableExists(conn, "practitioner"))
-            {
-                cmd.CommandText = "CREATE TABLE practitioner (id nvarchar(255)  NULL, org nvarchar(255)  NULL,name nvarchar(255) NULL, practice nvarchar(255) NULL, phone nvarchar(255)  NULL,email nvarchar(255) NULL,image nvarchar(255) NULL,sync nvarchar(255) NULL);";
-                cmd.ExecuteNonQuery();
-                System.Diagnostics.Debug.WriteLine("Created table practitioners");
-            }
-
-            if (!TableExists(conn, "appointment"))
-            {
-                cmd.CommandText = "CREATE TABLE appointment (id nvarchar(255)  NULL, org nvarchar(255)  NULL, patient nvarchar(255)  NULL,practitioner nvarchar(255) NULL, dated nvarchar(255) NULL, startTime nvarchar(255)  NULL,endTime nvarchar(255) NULL,reason nvarchar(255) NULL,sync nvarchar(255) NULL,meet nvarchar(255) NULL);";
-                cmd.ExecuteNonQuery();
-                System.Diagnostics.Debug.WriteLine("Created table appointments");
-            }
-
-            conn.Close();
-
-        }
-
-        public bool TableExists(SqlCeConnection connection, string tableName)
-        {
-            using (var command = new SqlCeCommand())
-            {
-                command.Connection = connection;
-                var sql = string.Format("SELECT COUNT(*) FROM information_schema.tables WHERE table_name = '{0}'", tableName);
-                command.CommandText = sql;
-                var count = Convert.ToInt32(command.ExecuteScalar());
-                return (count > 0);
-            }
-        }
-
 
         private void Button_Click_Update(object sender, RoutedEventArgs e)
         {
-
+            AutoUpdater.OpenDownloadPage = true;
+            AutoUpdater.Start(Sending.directoryUrl + "amHealth.xml");
         }
-
         private void btnAdd_Click_1(object sender, RoutedEventArgs e)
         {
             _mainFrame.NavigationService.Navigate(new Uri("view/MessagePage.xaml", UriKind.Relative));
@@ -229,21 +111,8 @@ namespace amHealth
 
         private void Modem_Click(object sender, RoutedEventArgs e)
         {
-            modem.Content = "modem connecting....................";
-            Messenger.connect();
-
-            if (Messenger.connect() == "true")
-            {
-                modem.Content = "modem connected :" + (_messageList.Where(m => m.Sent == "F").Count()).ToString() + " unsent messages";
-
+            if (!bw.IsBusy)
                 tasks();
-                modem.Foreground = new SolidColorBrush(Colors.Blue);
-            }
-            else
-            {
-                modem.Foreground = new SolidColorBrush(Colors.Red);
-                modem.Content = "no modem connected!  :" + (_messageList.Where(m => m.Sent == "F").Count()).ToString() + " unsent messages";
-            }
 
         }
 
@@ -260,17 +129,17 @@ namespace amHealth
         {
             if ((e.Cancelled == true))
             {
-                // this.tbProgress.Content = "Canceled!";
+                //this.tbProgress.Content = "Canceled!";
             }
 
             else if (!(e.Error == null))
             {
-                ///this.tbProgress.Content = ("Error: " + e.Error.Message);
+               // this.tbProgress.Content = ("Error: " + e.Error.Message);
             }
 
             else
             {
-                // this.tbProgress.Content = "All messages sent";
+               // this.tbProgress.Content = "All messages sent";
             }
         }
         private void bw_ProgressChanged(object sender, ProgressChangedEventArgs e)
@@ -284,7 +153,7 @@ namespace amHealth
 
             send();
 
-            System.Threading.Thread.Sleep(500);
+            System.Threading.Thread.Sleep(5000);
 
         }
 
@@ -314,10 +183,12 @@ namespace amHealth
                                     if (t.Message.Contains("service error"))
                                     {
                                         MessageBox.Show("you do not have enough credits");
+                                        return;
                                     }
                                     if (t.Message.Contains("No data"))
                                     {
                                         MessageBox.Show(" i think you donot have enough credit to send messages");
+                                        return;
                                     }
 
                                 }
@@ -331,11 +202,16 @@ namespace amHealth
                         return;
                     }
                 }
+                else {
+                    
+                    return;
+                
+                }
 
             }
             else
             {
-                
+
             }
         }
     }

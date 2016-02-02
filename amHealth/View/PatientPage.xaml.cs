@@ -50,8 +50,7 @@ namespace amHealth
             // EditPatient(string id,string fname,string lname,string gender,string dob,string height,string weight,string phone,string email,string region,string image)
 
             EditPatient inputDialog = new EditPatient(user.Id, user.Fname, user.Lname, user.Gender, user.Dob, user.Height, user.Weight, user.Phone, user.Email, user.Region, user.Image);
-            if (inputDialog.ShowDialog() == true)
-             
+            if (inputDialog.ShowDialog() == true)          
 
             Refresh();
 

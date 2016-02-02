@@ -79,7 +79,6 @@ namespace amLibrary
                cmd.Parameters.AddWithValue("@name", Name);
                cmd.Parameters.AddWithValue("@contact", Contact);
                cmd.Parameters.AddWithValue("@sync", Sync);
-
                ExecuteNonQuery(cmd);
                //System.Diagnostics.Debug.WriteLine(cmd);
 

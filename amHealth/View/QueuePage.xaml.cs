@@ -44,7 +44,7 @@ namespace amHealth
 
            // DeleteQueue();
 
-            CreateDB();
+           
             InitializeComponent();
             selectdate.Text = DateTime.Now.Date.Date.ToString();
             Refresh();
@@ -108,29 +108,7 @@ namespace amHealth
 
         }
 
-        private void CreateDB()
-        {
-            string con;
-
-            con = string.Format(@"Data Source=C:\amHealth\amHealth.sdf;Password=access; Persist Security Info=True;");
-
-            SqlCeConnection conn = new SqlCeConnection(con);
-            conn.Open();
-            SqlCeCommand cmd = conn.CreateCommand();
-
-            if (!Helper.TableExists(conn, "queue"))
-            {
-                cmd.CommandText = "CREATE TABLE queue (id nvarchar(255)  NULL, org nvarchar(255)  NULL, patient nvarchar(255)  NULL,practitioner nvarchar(255) NULL,payment nvarchar(255) NULL, amount nvarchar(255)  NULL,checked nvarchar(255) NULL,day nvarchar(255) NULL,reason nvarchar(255) NULL,sync nvarchar(255) NULL,seen nvarchar(255) NULL);";
-                cmd.ExecuteNonQuery();
-            }
-            if (!Helper.TableExists(conn, "messages"))
-            {
-                cmd.CommandText = "CREATE TABLE messages (id nvarchar(255)  NULL, org nvarchar(255)  NULL, type nvarchar(255)  NULL,content nvarchar(255) NULL,contact nvarchar(255) NULL, sent nvarchar(255)  NULL,dor nvarchar(255) NULL,sync nvarchar(255) NULL);";
-                cmd.ExecuteNonQuery();
-            }
-            conn.Close();
-        }
-
+       
 
         private void selectdate_LostFocus(object sender, RoutedEventArgs e)
         {

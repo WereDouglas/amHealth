@@ -35,7 +35,7 @@
             <Setter Property="Height" Value="25"/>
             <Setter Property="FontSize" Value="11"/>
             <Setter Property="BorderBrush" Value="{x:Null}"/>
-            <Setter Property="Foreground" Value="#000000"/>
+            <Setter Property="Foreground" Value="#FF3399FF"/>
 
         </Style>
         <Style TargetType="Label" x:Key="HeaderLabel">
@@ -46,6 +46,7 @@
             <Setter Property="Foreground" Value="#000000"/>
 
         </Style>
+       
         <Style TargetType="TextBlock" x:Key="ButtonText">
             <Setter Property="Height" Value="25"/>
             <Setter Property="FontSize" Value="9"/>
@@ -75,7 +76,21 @@
         </Style>
         <Style TargetType="DataGrid" x:Key="infoGrid">
             <Setter Property="RowBackground" Value="#C5DFFB"/>
-            <Setter Property="AlternatingRowBackground" Value="BurlyWood"/>
+            <Setter Property="AlternatingRowBackground" Value="White"/>
+            <Setter Property="CanUserReorderColumns" Value="True"/>
+            <Setter Property="CanUserResizeColumns" Value="True"/>
+            <Setter Property="ScrollViewer.CanContentScroll" Value="True"/>
+            <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
+            <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto"/>
+            <Setter Property="CanUserResizeRows" Value="True"/>
+            <Setter Property="FrozenColumnCount" Value="1"/>
+            <Setter Property="AutoGenerateColumns" Value="False"/>
+            <Setter Property="HorizontalGridLinesBrush" Value="WhiteSmoke"/>
+            <Setter Property="VerticalGridLinesBrush" Value="#FFE7E8EC"/>
+
+        </Style>
+        <Style TargetType="DataGrid" x:Key="smallGrid">
+            <Setter Property="RowBackground" Value="#C5DFFB"/>          
             <Setter Property="CanUserReorderColumns" Value="True"/>
             <Setter Property="CanUserResizeColumns" Value="True"/>
             <Setter Property="ScrollViewer.CanContentScroll" Value="True"/>
@@ -119,6 +134,16 @@
             <Setter Property="FontWeight" Value="ExtraBold"/>
             <Setter Property="MinHeight" Value="20"/>
             <Setter Property="MinWidth" Value="20"/>
+        </Style>
+        <Style TargetType="Label" x:Key="CalenderLabel">
+            <Setter Property="Height" Value="Auto"/>
+            <Setter Property="Width" Value="150"/>
+            <Setter Property="FontSize" Value="10"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="BorderBrush" Value="#CCCC"/>
+            <Setter Property="Background" Value="#52C5CE"/>
+            <Setter Property="Foreground" Value="#FFFF"/>
+
         </Style>
     </Application.Resources>
 </Application>

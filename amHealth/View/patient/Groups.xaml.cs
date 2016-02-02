@@ -51,9 +51,9 @@ namespace amHealth.View.patient
 
             _patientList = new ObservableCollection<Patient>(App.amApp.Patients);
             PatientlistView.ItemsSource = null;
-            PatientlistView.ItemsSource = _patientList;
-            CollectionView view = (CollectionView)CollectionViewSource.GetDefaultView(PatientlistView.ItemsSource);
-            view.Filter = UserFilter;
+           // PatientlistView.ItemsSource = _patientList;
+          //  CollectionView view = (CollectionView)CollectionViewSource.GetDefaultView(PatientlistView.ItemsSource);
+           // view.Filter = UserFilter;
             _groupList = new ObservableCollection<Group>(App.amApp.Groups);
 
         }

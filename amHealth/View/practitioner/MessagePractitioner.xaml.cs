@@ -46,8 +46,6 @@ namespace amHealth.View.practitioner
             string myText = new TextRange(message.Document.ContentStart, message.Document.ContentEnd).Text;
             try
             {
-
-
                 Messenger.Send(App.amApp, myText, phone.Text);
                 
                 MessageBox.Show("message sent");

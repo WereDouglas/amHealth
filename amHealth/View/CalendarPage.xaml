@@ -1,0 +1,64 @@
+﻿<Page x:Class="amHealth.CalendarPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"       
+      mc:Ignorable="d"
+	Title="Daily weather records" MinWidth="800" MinHeight="600" Background="White" Height="417" >
+
+    <Grid Margin="0,0,0,10">
+        <ComboBox HorizontalAlignment="Right" x:Name="month" Margin="0,14,471,0" VerticalAlignment="Top" Width="126" SelectedIndex="0" SelectionChanged="month_SelectionChanged" DropDownClosed="month_DropDownClosed"/>
+
+        <StackPanel Height="123" Margin="0,71,0,0" VerticalAlignment="Top" Orientation="Horizontal">
+            <Label Content="1" Style="{StaticResource CalenderLabel}" Name="i"/>
+            <Label Content="2" Style="{StaticResource CalenderLabel}" Name="ii" />
+            <Label Content="3" Style="{StaticResource CalenderLabel}" Name="iii" />
+            <Label Content="4" Style="{StaticResource CalenderLabel}" Name="iv" />
+            <Label Content="5" Style="{StaticResource CalenderLabel}" Name="v" />
+            <Label Content="6" Style="{StaticResource CalenderLabel}" Name="vi" />
+            <Label Content="7" Style="{StaticResource CalenderLabel}" Name="vii" />
+           
+        </StackPanel>
+        <StackPanel Height="103" Margin="0,194,0,0" VerticalAlignment="Top" Orientation="Horizontal">
+            <Label Content="8" Style="{StaticResource CalenderLabel}" Name="viii" />
+            <Label Content="9" Style="{StaticResource CalenderLabel}" Name="ix" />
+            <Label Content="10" Style="{StaticResource CalenderLabel}" Name="x" />
+            <Label Content="11" Style="{StaticResource CalenderLabel}" Name="xi" />
+            <Label Content="12" Style="{StaticResource CalenderLabel}"  Name="xii" />
+            <Label Content="13" Style="{StaticResource CalenderLabel}" Name="xiii" />
+            <Label Content="14"  Style="{StaticResource CalenderLabel}" Name="xiv" />
+            
+        </StackPanel>
+        <StackPanel Height="88" Margin="0,297,0,0" VerticalAlignment="Top" Orientation="Horizontal">
+            <Label Content="15"  Name="xv" Style="{StaticResource CalenderLabel}"/>
+            <Label Content="16" Style="{StaticResource CalenderLabel}"  Name="xvi" />
+            <Label Content="17" Style="{StaticResource CalenderLabel}" Name="xvii" />
+            <Label Content="18" Style="{StaticResource CalenderLabel}" Name="xviii" />
+            <Label Content="19" Style="{StaticResource CalenderLabel}" Name="xix" />
+            <Label Content="20" Style="{StaticResource CalenderLabel}" Name="xx" />
+            <Label Content="21" Style="{StaticResource CalenderLabel}" Name="xxi" />
+            
+        </StackPanel>
+        <StackPanel Height="94" Margin="0,385,0,0" VerticalAlignment="Top" Orientation="Horizontal">
+            <Label Content="22" Style="{StaticResource CalenderLabel}" Name="xxii" />
+            <Label Content="23" Style="{StaticResource CalenderLabel}"  Name="xxiii" />
+            <Label Content="24" Style="{StaticResource CalenderLabel}" Name="xxiv" />
+            <Label Content="25" Style="{StaticResource CalenderLabel}" Name="xxv" />
+            <Label Content="26" Style="{StaticResource CalenderLabel}" Name="xxvi" />
+            <Label Content="27" Style="{StaticResource CalenderLabel}" Name="xxvii" />
+            <Label Content="28" Style="{StaticResource CalenderLabel}" Name="xxviii" />
+            
+        </StackPanel>
+        <StackPanel Height="99" Margin="0,479,0,0"  VerticalAlignment="Top" Orientation="Horizontal">
+            <Label Content="29" Style="{StaticResource CalenderLabel}" Name="xxix" />
+            <Label Content="30" Style="{StaticResource CalenderLabel}" Name="xxx" />
+            <Label Content="31" Style="{StaticResource CalenderLabel}"  Name="xxxi" />
+
+        </StackPanel>
+        <Label Content="Select month" HorizontalAlignment="Right" Margin="0,13,619,0" VerticalAlignment="Top" RenderTransformOrigin="-0.414,-0.198"/>
+        <TextBox HorizontalAlignment="Right" Height="23" Margin="0,15,354,0" TextWrapping="Wrap" Text="" Name="year" VerticalAlignment="Top" Width="112"/>
+        <ComboBox  x:Name="practitioners"  SelectedValuePath="Content"  Margin="128,13,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.302,-0.056" SelectionChanged="PractitionerSelectionChanged" Height="23" HorizontalAlignment="Left" Width="163" DropDownClosed="practitioners_DropDownClosed" SelectedIndex="0"/>
+        <Label Content="Select practitioner" HorizontalAlignment="Left" Margin="10,13,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.414,-0.198"/>
+
+    </Grid>
+</Page>

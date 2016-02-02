@@ -228,7 +228,6 @@ namespace amHealth
             //MessageBox.Show(user.Name+user.Id);
 
             ManageAppointment inputDialog = new ManageAppointment(user.Id, user.Name);
-
             if (inputDialog.ShowDialog() == true)
                 Refresh();
         }

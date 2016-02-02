@@ -4,6 +4,7 @@ using amLibrary.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -34,6 +35,8 @@ namespace amHealth.View.Appointments
         private ObservableCollection<Appointment> _appointmentList = null;
         private string selectedPrac = "";
 
+        
+
         public AddAppointment()
         {
             InitializeComponent();
@@ -58,8 +61,11 @@ namespace amHealth.View.Appointments
                 startMin.Items.Add(d.ToString(fmt));
                 endMin.Items.Add(d.ToString(fmt));
             }
+           
 
         }
+       
+
         public string Answer
         {
             get { return " "; }
@@ -81,7 +87,7 @@ namespace amHealth.View.Appointments
             }
             catch
             {
-
+               
             }
 
 

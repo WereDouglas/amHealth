@@ -4,43 +4,300 @@
         WindowStartupLocation="CenterScreen"
         SizeToContent="WidthAndHeight"
          
-        Title="Add user" Height="650.865" Width="327.677"  WindowStyle="None">
+        Title="Add user" MinHeight="600" MinWidth="800"  WindowStyle="None">
 
     <Grid IsHitTestVisible="True" Margin="0,0,2,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="283*"/>
+            <ColumnDefinition Width="507*"/>
+        </Grid.ColumnDefinitions>
 
-        <Label Content="First name" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,183,0,0"/>
-        <Label x:Name="lblQuestion" Margin="20,9,298,391">
+        <Label Content="First name" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,292,0,0"/>
+        <Label x:Name="lblQuestion" Margin="114,226,0,391" HorizontalAlignment="Left" Width="164">
 
         </Label>
 
-        <WrapPanel HorizontalAlignment="Right" Margin="0,5,106,10"/>
-        <Button IsDefault="True" Style="{StaticResource SaveButton}" x:Name="btnDialogOk" Click="btnDialogOk_Click" MinWidth="60" Margin="114,476,0,0" Content="Update" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" Width="83"/>
+        <WrapPanel HorizontalAlignment="Right" Margin="0,5,106,10" Grid.Column="1"/>
+        <Button IsDefault="True" Style="{StaticResource SaveButton}" x:Name="btnDialogOk" Click="btnDialogOk_Click" MinWidth="60" Margin="114,585,0,0" Content="Update" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" Width="83"/>
 
-        <Button IsCancel="True" Style="{StaticResource CancelButton}" MinWidth="60" Content="_Cancel" Margin="0,477,40,0" Height="29" VerticalAlignment="Top" HorizontalAlignment="Right" Width="76" Click="Button_Click"/>
-        <TextBox HorizontalAlignment="Left" Height="23" x:Name="lname" Margin="114,214,0,0" TextWrapping="Wrap" Text="{Binding Lname}" VerticalAlignment="Top" Width="164" RenderTransformOrigin="-1.893,1.016"/>
-        <Label Content="Last name" HorizontalAlignment="Left" Margin="10,214,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.214,0.731"/>
-        <TextBox HorizontalAlignment="Left" x:Name="fname" Margin="114,183,0,434" TextWrapping="Wrap" Text="{Binding Fname}" Width="164" RenderTransformOrigin="-1.893,1.016"/>
-        <Label Content="Gender" HorizontalAlignment="Left" Margin="10,245,0,0" VerticalAlignment="Top" Width="48"/>
-        <ComboBox HorizontalAlignment="Left"  x:Name="gender"  SelectedValue="{Binding Gender}" SelectedValuePath="Content"  Margin="114,249,0,0" VerticalAlignment="Top" Width="166" RenderTransformOrigin="0.302,-0.056">
+        <Button IsCancel="True" Style="{StaticResource CancelButton}" MinWidth="60" Content="_Cancel" Margin="202,585,0,0" Height="29" VerticalAlignment="Top" HorizontalAlignment="Left" Width="76" Click="Button_Click"/>
+        <TextBox HorizontalAlignment="Left" Height="23" x:Name="lname" Margin="114,323,0,0" TextWrapping="Wrap" Text="{Binding Lname}" VerticalAlignment="Top" Width="164" RenderTransformOrigin="-1.893,1.016"/>
+        <Label Content="Last name" HorizontalAlignment="Left" Margin="10,323,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.214,0.731"/>
+        <TextBox HorizontalAlignment="Left" x:Name="fname" Margin="114,292,0,325" TextWrapping="Wrap" Text="{Binding Fname}" Width="164" RenderTransformOrigin="-1.893,1.016"/>
+        <Label Content="Gender" HorizontalAlignment="Left" Margin="10,354,0,0" VerticalAlignment="Top" Width="48"/>
+        <ComboBox HorizontalAlignment="Left"  x:Name="gender"  SelectedValue="{Binding Gender}" SelectedValuePath="Content"  Margin="114,358,0,0" VerticalAlignment="Top" Width="166" RenderTransformOrigin="0.302,-0.056">
             <ListBoxItem Content="Male"/>
             <ListBoxItem Content="Female"/>
 
         </ComboBox>
-        <DatePicker x:Name="dob" HorizontalAlignment="Left" Margin="114,285,0,0" VerticalAlignment="Top" Text="{Binding Dob}" Width="167"/>
+        <DatePicker x:Name="dob" HorizontalAlignment="Left" Margin="114,394,0,0" VerticalAlignment="Top" Text="{Binding Dob}" Width="167"/>
 
-        <Label Content="Date of birth" HorizontalAlignment="Left" Margin="10,285,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Height="23" x:Name="height" Margin="114,314,0,0" TextWrapping="Wrap" Text="{Binding Height}" VerticalAlignment="Top" Width="164" RenderTransformOrigin="-1.893,1.016"/>
-        <TextBox HorizontalAlignment="Left" x:Name="weight" Margin="114,342,0,0" TextWrapping="Wrap" Text="{Binding Weight}" Width="164" RenderTransformOrigin="-1.893,1.016" Height="23" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" x:Name="phone" Margin="114,370,0,0" TextWrapping="Wrap" Text="{Binding Phone}" Width="164" RenderTransformOrigin="-1.893,1.016" Height="23" VerticalAlignment="Top"/>
-        <Label Content="Height/cms" HorizontalAlignment="Left" Margin="10,314,0,0" VerticalAlignment="Top" Width="77"/>
-        <Label Content="Weight/kgs" HorizontalAlignment="Left" Margin="10,339,0,0" VerticalAlignment="Top" Width="75"/>
-        <Label Content="Phone" HorizontalAlignment="Left" Margin="10,365,0,0" VerticalAlignment="Top" Width="48"/>
-        <Label Content="Email" HorizontalAlignment="Left" Margin="10,396,0,0" VerticalAlignment="Top" Width="48"/>
-        <Label Content="Region" HorizontalAlignment="Left" Margin="10,427,0,0" VerticalAlignment="Top" Width="48"/>
-        <TextBox HorizontalAlignment="Left" x:Name="email" Margin="114,399,0,0" TextWrapping="Wrap" Text="{Binding Email}" Width="164" RenderTransformOrigin="-1.893,1.016" Height="23" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" x:Name="region" Margin="114,430,0,0" TextWrapping="Wrap" Text="{Binding Region}" Width="164" RenderTransformOrigin="-1.893,1.016" Height="23" VerticalAlignment="Top"/>
+        <Label Content="Date of birth" HorizontalAlignment="Left" Margin="13,394,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="23" x:Name="height" Margin="114,423,0,0" TextWrapping="Wrap" Text="{Binding Height}" VerticalAlignment="Top" Width="164" RenderTransformOrigin="-1.893,1.016"/>
+        <TextBox HorizontalAlignment="Left" x:Name="weight" Margin="114,451,0,0" TextWrapping="Wrap" Text="{Binding Weight}" Width="164" RenderTransformOrigin="-1.893,1.016" Height="23" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" x:Name="phone" Margin="114,479,0,0" TextWrapping="Wrap" Text="{Binding Phone}" Width="164" RenderTransformOrigin="-1.893,1.016" Height="23" VerticalAlignment="Top"/>
+        <Label Content="Height/cms" HorizontalAlignment="Left" Margin="10,423,0,0" VerticalAlignment="Top" Width="77"/>
+        <Label Content="Weight/kgs" HorizontalAlignment="Left" Margin="10,448,0,0" VerticalAlignment="Top" Width="75"/>
+        <Label Content="Phone" HorizontalAlignment="Left" Margin="10,474,0,0" VerticalAlignment="Top" Width="48"/>
+        <Label Content="Email" HorizontalAlignment="Left" Margin="15,511,0,0" VerticalAlignment="Top" Width="48"/>
+        <Label Content="Region" HorizontalAlignment="Left" Margin="10,536,0,0" VerticalAlignment="Top" Width="48"/>
+        <TextBox HorizontalAlignment="Left" x:Name="email" Margin="114,508,0,0" TextWrapping="Wrap" Text="{Binding Email}" Width="164" RenderTransformOrigin="-1.893,1.016" Height="23" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" x:Name="region" Margin="114,539,0,0" TextWrapping="Wrap" Text="{Binding Region}" Width="164" RenderTransformOrigin="-1.893,1.016" Height="23" VerticalAlignment="Top"/>
 
-        <Image Margin="114,46,0,0" x:Name="imgCapture" Source="{Binding Image}" HorizontalAlignment="Left" Width="164" Height="118" VerticalAlignment="Top" />
+        <Image Margin="0,175,5,0" x:Name="imgCapture" Source="{Binding Image}" HorizontalAlignment="Right" Width="164" Height="102" VerticalAlignment="Top" />
+        <Button Content="Add new" HorizontalAlignment="Left" Command="{Binding AddCommand}" Margin="10,54,0,0" x:Name="btnAdd"  VerticalAlignment="Top" Width="74" Height="24" Click="btnAdd_Click_1" Grid.Column="1" >
+            <Button.Template>
+                <ControlTemplate>
+                    <Grid Background="Transparent">
+                        <TextBlock><Run Text="Add kin"/></TextBlock>
+                        <Image  Stretch="Uniform" Source="/amHealth;component/image/Add.png" HorizontalAlignment="Right" />
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <DataGrid  AutoGenerateColumns="False"		x:Name="dtGrid"    Margin="10,83,10,0" Grid.Column="1" Height="249" VerticalAlignment="Top"  >
+            <DataGrid.Resources>
+                <Style TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="Background" Value="#A5A5A5"  />
+                    <Setter Property="VerticalContentAlignment" Value="Center" />
+
+                </Style>
+            </DataGrid.Resources>
+
+            <DataGrid.Style>
+                <StaticResource ResourceKey="infoGrid"/>
+            </DataGrid.Style>
+
+            <DataGrid.Columns >
+
+                <DataGridTemplateColumn Header="">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <Image Height="30" Width="30" Source="{Binding Image}"   />
+                                <TextBlock  FontSize="12" Width="140" Text="{Binding Name}" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Name">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock  Style="{StaticResource CalendarText}" Text="{Binding Name}" />
+
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Header="Relationship">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <Button   Click="image_Click"  Style="{StaticResource CalendarButton}">
+                                    <StackPanel>
+                                        <TextBlock  Style="{StaticResource CalendarText}"  Text="{Binding Relationship}" />
+                                    </StackPanel>
+                                </Button>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+
+
+                <DataGridTemplateColumn Header="Phone">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <Button   Click="image_Click" Style="{StaticResource CalendarButton}">
+                                    <StackPanel>
+                                        <TextBlock  FontSize="10" Text="{Binding Phone}" />
+                                    </StackPanel>
+                                </Button>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Header="E-mail">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <Button   Click="image_Click" Style="{StaticResource CalendarButton}">
+                                    <StackPanel>
+                                        <TextBlock  FontSize="10" Text="{Binding Email}" />
+                                    </StackPanel>
+                                </Button>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Header="Nofication active?">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+
+                                <StackPanel>
+                                    <TextBlock  FontSize="10" Text="{Binding Notify}" />
+                                </StackPanel>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Header="Edit">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <Button   Click="EditButton_Click" Style="{StaticResource CalendarButton}" >
+                                    <StackPanel>
+                                        <Image  Source="/amHealth;component/image/Edits.png"   />
+                                    </StackPanel>
+                                </Button>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Delete">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <Button   Click="DeleteButton_Click"  Style="{StaticResource CalendarButton}" >
+                                    <StackPanel>
+                                        <Image  Source="/amHealth;component/image/Deletes.png"   />
+
+                                    </StackPanel>
+                                </Button>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+
+            </DataGrid.Columns>
+        </DataGrid>
+        <TextBox x:Name="txtFilter" TextChanged="txtFilter_TextChanged" Height="21" VerticalAlignment="Top" HorizontalAlignment="Right" Width="181" Margin="0,58,10,0" Grid.Column="1" />
+        <Label Content="Search" HorizontalAlignment="Right" Margin="0,54,196,0" VerticalAlignment="Top" Width="51" Height="27" Grid.Column="1" />
+        <Button Content="selected" HorizontalAlignment="Left" Command="{Binding AddCommand}" Margin="91,55,0,0" x:Name="btnAdd_Copy"  VerticalAlignment="Top" Width="62" Height="24" Click="btnDeleteAll_Click" Grid.Column="1">
+            <Button.Template>
+                <ControlTemplate>
+                    <Grid Background="Transparent">
+                        <TextBlock><Run Text="Delete "/></TextBlock>
+                        <Image  Stretch="Uniform" Source="/amHealth;component/image/Deletes.png" HorizontalAlignment="Right" />
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <CheckBox Margin="172,57,0,0" x:Name="chkSelectAll"  Click="chkSelectAll_Click" Content="Check all" Height="21" VerticalAlignment="Top" Grid.Column="1" HorizontalAlignment="Left" Width="67" />
+        <Label Content="Family members/next of kin" Grid.Column="1" HorizontalAlignment="Left" Margin="146,10,0,0" VerticalAlignment="Top" Width="165" FontWeight="Bold"/>
+        <WrapPanel HorizontalAlignment="Right" Margin="0,316,106,-301" Grid.Column="1"/>
+        <Button Content="Add new" HorizontalAlignment="Left" Command="{Binding AddCommand}" Margin="10,0,0,253" x:Name="btnAdd_Copy1"  VerticalAlignment="Bottom" Width="99" Height="24" Click="btnAdd_Chronic" Grid.Column="1" >
+            <Button.Template>
+                <ControlTemplate>
+                    <Grid Background="Transparent">
+                        <TextBlock><Run Text="Add condition"/></TextBlock>
+                        <Image  Stretch="Uniform" Source="/amHealth;component/image/Add.png" HorizontalAlignment="Right" />
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Label Content="Health conditions" Grid.Column="1" HorizontalAlignment="Right" Margin="0,337,211,0" VerticalAlignment="Top" Width="165" FontWeight="Bold"/>
+        <DataGrid  AutoGenerateColumns="False" 	x:Name="dtGrid_chronic"  Style="{StaticResource smallGrid}"  Margin="10,0,0,10" Grid.Column="1" HorizontalAlignment="Left" Width="229" Height="242" VerticalAlignment="Bottom"  >
+            <DataGrid.Resources>
+                <Style TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="Background" Value="#A5A5A5"  />
+                    <Setter Property="VerticalContentAlignment" Value="Center" />
+
+                </Style>
+            </DataGrid.Resources>
+
+            <DataGrid.Columns >
+
+
+                <DataGridTemplateColumn Header="Name">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock  Style="{StaticResource CalendarText}" Text="{Binding Chronic}" />
+
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+
+
+                <DataGridTemplateColumn Header="Remove">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <Button   Click="RemoveChronicButton_Click"  Style="{StaticResource CalendarButton}" >
+                                    <StackPanel>
+                                        <Image  Source="/amHealth;component/image/Deletes.png"   />
+
+                                    </StackPanel>
+                                </Button>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+
+            </DataGrid.Columns>
+        </DataGrid>
+        <DataGrid  AutoGenerateColumns="False"	 Style="{StaticResource smallGrid}"	x:Name="dtGrid_allergy"    Margin="0,0,10,10" Grid.Column="1" HorizontalAlignment="Right" Width="253" Height="241" VerticalAlignment="Bottom"  >
+            <DataGrid.Resources>
+                <Style TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="Background" Value="#A5A5A5"  />
+                    <Setter Property="VerticalContentAlignment" Value="Center" />
+
+                </Style>
+            </DataGrid.Resources>
+
+
+            <DataGrid.Columns >
+
+
+                <DataGridTemplateColumn Header="Name">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock  Style="{StaticResource CalendarText}" Text="{Binding Allergy}" />
+
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+
+
+
+                <DataGridTemplateColumn Header="Remove">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <Button   Click="RemoveAllergyButton_Click"  Style="{StaticResource CalendarButton}" >
+                                    <StackPanel>
+                                        <Image  Source="/amHealth;component/image/Deletes.png"   />
+
+                                    </StackPanel>
+                                </Button>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Add new" HorizontalAlignment="Right" Command="{Binding AddCommand}" Margin="0,0,155,256" x:Name="btnAdd_Copy5"  VerticalAlignment="Bottom" Width="108" Height="24" Click="btnAdd_allergy" Grid.Column="1" >
+            <Button.Template>
+                <ControlTemplate>
+                    <Grid Background="Transparent">
+                        <TextBlock><Run Text="Add Allergies"/></TextBlock>
+                        <Image  Stretch="Uniform" Source="/amHealth;component/image/Add.png" HorizontalAlignment="Right" />
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Label Content="Info" Name="info" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="25,18,0,0" RenderTransformOrigin="0.533,-0.12" Width="248" Height="157"/>
     </Grid>
 
 </Window>

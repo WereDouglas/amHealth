@@ -12,7 +12,7 @@
     </Page.Resources>
     <Grid Margin="0,0,0,10">
         <Label Content="" x:Name="internet" HorizontalAlignment="Left" Margin="883,9,0,0" VerticalAlignment="Top" Width="85"/>
-        <DataGrid x:Name="dtGrid" Margin="10,40,10,10"  CanUserReorderColumns="True" CanUserResizeColumns="True" 
+        <DataGrid x:Name="dtGrid" Margin="10,40,10,10" Style="{StaticResource smallGrid}" CanUserReorderColumns="True" CanUserResizeColumns="True" 
         	CanUserResizeRows="False" CanUserSortColumns="True" AutoGenerateColumns="False" HorizontalGridLinesBrush="WhiteSmoke" VerticalGridLinesBrush="#FFE7E8EC" >
             <DataGrid.Columns>
                 <DataGridTemplateColumn>

@@ -8,13 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("x64/sqlceca35.dll")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("x64/sqlcecompact35.dll")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("x64/sqlceer35en.dll")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("x64/sqlceme35.dll")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("x64/sqlceoledb35.dll")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("x64/sqlceqp35.dll")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("x64/sqlcese35.dll")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("x86/sqlceca35.dll")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("x86/sqlcecompact35.dll")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("x86/sqlceer35en.dll")]
