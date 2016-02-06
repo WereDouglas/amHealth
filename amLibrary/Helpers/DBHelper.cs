@@ -16,19 +16,13 @@ namespace amLibrary.Helpers
         //  public static SqlCeConnection con = new SqlCeConnection(@"Data Source="+ System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase) + "\\wimea.sdf;Password=wimea; Persist Security Info=True;");
         //ConnectionString = "Data Source=" + System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase) + "\\Database.sdf"s
 
-        public static string conString = @"Data Source=c:\amHealth\amHealth.sdf;Password=access; Persist Security Info=True;";
-        public static SqlCeConnection con = new SqlCeConnection(conString);
-        private static DBHelper _instance;
+        public string conString = @"Data Source=c:\amHealth\amHealth.sdf;Password=access; Persist Security Info=True;";
+        public SqlCeConnection con;
+        
 
-        public static DBHelper Instance
+        public DBHelper()
         {
-            get
-            {
-                if (_instance == null)
-                    _instance = new DBHelper();
-
-                return _instance;
-            }
+            con = new SqlCeConnection(conString);
         }
 
         public void ExecuteNonQuery(string Query)

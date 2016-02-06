@@ -15,13 +15,25 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_009A4A03B02E40EEBC32EFCFC1DD71EF"
+        "MsmKey" = "8:_0027F1CEB2E949DA8C9554A3A8F229C6"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_138411D67785493E96B562AD3680FF93"
+        "MsmKey" = "8:_072F98C7D2804C7E98E301D2B9C42F32"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_09C87A663D594FF49D72EA9AA20D561B"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_0EDE8BACC36C4DE8AEBC8582C7DEE7CE"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -51,61 +63,13 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_1C22E8AE625446DB98A9720652CCF55B"
+        "MsmKey" = "8:_181960BE40054DB6A2B583F509E2650E"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_269305FF2EB382FF6313EB262047F1E7"
-        "OwnerKey" = "8:_C679057056104B29A5D477DD40BA4437"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_2D1A554452423C79513121561DB1A7DD"
-        "OwnerKey" = "8:_C679057056104B29A5D477DD40BA4437"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_2D1A554452423C79513121561DB1A7DD"
-        "OwnerKey" = "8:_580D202A3A094678B1751CC48242981B"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_2D1A554452423C79513121561DB1A7DD"
-        "OwnerKey" = "8:_269305FF2EB382FF6313EB262047F1E7"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_2D1A554452423C79513121561DB1A7DD"
-        "OwnerKey" = "8:_727EC5859F7643F25D242CAB762703AC"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_3136387816B44529B913700A6E0F83BA"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_4EAC4097CBF34D40B8F3EC6C4124FB89"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_4FD411913BFE412BB555968317D53B26"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_580D202A3A094678B1751CC48242981B"
+        "MsmKey" = "8:_216EB4C0E5214FB8942CD1DA9C3A7E87"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -135,13 +99,13 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_7A45EC6F10DF4945876E540B99CF65BC"
+        "MsmKey" = "8:_770E55E3C7B84BEEA98C76884D481B03"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_86D2112C58A5401BAA2C896D16F27376"
+        "MsmKey" = "8:_78D2321A775F4054978AFA0D81255CDB"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -165,44 +129,20 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_8C45D049050B4EA9A3005AF9C749809C"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_8D45F399574AAF0F8CF4B104D717B96C"
         "OwnerKey" = "8:_C679057056104B29A5D477DD40BA4437"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_8F8ED4BC1B71475FBC56108BB9ACA36C"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_981E3EF88E254C159E7A53C6E7A19359"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_9A8240C0355E4117B3B099350DF0F589"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_9B67367368CD4715A209C99C0CD8F553"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_A3D9D1A83706459490B748194CE40C7F"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_A6B060D4D0384272A3992DDA78DD9849"
-        "OwnerKey" = "8:_UNDEFINED"
+        "MsmKey" = "8:_9ABF567B420FB9E5D39B1DF741DC0BD1"
+        "OwnerKey" = "8:_C679057056104B29A5D477DD40BA4437"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -213,13 +153,61 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_B1527EE4643740EBA92C691C5FBB44BB"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_BA167CB716F6463DB6DAAF3EC8A92A90"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_BBF6F40A3C5B9FECDB34091BECC52C24"
         "OwnerKey" = "8:_C679057056104B29A5D477DD40BA4437"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
+        "MsmKey" = "8:_C66B31F2BBED4B849CF23C752C76792F"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_C679057056104B29A5D477DD40BA4437"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_E0149438FAAB48CF91CE89D725067C39"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_E822D2453A9D473024D683FC40368B4A"
+        "OwnerKey" = "8:_C679057056104B29A5D477DD40BA4437"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_E822D2453A9D473024D683FC40368B4A"
+        "OwnerKey" = "8:_727EC5859F7643F25D242CAB762703AC"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_E822D2453A9D473024D683FC40368B4A"
+        "OwnerKey" = "8:_9ABF567B420FB9E5D39B1DF741DC0BD1"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_EC22221D51FF423D906F5A07A2A0BBB1"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -232,19 +220,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_580D202A3A094678B1751CC48242981B"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_C679057056104B29A5D477DD40BA4437"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_269305FF2EB382FF6313EB262047F1E7"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -286,13 +262,19 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_8D45F399574AAF0F8CF4B104D717B96C"
+        "OwnerKey" = "8:_9ABF567B420FB9E5D39B1DF741DC0BD1"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_2D1A554452423C79513121561DB1A7DD"
+        "OwnerKey" = "8:_E822D2453A9D473024D683FC40368B4A"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_8D45F399574AAF0F8CF4B104D717B96C"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -390,12 +372,12 @@
         }
         "File"
         {
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_009A4A03B02E40EEBC32EFCFC1DD71EF"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_0027F1CEB2E949DA8C9554A3A8F229C6"
             {
-            "SourcePath" = "8:..\\..\\wimea\\WimeaLibrary\\x86\\sqlceca35.dll"
-            "TargetName" = "8:sqlceca35.dll"
+            "SourcePath" = "8:..\\amHealth\\x64\\sqlcese35.dll"
+            "TargetName" = "8:sqlcese35.dll"
             "Tag" = "8:"
-            "Folder" = "8:_DD94614060184CFE9C764040C7B0DCB3"
+            "Folder" = "8:_6DB8F97ABE9A4FEDBE152E354A489EFF"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -410,12 +392,52 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_138411D67785493E96B562AD3680FF93"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_072F98C7D2804C7E98E301D2B9C42F32"
             {
-            "SourcePath" = "8:..\\..\\wimea\\WimeaLibrary\\x86\\sqlcecompact35.dll"
+            "SourcePath" = "8:..\\amHealth\\x86\\sqlceqp35.dll"
+            "TargetName" = "8:sqlceqp35.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_2D8ACD68A9F8423093A00F9B4BA37B89"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_09C87A663D594FF49D72EA9AA20D561B"
+            {
+            "SourcePath" = "8:..\\amHealth\\x64\\sqlceer35EN.dll"
+            "TargetName" = "8:sqlceer35EN.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_6DB8F97ABE9A4FEDBE152E354A489EFF"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_0EDE8BACC36C4DE8AEBC8582C7DEE7CE"
+            {
+            "SourcePath" = "8:..\\amHealth\\x86\\sqlcecompact35.dll"
             "TargetName" = "8:sqlcecompact35.dll"
             "Tag" = "8:"
-            "Folder" = "8:_DD94614060184CFE9C764040C7B0DCB3"
+            "Folder" = "8:_2D8ACD68A9F8423093A00F9B4BA37B89"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -461,94 +483,12 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_1C22E8AE625446DB98A9720652CCF55B"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_181960BE40054DB6A2B583F509E2650E"
             {
-            "SourcePath" = "8:..\\..\\wimea\\WimeaLibrary\\x86\\sqlcese35.dll"
-            "TargetName" = "8:sqlcese35.dll"
-            "Tag" = "8:"
-            "Folder" = "8:_DD94614060184CFE9C764040C7B0DCB3"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_269305FF2EB382FF6313EB262047F1E7"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:TRUE"
-            "AssemblyAsmDisplayName" = "8:System.Data.SqlServerCe.Entity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_269305FF2EB382FF6313EB262047F1E7"
-                    {
-                    "Name" = "8:System.Data.SqlServerCe.Entity.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:System.Data.SqlServerCe.Entity.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_A79132A8968B45F69890A50104F54B6D"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_2D1A554452423C79513121561DB1A7DD"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_2D1A554452423C79513121561DB1A7DD"
-                    {
-                    "Name" = "8:System.Data.SqlServerCe.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:System.Data.SqlServerCe.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_A79132A8968B45F69890A50104F54B6D"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_3136387816B44529B913700A6E0F83BA"
-            {
-            "SourcePath" = "8:..\\..\\wimea\\WimeaLibrary\\x86\\sqlceme35.dll"
+            "SourcePath" = "8:..\\amHealth\\x86\\sqlceme35.dll"
             "TargetName" = "8:sqlceme35.dll"
             "Tag" = "8:"
-            "Folder" = "8:_DD94614060184CFE9C764040C7B0DCB3"
+            "Folder" = "8:_2D8ACD68A9F8423093A00F9B4BA37B89"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -563,63 +503,12 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_4EAC4097CBF34D40B8F3EC6C4124FB89"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_216EB4C0E5214FB8942CD1DA9C3A7E87"
             {
-            "SourcePath" = "8:..\\..\\wimea\\WimeaLibrary\\x64\\sqlcese35.dll"
-            "TargetName" = "8:sqlcese35.dll"
+            "SourcePath" = "8:..\\amHealth\\x86\\sqlceoledb35.dll"
+            "TargetName" = "8:sqlceoledb35.dll"
             "Tag" = "8:"
-            "Folder" = "8:_88F686788387473BAC5B864D33610E8B"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_4FD411913BFE412BB555968317D53B26"
-            {
-            "SourcePath" = "8:..\\..\\wimea\\WimeaLibrary\\x64\\sqlceme35.dll"
-            "TargetName" = "8:sqlceme35.dll"
-            "Tag" = "8:"
-            "Folder" = "8:_88F686788387473BAC5B864D33610E8B"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_580D202A3A094678B1751CC48242981B"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:System.Data.SqlServerCe.Entity, Version=3.5.1.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_580D202A3A094678B1751CC48242981B"
-                    {
-                    "Name" = "8:System.Data.SqlServerCe.Entity.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:..\\..\\wimea\\WimeaLibrary\\x86\\System.Data.SqlServerCe.Entity.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_DD94614060184CFE9C764040C7B0DCB3"
+            "Folder" = "8:_2D8ACD68A9F8423093A00F9B4BA37B89"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -696,12 +585,12 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_7A45EC6F10DF4945876E540B99CF65BC"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_770E55E3C7B84BEEA98C76884D481B03"
             {
-            "SourcePath" = "8:..\\..\\wimea\\WimeaLibrary\\x64\\sqlceer35EN.dll"
-            "TargetName" = "8:sqlceer35EN.dll"
+            "SourcePath" = "8:..\\amHealth\\x64\\sqlceca35.dll"
+            "TargetName" = "8:sqlceca35.dll"
             "Tag" = "8:"
-            "Folder" = "8:_88F686788387473BAC5B864D33610E8B"
+            "Folder" = "8:_6DB8F97ABE9A4FEDBE152E354A489EFF"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -716,12 +605,12 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_86D2112C58A5401BAA2C896D16F27376"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_78D2321A775F4054978AFA0D81255CDB"
             {
-            "SourcePath" = "8:..\\..\\wimea\\WimeaLibrary\\x64\\sqlceoledb35.dll"
-            "TargetName" = "8:sqlceoledb35.dll"
+            "SourcePath" = "8:..\\amHealth\\x86\\sqlceca35.dll"
+            "TargetName" = "8:sqlceca35.dll"
             "Tag" = "8:"
-            "Folder" = "8:_88F686788387473BAC5B864D33610E8B"
+            "Folder" = "8:_2D8ACD68A9F8423093A00F9B4BA37B89"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -767,6 +656,26 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_8C45D049050B4EA9A3005AF9C749809C"
+            {
+            "SourcePath" = "8:..\\amHealth\\x64\\sqlceqp35.dll"
+            "TargetName" = "8:sqlceqp35.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_6DB8F97ABE9A4FEDBE152E354A489EFF"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_8D45F399574AAF0F8CF4B104D717B96C"
             {
             "AssemblyRegister" = "3:1"
@@ -798,12 +707,23 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_8F8ED4BC1B71475FBC56108BB9ACA36C"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_9ABF567B420FB9E5D39B1DF741DC0BD1"
             {
-            "SourcePath" = "8:..\\..\\wimea\\WimeaLibrary\\x64\\sqlceca35.dll"
-            "TargetName" = "8:sqlceca35.dll"
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:System.Data.SqlServerCe.Entity, Version=3.5.1.50, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_9ABF567B420FB9E5D39B1DF741DC0BD1"
+                    {
+                    "Name" = "8:System.Data.SqlServerCe.Entity.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:System.Data.SqlServerCe.Entity.dll"
+            "TargetName" = "8:"
             "Tag" = "8:"
-            "Folder" = "8:_88F686788387473BAC5B864D33610E8B"
+            "Folder" = "8:_A79132A8968B45F69890A50104F54B6D"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -815,107 +735,7 @@
             "PackageAs" = "3:1"
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_981E3EF88E254C159E7A53C6E7A19359"
-            {
-            "SourcePath" = "8:..\\..\\wimea\\WimeaLibrary\\x64\\sqlcecompact35.dll"
-            "TargetName" = "8:sqlcecompact35.dll"
-            "Tag" = "8:"
-            "Folder" = "8:_88F686788387473BAC5B864D33610E8B"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_9A8240C0355E4117B3B099350DF0F589"
-            {
-            "SourcePath" = "8:..\\..\\wimea\\WimeaLibrary\\x86\\sqlceer35EN.dll"
-            "TargetName" = "8:sqlceer35EN.dll"
-            "Tag" = "8:"
-            "Folder" = "8:_DD94614060184CFE9C764040C7B0DCB3"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_9B67367368CD4715A209C99C0CD8F553"
-            {
-            "SourcePath" = "8:..\\..\\wimea\\WimeaLibrary\\x86\\sqlceoledb35.dll"
-            "TargetName" = "8:sqlceoledb35.dll"
-            "Tag" = "8:"
-            "Folder" = "8:_DD94614060184CFE9C764040C7B0DCB3"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_A3D9D1A83706459490B748194CE40C7F"
-            {
-            "SourcePath" = "8:..\\..\\wimea\\WimeaLibrary\\x64\\sqlceqp35.dll"
-            "TargetName" = "8:sqlceqp35.dll"
-            "Tag" = "8:"
-            "Folder" = "8:_88F686788387473BAC5B864D33610E8B"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_A6B060D4D0384272A3992DDA78DD9849"
-            {
-            "SourcePath" = "8:..\\..\\wimea\\WimeaLibrary\\x86\\sqlceqp35.dll"
-            "TargetName" = "8:sqlceqp35.dll"
-            "Tag" = "8:"
-            "Folder" = "8:_DD94614060184CFE9C764040C7B0DCB3"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_B10C839CCFD55B4B327D164D6E2942C0"
@@ -949,6 +769,46 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_B1527EE4643740EBA92C691C5FBB44BB"
+            {
+            "SourcePath" = "8:..\\amHealth\\x86\\sqlceer35EN.dll"
+            "TargetName" = "8:sqlceer35EN.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_2D8ACD68A9F8423093A00F9B4BA37B89"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_BA167CB716F6463DB6DAAF3EC8A92A90"
+            {
+            "SourcePath" = "8:..\\amHealth\\x86\\sqlcese35.dll"
+            "TargetName" = "8:sqlcese35.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_2D8ACD68A9F8423093A00F9B4BA37B89"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_BBF6F40A3C5B9FECDB34091BECC52C24"
             {
             "AssemblyRegister" = "3:1"
@@ -978,6 +838,97 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_C66B31F2BBED4B849CF23C752C76792F"
+            {
+            "SourcePath" = "8:..\\amHealth\\x64\\sqlceoledb35.dll"
+            "TargetName" = "8:sqlceoledb35.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_6DB8F97ABE9A4FEDBE152E354A489EFF"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_E0149438FAAB48CF91CE89D725067C39"
+            {
+            "SourcePath" = "8:..\\amHealth\\x64\\sqlceme35.dll"
+            "TargetName" = "8:sqlceme35.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_6DB8F97ABE9A4FEDBE152E354A489EFF"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_E822D2453A9D473024D683FC40368B4A"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:System.Data.SqlServerCe, Version=3.5.1.50, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_E822D2453A9D473024D683FC40368B4A"
+                    {
+                    "Name" = "8:System.Data.SqlServerCe.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:System.Data.SqlServerCe.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_A79132A8968B45F69890A50104F54B6D"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_EC22221D51FF423D906F5A07A2A0BBB1"
+            {
+            "SourcePath" = "8:..\\amHealth\\x64\\sqlcecompact35.dll"
+            "TargetName" = "8:sqlcecompact35.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_6DB8F97ABE9A4FEDBE152E354A489EFF"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_FE8B8BDFE6D04CA2BAD2A2E4F0252C0A"
@@ -1038,24 +989,24 @@
             "Property" = "8:TARGETDIR"
                 "Folders"
                 {
-                    "{9EF0B969-E518-4E46-987F-47570745A589}:_88F686788387473BAC5B864D33610E8B"
-                    {
-                    "Name" = "8:x64"
-                    "AlwaysCreate" = "11:FALSE"
-                    "Condition" = "8:"
-                    "Transitive" = "11:FALSE"
-                    "Property" = "8:_F12CEF8A3B984F108A90A67169DC7DBA"
-                        "Folders"
-                        {
-                        }
-                    }
-                    "{9EF0B969-E518-4E46-987F-47570745A589}:_DD94614060184CFE9C764040C7B0DCB3"
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_2D8ACD68A9F8423093A00F9B4BA37B89"
                     {
                     "Name" = "8:x86"
                     "AlwaysCreate" = "11:FALSE"
                     "Condition" = "8:"
                     "Transitive" = "11:FALSE"
-                    "Property" = "8:_DE8B8D93F31045D9AE54386EF45DB4A1"
+                    "Property" = "8:_C2494A50EED34AE080756B39656B55B6"
+                        "Folders"
+                        {
+                        }
+                    }
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_6DB8F97ABE9A4FEDBE152E354A489EFF"
+                    {
+                    "Name" = "8:x64"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_D61CE6C7FFF84324BB8D9A5CD07B5637"
                         "Folders"
                         {
                         }
@@ -1079,7 +1030,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:AccessHealth"
         "ProductCode" = "8:{534D715E-FF13-4A2F-87F7-8AECB421E935}"
-        "PackageCode" = "8:{31DE8CCE-6FC4-4E28-9555-402D0AD3F0F8}"
+        "PackageCode" = "8:{C9F0B3CE-8E17-44C3-B7E5-B502D5C1D1BE}"
         "UpgradeCode" = "8:{40839B79-2041-467F-87B7-61ED39831EB7}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"

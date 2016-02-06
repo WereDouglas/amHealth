@@ -4,13 +4,13 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"       
       mc:Ignorable="d"
-	Title="Daily weather records" MinWidth="800" MinHeight="600" Background="White" Height="417" >
+	Title="Daily weather records" MinWidth="800" MinHeight="600" Background="White"  >
 
     <Grid Margin="0,0,0,10">
-        <ComboBox HorizontalAlignment="Right" x:Name="month" Margin="0,14,471,0" VerticalAlignment="Top" Width="126" SelectedIndex="0" SelectionChanged="month_SelectionChanged" DropDownClosed="month_DropDownClosed"/>
+        <ComboBox HorizontalAlignment="Right" x:Name="month" Margin="0,15,299,0" VerticalAlignment="Top" Width="126" SelectedIndex="0" SelectionChanged="month_SelectionChanged" DropDownClosed="month_DropDownClosed"/>
 
         <StackPanel Height="123" Margin="0,71,0,0" VerticalAlignment="Top" Orientation="Horizontal">
-            <Label Content="1" Style="{StaticResource CalenderLabel}" Name="i"/>
+            <Label Content="1" Style="{StaticResource CalenderLabel}"  Name="i"/>
             <Label Content="2" Style="{StaticResource CalenderLabel}" Name="ii" />
             <Label Content="3" Style="{StaticResource CalenderLabel}" Name="iii" />
             <Label Content="4" Style="{StaticResource CalenderLabel}" Name="iv" />
@@ -55,9 +55,9 @@
             <Label Content="31" Style="{StaticResource CalenderLabel}"  Name="xxxi" />
 
         </StackPanel>
-        <Label Content="Select month" HorizontalAlignment="Right" Margin="0,13,619,0" VerticalAlignment="Top" RenderTransformOrigin="-0.414,-0.198"/>
-        <TextBox HorizontalAlignment="Right" Height="23" Margin="0,15,354,0" TextWrapping="Wrap" Text="" Name="year" VerticalAlignment="Top" Width="112"/>
-        <ComboBox  x:Name="practitioners"  SelectedValuePath="Content"  Margin="128,13,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.302,-0.056" SelectionChanged="PractitionerSelectionChanged" Height="23" HorizontalAlignment="Left" Width="163" DropDownClosed="practitioners_DropDownClosed" SelectedIndex="0"/>
+        <Label Content="Select month" HorizontalAlignment="Right" Margin="0,15,430,0" VerticalAlignment="Top" RenderTransformOrigin="-0.414,-0.198"/>
+        <TextBox HorizontalAlignment="Right" Height="23" Margin="0,15,155,0" TextWrapping="Wrap" Text="" Name="year" VerticalAlignment="Top" Width="112"/>
+        <ComboBox  x:Name="practitioners"  SelectedValuePath="Content"  Margin="128,13,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.302,-0.056" SelectionChanged="PractitionerSelectionChanged" Height="23" HorizontalAlignment="Left" Width="163" DropDownClosed="practitioners_DropDownClosed"/>
         <Label Content="Select practitioner" HorizontalAlignment="Left" Margin="10,13,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.414,-0.198"/>
 
     </Grid>

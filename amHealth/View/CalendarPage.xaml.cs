@@ -39,10 +39,12 @@ namespace amHealth
             year.Text = DateTime.Now.Date.Year.ToString();
             _practitionerList = new ObservableCollection<Practitioner>(App.amApp.Practitioners);
             practitioners.ItemsSource = null;
+            practitioners.Items.Add("");
             foreach (Practitioner prac in _practitionerList)
             {
                 practitioners.Items.Add(prac.Name);
             }
+            view();
         }
 
         private void PractitionerSelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -69,6 +71,44 @@ namespace amHealth
             roman += ones[num % 10];
 
             return roman;
+        }
+        public void view() {
+            _patientList = new ObservableCollection<Patient>(App.amApp.Patients);
+            _practitionerList = new ObservableCollection<Practitioner>(App.amApp.Practitioners);
+            _appointmentList = new ObservableCollection<Appointment>(App.amApp.Appointments);
+
+            for (int r = 1; r < 32; r++)
+            {
+
+
+                Console.WriteLine(IntToRoman(r).ToString().ToLower());
+                Label tvs = (Label)FindName(IntToRoman(r).ToString().ToLower()) as Label;
+                tvs.Content = r.ToString();
+
+            }
+
+
+            foreach (Appointment T in _appointmentList.Where(i => Convert.ToDateTime(i.Dated).Date.Year.ToString() == year.Text && Convert.ToDateTime(i.Dated).Date.ToString("MMMM") == month.Text))
+            {
+
+                for (int r = 1; r < 32; r++)
+                {
+
+
+                    if (Convert.ToDateTime(T.Dated).Date.Day == r)
+                    {
+
+                        Label tvs = (Label)FindName(IntToRoman(r).ToString().ToLower()) as Label;
+                        tvs.Content = tvs.Content + Environment.NewLine + T.Meet + "-" + T.EndTime + _patientList.First(x => x.Id.Equals(T.Patient)).Fname + " " + _patientList.First(x => x.Id.Equals(T.Patient)).Lname;
+
+                    }
+
+
+
+                }
+            }
+        
+        
         }
         private void month_DropDownClosed(object sender, EventArgs e)
         {
@@ -114,7 +154,15 @@ namespace amHealth
 
         private void practitioners_DropDownClosed(object sender, EventArgs e)
         {
-            month_DropDownClosed(null, null);
+            if (practitioners.Text == "")
+            {
+                view();
+
+            }
+            else
+            {
+                month_DropDownClosed(null, null);
+            }
         }
     }
 }

@@ -242,5 +242,10 @@ namespace amHealth
             }
 
         }
+
+        private void btnAppointment(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("view/CalendarPage.xaml", UriKind.Relative));
+        }
     }
 }

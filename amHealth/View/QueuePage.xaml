@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"       
       mc:Ignorable="d"
 	Title="Daily weather records" MinWidth="800" MinHeight="600" Background="White" Height="417" >
-   
+
     <Grid Margin="0,0,0,10">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="399*"/>
@@ -24,7 +24,7 @@
                         </Button>
                         <TextBlock  Margin="0,15,0,5" Text="{Binding Checked}" Width="50" />
                         <TextBlock  Margin="0,15,0,5" Text="{Binding Details}" Width="200" />
-                       
+
                         <TextBlock  Visibility="Hidden" Margin="0,15,0,5" Text="{Binding Patient}" Width="0" />
                         <TextBlock  Visibility="Hidden"  Margin="0,15,0,5" Text="{Binding Practitioner}" Width="0" />
 
@@ -115,7 +115,16 @@
             </ListView.ItemsPanel>
         </ListView>
         <Button IsDefault="True" x:Name="btnDialogOk_Copy" Click="Schedule_Click" MinWidth="60" Margin="0,34,0,0" Content="NEW APPOINTMENT" HorizontalAlignment="Left" Width="138" Background="{x:Null}" Foreground="#FF2799F0" Height="27" VerticalAlignment="Top" FontFamily="Calibri Light" FontSize="14" BorderBrush="#FF2799F0" Grid.Column="1" BorderThickness="0,0,0,5"/>
-        <Label Content="Info:" x:Name="appointmentcount" Margin="0,0,7,0" VerticalAlignment="Top" Grid.Column="1" HorizontalAlignment="Right" Width="216" Height="29"/>
+        <Label Content="Info:" x:Name="appointmentcount" Margin="10,5,0,0" VerticalAlignment="Top" Grid.Column="1" Height="29" HorizontalAlignment="Left" Width="213"/>
         <Label Content="Info:" x:Name="queuecount" Margin="10,0,0,0" VerticalAlignment="Top" Height="29" HorizontalAlignment="Left" Width="198"/>
+        <Button Content="Add new" Command="{Binding AddCommand}" Margin="0,30,10,0" x:Name="appointments"  VerticalAlignment="Top" Height="29" Click="btnAppointment"  Foreground="#FF4E8FB2" FontWeight="Medium" Padding="3" Grid.Column="1" HorizontalAlignment="Right" Width="32" >
+            <Button.Template>
+                <ControlTemplate>
+                    <Grid Background="Transparent" Margin="0,0,0,-1">
+                        <Image  Stretch="Uniform" Source="/amHealth;component/image/Calendar-Date-48.png" HorizontalAlignment="Left" Margin="0,0,-10,0" Width="55" Height="30" VerticalAlignment="Top" />
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
     </Grid>
 </Page>

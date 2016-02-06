@@ -211,7 +211,7 @@ namespace amHealth
 
         private void btnCalendar(object sender, RoutedEventArgs e)
         {
-           MessagePage  m = new MessagePage();
+          
          NavigationService.Navigate(new Uri("view/CalendarPage.xaml", UriKind.Relative));
           
         }
